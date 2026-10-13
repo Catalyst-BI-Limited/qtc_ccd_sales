@@ -1,0 +1,50 @@
+sourceConnection: '{{task.land_ccd_landing-kqgj.sourceConnection}}'
+explicitlySelected:
+  - name: product_category
+    schema: '{{task.land_ccd_landing-kqgj:null$_$public.schema}}'
+    type: TABLE
+  - name: product_product
+    schema: '{{task.land_ccd_landing-kqgj:null$_$public.schema}}'
+    type: TABLE
+  - name: product_template
+    schema: '{{task.land_ccd_landing-kqgj:null$_$public.schema}}'
+    type: TABLE
+  - name: product_supplierinfo
+    schema: '{{task.land_ccd_landing-kqgj:null$_$public.schema}}'
+    type: TABLE
+  - name: sale_order_line
+    schema: '{{task.land_ccd_landing-kqgj:null$_$public.schema}}'
+    type: TABLE
+  - name: sale_order_cancel
+    schema: '{{task.land_ccd_landing-kqgj:null$_$public.schema}}'
+    type: TABLE
+  - name: sale_order
+    schema: '{{task.land_ccd_landing-kqgj:null$_$public.schema}}'
+    type: TABLE
+  - name: sale_order_line_invoice_rel
+    schema: '{{task.land_ccd_landing-kqgj:null$_$public.schema}}'
+    type: TABLE
+  - name: res_country
+    schema: '{{task.land_ccd_landing-kqgj:null$_$public.schema}}'
+    type: TABLE
+  - name: res_company
+    schema: '{{task.land_ccd_landing-kqgj:null$_$public.schema}}'
+    type: TABLE
+  - name: res_currency
+    schema: '{{task.land_ccd_landing-kqgj:null$_$public.schema}}'
+    type: TABLE
+  - name: res_partner
+    schema: '{{task.land_ccd_landing-kqgj:null$_$public.schema}}'
+    type: TABLE
+  - name: res_users
+    schema: '{{task.land_ccd_landing-kqgj:null$_$public.schema}}'
+    type: TABLE
+  - name: resource_resource
+    schema: '{{task.land_ccd_landing-kqgj:null$_$public.schema}}'
+    type: TABLE
+  - name: stock_warehouse
+    schema: '{{task.land_ccd_landing-kqgj:null$_$public.schema}}'
+    type: TABLE
+  - name: crm_team
+    schema: '{{task.land_ccd_landing-kqgj:null$_$public.schema}}'
+    type: TABLE

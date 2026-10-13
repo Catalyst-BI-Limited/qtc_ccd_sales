@@ -1,0 +1,362 @@
+properties:
+  id: customer-digg
+  name: CUSTOMER
+  inputDatasets:
+    - datasetId: customer-g-tm
+      name: CUSTOMER
+      taskId: sales_transform-lz1g
+  datasetAttributes:
+    materialized: ON
+    hasStandardViewsWithHeaders: ON
+  tableDef:
+    columns:
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Customer ID
+        nullable: true
+        primaryKeyOrdinal: 1
+        id: customer id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Customer Name
+        nullable: true
+        id: customer name
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Customer Display Name
+        nullable: true
+        id: customer display name
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Customer Address 1
+        nullable: true
+        id: customer address 1
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Customer Address 2
+        nullable: true
+        id: customer address 2
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Customer Postcode
+        nullable: true
+        id: customer postcode
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Customer City
+        nullable: true
+        id: customer city
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Customer Email
+        nullable: true
+        id: customer email
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: 'Customer Phone '
+        nullable: true
+        id: 'customer phone '
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Customer T/A
+        nullable: true
+        id: customer t/a
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Customer Rank
+        nullable: true
+        id: customer rank
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Customer Invoice Warning Message
+        nullable: true
+        id: customer invoice warning message
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Customer Credit Limit
+        nullable: true
+        id: customer credit limit
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Customer Sales Warning Message
+        nullable: true
+        id: customer sales warning message
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 2
+          originalTypeFull: NVARCHAR(2)
+        name: Customer Country Code
+        nullable: true
+        id: customer country code
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NCLOB
+          originalTypeFull: NVARCHAR(8388608)
+        name: Customer Country Name
+        nullable: true
+        id: customer country name
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Customer Latitude
+        nullable: true
+        id: customer latitude
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Customer Longitude
+        nullable: true
+        id: customer longitude
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Customer Default Warehouse
+        nullable: true
+        id: Customer Default Warehouse-1f16
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 18
+          scale: 2
+        name: Customer Delivery Warehouse Longitude
+        nullable: true
+        id: Customer Delivery Warehouse Longitude-d46b
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 18
+          scale: 2
+        name: Customer Delivery Warehouse Latitude
+        nullable: true
+        id: Customer Delivery Warehouse Latitude-9d03
+        properties:
+          documentMetadata: false
+  dimensionDatasetSettings:
+    type: TYPE1
+    rootDataEntityId:
+      datasetId: customer-g-tm
+      name: CUSTOMER
+      taskId: sales_transform-lz1g
+    mapping:
+      columns:
+        - columnName: Customer ID
+          type: ROOT_PK
+          expression:
+            expressionStatement: ${Customer ID}
+            alias:
+              - name: Customer ID
+                value: Customer ID
+        - columnName: Customer Name
+          type: NONE
+          expression:
+            expressionStatement: ${Customer Name}
+            alias:
+              - name: Customer Name
+                value: Customer Name
+        - columnName: Customer Display Name
+          type: NONE
+          expression:
+            expressionStatement: ${Customer Display Name}
+            alias:
+              - name: Customer Display Name
+                value: Customer Display Name
+        - columnName: Customer Address 1
+          type: NONE
+          expression:
+            expressionStatement: ${Customer Address 1}
+            alias:
+              - name: Customer Address 1
+                value: Customer Address 1
+        - columnName: Customer Address 2
+          type: NONE
+          expression:
+            expressionStatement: ${Customer Address 2}
+            alias:
+              - name: Customer Address 2
+                value: Customer Address 2
+        - columnName: Customer Postcode
+          type: NONE
+          expression:
+            expressionStatement: ${Customer Postcode}
+            alias:
+              - name: Customer Postcode
+                value: Customer Postcode
+        - columnName: Customer City
+          type: NONE
+          expression:
+            expressionStatement: ${Customer City}
+            alias:
+              - name: Customer City
+                value: Customer City
+        - columnName: Customer Email
+          type: NONE
+          expression:
+            expressionStatement: ${Customer Email}
+            alias:
+              - name: Customer Email
+                value: Customer Email
+        - columnName: 'Customer Phone '
+          type: NONE
+          expression:
+            expressionStatement: ${Customer Phone }
+            alias:
+              - name: 'Customer Phone '
+                value: 'Customer Phone '
+        - columnName: Customer T/A
+          type: NONE
+          expression:
+            expressionStatement: ${Customer T/A}
+            alias:
+              - name: Customer T/A
+                value: Customer T/A
+        - columnName: Customer Rank
+          type: NONE
+          expression:
+            expressionStatement: ${Customer Rank}
+            alias:
+              - name: Customer Rank
+                value: Customer Rank
+        - columnName: Customer Invoice Warning Message
+          type: NONE
+          expression:
+            expressionStatement: ${Customer Invoice Warning Message}
+            alias:
+              - name: Customer Invoice Warning Message
+                value: Customer Invoice Warning Message
+        - columnName: Customer Credit Limit
+          type: NONE
+          expression:
+            expressionStatement: ${Customer Credit Limit}
+            alias:
+              - name: Customer Credit Limit
+                value: Customer Credit Limit
+        - columnName: Customer Sales Warning Message
+          type: NONE
+          expression:
+            expressionStatement: ${Customer Sales Warning Message}
+            alias:
+              - name: Customer Sales Warning Message
+                value: Customer Sales Warning Message
+        - columnName: Customer Country Code
+          type: NONE
+          expression:
+            expressionStatement: ${Customer Country Code}
+            alias:
+              - name: Customer Country Code
+                value: Customer Country Code
+        - columnName: Customer Country Name
+          type: NONE
+          expression:
+            expressionStatement: ${Customer Country Name}
+            alias:
+              - name: Customer Country Name
+                value: Customer Country Name
+        - columnName: Customer Latitude
+          type: NONE
+          expression:
+            expressionStatement: ${Customer Latitude}
+            alias:
+              - name: Customer Latitude
+                value: Customer Latitude
+        - columnName: Customer Longitude
+          type: NONE
+          expression:
+            expressionStatement: ${Customer Longitude}
+            alias:
+              - name: Customer Longitude
+                value: Customer Longitude
+        - columnName: Customer Default Warehouse
+          type: NONE
+          expression:
+            expressionStatement: ${Customer Default Warehouse}
+            alias:
+              - name: Customer Default Warehouse
+                value: Customer Default Warehouse
+        - columnName: Customer Delivery Warehouse Longitude
+          type: NONE
+          expression:
+            expressionStatement: ${Customer Delivery Warehouse Longitude}
+            alias:
+              - name: Customer Delivery Warehouse Longitude
+                value: Customer Delivery Warehouse Longitude
+        - columnName: Customer Delivery Warehouse Latitude
+          type: NONE
+          expression:
+            expressionStatement: ${Customer Delivery Warehouse Latitude}
+            alias:
+              - name: Customer Delivery Warehouse Latitude
+                value: Customer Delivery Warehouse Latitude
+    fullyType2Sources: false
+    subtype: MODEL_BASED
+    materializedSource: false

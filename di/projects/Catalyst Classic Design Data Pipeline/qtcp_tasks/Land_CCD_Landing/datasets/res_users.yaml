@@ -1,0 +1,7 @@
+properties:
+  id: res_users
+  name: res_users
+sourceTable:
+  schema: '{{task.land_ccd_landing-kqgj:null$_$public.schema}}'
+  type: TABLE
+  name: res_users

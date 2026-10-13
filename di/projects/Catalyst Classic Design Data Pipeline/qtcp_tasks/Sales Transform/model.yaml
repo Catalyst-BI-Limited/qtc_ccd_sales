@@ -1,0 +1,66 @@
+relationships:
+  - sourceEntity:
+      datasetId: order_line-g-tx
+      name: ORDER_LINE
+      taskId: sales_transform-lz1g
+    targetEntity:
+      datasetId: salesman-kqij
+      name: SALESMAN
+      taskId: sales_transform-lz1g
+    columnRelationships:
+      - sourceColumn: Order Line Salesman ID
+        targetColumn: Salesman ID
+        sourceColumnId: order line salesman id
+        targetColumnId: salesman id
+    shortName: Salesman
+    name: ORDERLINE_SALESMAN
+    description: ''
+    id: orderline_salesman-digq
+  - sourceEntity:
+      datasetId: order_line-g-tx
+      name: ORDER_LINE
+      taskId: sales_transform-lz1g
+    targetEntity:
+      datasetId: customer-g-tm
+      name: CUSTOMER
+      taskId: sales_transform-lz1g
+    columnRelationships:
+      - sourceColumn: Order Line Customer ID
+        targetColumn: Customer ID
+        sourceColumnId: order line customer id
+        targetColumnId: customer id
+    name: ORDER_LINE_CUSTOMER_relation
+    description: ''
+    id: order_line_customer_relation-f2sr
+  - sourceEntity:
+      datasetId: order_line-g-tx
+      name: ORDER_LINE
+      taskId: sales_transform-lz1g
+    targetEntity:
+      datasetId: product-lz1x
+      name: PRODUCT
+      taskId: sales_transform-lz1g
+    columnRelationships:
+      - sourceColumn: Order Line Product ID
+        targetColumn: Product ID
+        sourceColumnId: order line product id
+        targetColumnId: product id
+    name: ORDER_LINE_PRODUCT_relation
+    description: ''
+    id: order_line_product_relation-f2ss
+  - sourceEntity:
+      datasetId: order_line-g-tx
+      name: ORDER_LINE
+      taskId: sales_transform-lz1g
+    targetEntity:
+      datasetId: stock_warehouse-difs
+      name: WAREHOUSE
+      taskId: sales_transform-lz1g
+    columnRelationships:
+      - sourceColumn: Order Line Warehouse ID
+        targetColumn: Warehouse ID
+        sourceColumnId: order line warehouse id
+        targetColumnId: id
+    name: ORDER_LINE_WAREHOUSE_relation
+    description: ''
+    id: order_line_warehouse_relation-g-uy

@@ -1,0 +1,12 @@
+properties:
+  name: Land_CCD_Storage
+  id: land_ccd_storage-kqgk
+  type: STORAGE
+settings:
+  artifactsLocation:
+    internalSchema: '{{task.land_ccd_storage-kqgk.internalSchema}}'
+    taskSchema: '{{task.land_ccd_storage-kqgk.taskSchema}}'
+    databaseName: '{{task.land_ccd_storage-kqgk.databaseName}}'
+  taskRuntime:
+    warehouseSelection:
+      warehouseName: '{{task.land_ccd_storage-kqgk.warehouseName}}'

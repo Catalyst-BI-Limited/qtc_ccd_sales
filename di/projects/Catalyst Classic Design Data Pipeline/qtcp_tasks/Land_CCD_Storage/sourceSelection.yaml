@@ -1,0 +1,10 @@
+includePatterns:
+  - sourceTask: land_ccd_landing-kqgj
+    tablePattern: '%'
+explicitlySelected:
+  - sourceTask: land_ccd_landing-kqgj
+    name: stock_warehouse
+    sourceTableId: stock_warehouse
+  - sourceTask: land_ccd_landing-kqgj
+    name: crm_team
+    sourceTableId: crm_team

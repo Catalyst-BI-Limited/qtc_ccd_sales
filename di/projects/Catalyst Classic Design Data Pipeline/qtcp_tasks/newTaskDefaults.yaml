@@ -1,0 +1,6 @@
+transform:
+  materialized: true
+knowledgeMart:
+  llmSettings: {}
+fileBasedKnowledgeMart:
+  llmSettings: {}

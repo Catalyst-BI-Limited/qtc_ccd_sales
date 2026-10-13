@@ -1,0 +1,12 @@
+properties:
+  name: Sales Transform
+  id: sales_transform-lz1g
+  type: TRANSFORM
+settings:
+  artifactsLocation:
+    internalSchema: '{{task.sales_transform-lz1g.internalSchema}}'
+    taskSchema: '{{task.sales_transform-lz1g.taskSchema}}'
+    databaseName: '{{task.sales_transform-lz1g.databaseName}}'
+  taskRuntime:
+    warehouseSelection:
+      warehouseName: '{{task.sales_transform-lz1g.warehouseName}}'

@@ -1,0 +1,6 @@
+properties:
+  id: product_category-kqgm
+  name: product_category
+  inputDatasets:
+    - datasetId: product_category
+      taskId: land_ccd_landing-kqgj

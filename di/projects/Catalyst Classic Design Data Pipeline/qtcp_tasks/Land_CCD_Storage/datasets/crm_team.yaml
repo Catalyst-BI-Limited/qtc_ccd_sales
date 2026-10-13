@@ -1,0 +1,6 @@
+properties:
+  id: crm_team-lz2y
+  name: crm_team
+  inputDatasets:
+    - datasetId: crm_team
+      taskId: land_ccd_landing-kqgj

@@ -1,0 +1,14 @@
+properties:
+  id: order_line-g-tx
+  name: ORDER_LINE
+  inputDatasets:
+    - datasetId: sale_order-kqgw
+      taskId: land_ccd_storage-kqgk
+    - datasetId: res_currency-kqgs
+      taskId: land_ccd_storage-kqgk
+    - datasetId: sale_order_line-kqgy
+      taskId: land_ccd_storage-kqgk
+  dataflowDatasetSettings:
+    dataflowId: '{{id(dataflow, ORDER_LINE)}}'
+    targetId: '67184826-c4b5-49f0-ab64-7c1c280f6070'
+    dataflowTargetState: VALID

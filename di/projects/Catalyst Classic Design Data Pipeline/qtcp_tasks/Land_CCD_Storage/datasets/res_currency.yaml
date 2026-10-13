@@ -1,0 +1,6 @@
+properties:
+  id: res_currency-kqgs
+  name: res_currency
+  inputDatasets:
+    - datasetId: res_currency
+      taskId: land_ccd_landing-kqgj

@@ -1,0 +1,6 @@
+properties:
+  id: res_country-kqgr
+  name: res_country
+  inputDatasets:
+    - datasetId: res_country
+      taskId: land_ccd_landing-kqgj

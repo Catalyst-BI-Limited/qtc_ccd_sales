@@ -1,0 +1,12 @@
+properties:
+  id: customer-g-tm
+  name: CUSTOMER
+  inputDatasets:
+    - datasetId: res_partner-kqgt
+      taskId: land_ccd_storage-kqgk
+    - datasetId: res_country-kqgr
+      taskId: land_ccd_storage-kqgk
+  dataflowDatasetSettings:
+    dataflowId: '{{id(dataflow, CUSTOMER)}}'
+    targetId: '96cebafc-a9d0-4ce2-9a99-ed2573dbdc4f'
+    dataflowTargetState: VALID

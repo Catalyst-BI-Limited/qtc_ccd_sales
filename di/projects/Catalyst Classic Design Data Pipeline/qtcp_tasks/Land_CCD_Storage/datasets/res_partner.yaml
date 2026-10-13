@@ -1,0 +1,6 @@
+properties:
+  id: res_partner-kqgt
+  name: res_partner
+  inputDatasets:
+    - datasetId: res_partner
+      taskId: land_ccd_landing-kqgj

@@ -1,0 +1,14 @@
+properties:
+  id: product-lz1x
+  name: PRODUCT
+  inputDatasets:
+    - datasetId: product_category-kqgm
+      taskId: land_ccd_storage-kqgk
+    - datasetId: product_product-kqgn
+      taskId: land_ccd_storage-kqgk
+    - datasetId: product_template-kqgp
+      taskId: land_ccd_storage-kqgk
+  dataflowDatasetSettings:
+    dataflowId: '{{id(dataflow, PRODUCT)}}'
+    targetId: '2cff79fc-67fd-4a1d-b135-fd7f8115a5cc'
+    dataflowTargetState: VALID

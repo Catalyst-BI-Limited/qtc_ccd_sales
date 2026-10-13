@@ -1,0 +1,878 @@
+name: SALESMAN
+description: ''
+context:
+  projectId: '{{ref(project.current.projectId)}}'
+  dataAppId: sales_transform-lz1g
+graph: |-
+  {
+    "nodes": [
+      {
+        "type": "source",
+        "id": "149eaf2f-b451-4cd4-b1de-f279224f6dfc",
+        "label": "res_users",
+        "graphical": {
+          "position": {
+            "x": -80,
+            "y": 360
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [],
+          "outgoing": [
+            {
+              "id": "c66218ee-3abb-4716-94bf-66258cefb811",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "qcdiDataEntitySource",
+          "label": "Input dataset",
+          "properties": {
+            "dataEntity": {
+              "projectId": "{{ref(project.current.projectId)}}",
+              "dataAppId": "land_ccd_storage-kqgk",
+              "entityId": "res_users-kqgu"
+            },
+            "configuration": {
+              "name": "res_users"
+            }
+          }
+        }
+      },
+      {
+        "type": "source",
+        "id": "17a88d1c-9647-45f9-a5da-5914d9bd6d14",
+        "label": "resource_resource",
+        "graphical": {
+          "position": {
+            "x": -80,
+            "y": 200
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [],
+          "outgoing": [
+            {
+              "id": "0f768dc8-3afe-45ab-9c38-034989f0b8c2",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "qcdiDataEntitySource",
+          "label": "Input dataset",
+          "properties": {
+            "dataEntity": {
+              "projectId": "{{ref(project.current.projectId)}}",
+              "dataAppId": "land_ccd_storage-kqgk",
+              "entityId": "resource_resource-kqgv"
+            },
+            "configuration": {
+              "name": "resource_resource"
+            }
+          }
+        }
+      },
+      {
+        "type": "target",
+        "id": "35629ed0-c51c-4b51-bdb4-8c0e695a12d0",
+        "label": "SALESMAN",
+        "graphical": {
+          "position": {
+            "x": 2200,
+            "y": 280
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "d1e95c60-4745-4fbe-b16d-be93884bb2ea",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": []
+        },
+        "component": {
+          "type": "qcdiDataEntityTarget",
+          "label": "Output dataset",
+          "properties": {
+            "configuration": {
+              "name": "SALESMAN",
+              "settings": {
+                "materialized": "INHERIT",
+                "createConsumptionViews": "INHERIT",
+                "hasHistory": "INHERIT",
+                "incremental": false
+              },
+              "overridenColumnsConfiguration": [
+                {
+                  "name": "Salesman ID",
+                  "nullable": false,
+                  "primaryKeyOrdinal": 1
+                },
+                {
+                  "name": "Salesman Name",
+                  "nullable": false,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "target_sales_won",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Salesman Team Target Done",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Salesmand Team Target Invoiced",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Salesman Team Name",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "d498adeb-d6a8-44f9-b843-e6f8cce934b1",
+        "label": "Select columns 1",
+        "graphical": {
+          "position": {
+            "x": 520,
+            "y": 360
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "e269e762-87d6-4cbc-bc6f-583b3ab174f3",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "1f6bcee0-ebf1-40a3-ab47-82ab1655273b",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "id",
+                  "field": "id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "sale_team_id",
+                  "field": "sale_team_id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "target_sales_won",
+                  "field": "target_sales_won",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "target_sales_done",
+                  "field": "target_sales_done",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "target_sales_invoiced",
+                  "field": "target_sales_invoiced",
+                  "output": "",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "5003905b-91b3-4692-9142-6846a7d13b88",
+        "label": "Select columns 2",
+        "graphical": {
+          "position": {
+            "x": 520,
+            "y": 200
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "ce96ddfb-e5e3-43b3-8264-22ab73fd7275",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "39a6fca5-54eb-4d07-b3d4-6ab0a1da1439",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "user_id",
+                  "field": "user_id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "name",
+                  "field": "name",
+                  "output": "",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "4c956b1c-9709-46cf-a2cc-76764297e066",
+        "label": "Filter 1",
+        "graphical": {
+          "position": {
+            "x": 200,
+            "y": 200
+          },
+          "icon": "filter-row-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "f529fad3-b681-4470-b46d-ea69dd024610",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "edba106b-60ae-46d1-ba22-5b1a9c83be86",
+              "type": "DEFAULT"
+            },
+            {
+              "id": "b0b04c9d-21d2-41fe-a768-ec97f2440c9e",
+              "type": "REJECT"
+            }
+          ]
+        },
+        "component": {
+          "type": "filter",
+          "label": "Filter",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmlsdGVy",
+            "configuration": {
+              "logicalOpType": "ALL",
+              "filters": [
+                {
+                  "columnName": "user_id",
+                  "function": "EMPTY",
+                  "operator": "IS_NOT_NULL",
+                  "compareWith": "VALUE",
+                  "value": "",
+                  "columnToCompareWith": "",
+                  "$columnName_name": "user_id",
+                  "$operator_name": "Is not null"
+                }
+              ],
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "0c43ce30-8b48-499f-a0e8-32a4ab5685d4",
+        "label": "Join 1",
+        "graphical": {
+          "position": {
+            "x": 800,
+            "y": 280
+          },
+          "icon": "union-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "13a90e77-5cd5-4859-80f2-e5abef28a256",
+              "type": "DEFAULT"
+            },
+            {
+              "id": "ea0a14d0-c3ed-484b-9fa9-85f23d258f5c",
+              "type": "LOOKUP"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "5b72e86d-7128-4024-aa67-91b4a685dfaf",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "join",
+          "label": "Join",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjSm9pbjI",
+            "configuration": {
+              "joinFunction": "LEFT_OUTER_JOIN",
+              "conditions": [
+                {
+                  "leftKey": "user_id",
+                  "rightKey": "id",
+                  "keepBothKeysInOutput": false,
+                  "$leftKey_name": "user_id",
+                  "$rightKey_name": "id"
+                }
+              ],
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "dce8ec3c-c72b-4ad2-9ecf-57a5892b0d01",
+        "label": "Select columns 3",
+        "graphical": {
+          "position": {
+            "x": 1080,
+            "y": 280
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "00e21425-b232-4c38-82b3-e6471d932c72",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "2560da9f-4dda-4b7b-86f8-43f527dd045c",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "user_id",
+                  "field": "user_id",
+                  "output": "Salesman ID",
+                  "selected": true
+                },
+                {
+                  "path": "name",
+                  "field": "name",
+                  "output": "Salesman Name",
+                  "selected": true
+                },
+                {
+                  "path": "target_sales_won",
+                  "field": "target_sales_won",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "sale_team_id",
+                  "field": "sale_team_id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "target_sales_done",
+                  "field": "target_sales_done",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "target_sales_invoiced",
+                  "field": "target_sales_invoiced",
+                  "output": "",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "source",
+        "id": "0bb0c836-8f91-4b4c-a517-08d0863f43ec",
+        "label": "crm_team",
+        "graphical": {
+          "position": {
+            "x": -80,
+            "y": 520
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [],
+          "outgoing": [
+            {
+              "id": "9bbf5adc-b49b-4453-8e6b-2fd8aeb32731",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "qcdiDataEntitySource",
+          "label": "Input dataset",
+          "properties": {
+            "dataEntity": {
+              "projectId": "{{ref(project.current.projectId)}}",
+              "dataAppId": "land_ccd_storage-kqgk",
+              "entityId": "crm_team-lz2y"
+            },
+            "configuration": {
+              "name": "crm_team"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "3289541d-ffe3-4cd0-b732-db10f880674b",
+        "label": "Select columns 4",
+        "graphical": {
+          "position": {
+            "x": 520,
+            "y": 520
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "201cc6c0-8644-467e-961c-65f49186f98a",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "59c1f065-b846-4285-aef2-eba1a8a4f635",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "id",
+                  "field": "id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "name",
+                  "field": "name",
+                  "output": "",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "ce4da29e-88ff-4be3-ab1c-d45cd762192d",
+        "label": "Strings 1",
+        "graphical": {
+          "position": {
+            "x": 800,
+            "y": 520
+          },
+          "icon": "abc-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "b144aa9f-54b7-45d7-8202-fd0e3ab23803",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "96e85fbd-c716-4163-aca2-80bc786c5dc9",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "strings",
+          "label": "Strings",
+          "properties": {
+            "tckType": "ZGF0YXByZXAtZnVuY3Rpb25zI0RhdGFwcmVwI0RhdGFwcmVwU3RyaW5nUHJvY2Vzc2luZw",
+            "configuration": {
+              "type": "SUBSTRING",
+              "computeLengthConfiguration": {
+                "columnsToProcess": "",
+                "$columnsToProcess_name": ""
+              },
+              "containsConfiguration": {
+                "columnsToProcess": "",
+                "type": "VALUE",
+                "constantValue": "",
+                "$columnsToProcess_name": ""
+              },
+              "lowercaseConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "$columnsToProcess_name": ""
+              },
+              "propercaseConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "$columnsToProcess_name": ""
+              },
+              "uppercaseConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "$columnsToProcess_name": ""
+              },
+              "generateAUuidConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": true,
+                "newColumnName": "",
+                "$columnsToProcess_name": ""
+              },
+              "fuzzyMatchingConfiguration": {
+                "columnsToProcess": "",
+                "type": "VALUE",
+                "sensitivity": 1,
+                "referenceValue": "",
+                "$columnsToProcess_name": ""
+              },
+              "removeNonNumCharsConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "$columnsToProcess_name": ""
+              },
+              "removeNonAlphaNumCharsConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "$columnsToProcess_name": ""
+              },
+              "paddingConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "size": 5,
+                "paddingCharacter": "0",
+                "paddingPosition": "LEFT",
+                "$columnsToProcess_name": ""
+              },
+              "matchesPatternConfiguration": {
+                "columnsToProcess": "",
+                "manualPattern": {
+                  "value": "",
+                  "operator": "EQUALS"
+                },
+                "proposedPattern": "ANY_WORD_CASE_INSENSITIVE",
+                "$columnsToProcess_name": ""
+              },
+              "trimConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "type": "WHITESPACE",
+                "customPaddingCharacter": "",
+                "$columnsToProcess_name": ""
+              },
+              "replaceOnValueConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "replaceValue": "",
+                "replaceEntireCell": false,
+                "cellValue": {
+                  "value": "",
+                  "operator": "EQUALS"
+                },
+                "$columnsToProcess_name": ""
+              },
+              "cutConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "pattern": {
+                  "value": "",
+                  "operator": "EQUALS"
+                },
+                "$columnsToProcess_name": ""
+              },
+              "substringConfiguration": {
+                "columnsToProcess": "name",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "fromType": "FROM_INDEX",
+                "fromIndex": 11,
+                "fromNBeforeEnd": 5,
+                "toType": "TO_INDEX",
+                "toIndex": 5,
+                "toIndex0": 5,
+                "toNBeforeEnd": 1,
+                "toNBeforeEnd0": 2,
+                "toNBeforeEnd1": 1,
+                "toTypeWithIndex": "TO_N_BEFORE_END",
+                "toTypeWithoutIndex": "TO_END",
+                "$columnsToProcess_name": "name",
+                "$fromType_name": "From index",
+                "$toTypeWithIndex_name": "To N before end"
+              },
+              "$state": "CONFIGURED",
+              "$type_name": "Extract a value by index"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "7e1e518f-4c1e-4efa-a384-5dfa59d29b4e",
+        "label": "Join 2",
+        "graphical": {
+          "position": {
+            "x": 1360,
+            "y": 280
+          },
+          "icon": "union-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "97d83057-cf74-4bfc-abbf-1346d9d3fe1b",
+              "type": "DEFAULT"
+            },
+            {
+              "id": "8e88c0b4-3993-4bf2-85a7-57671b5b2df1",
+              "type": "LOOKUP"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "ebe572c8-7f29-46c6-acdd-87342473eda9",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "join",
+          "label": "Join",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjSm9pbjI",
+            "configuration": {
+              "joinFunction": "LEFT_OUTER_JOIN",
+              "conditions": [
+                {
+                  "leftKey": "sale_team_id",
+                  "rightKey": "id",
+                  "keepBothKeysInOutput": false,
+                  "$leftKey_name": "sale_team_id",
+                  "$rightKey_name": "id"
+                }
+              ],
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "fe3978a1-90a2-46dd-945f-843fe71152cf",
+        "label": "Select columns 5",
+        "graphical": {
+          "position": {
+            "x": 1640,
+            "y": 280
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "346f7c90-ed73-4ef7-bd76-da6609fbc546",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "e8dc5f3a-dd30-48af-b9a4-00b9daae192e",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "Salesman ID",
+                  "field": "Salesman ID",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Salesman Name",
+                  "field": "Salesman Name",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "target_sales_won",
+                  "field": "target_sales_won",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "target_sales_done",
+                  "field": "target_sales_done",
+                  "output": "Salesman Team Target Done",
+                  "selected": true
+                },
+                {
+                  "path": "target_sales_invoiced",
+                  "field": "target_sales_invoiced",
+                  "output": "Salesmand Team Target Invoiced",
+                  "selected": true
+                },
+                {
+                  "path": "name",
+                  "field": "name",
+                  "output": "Salesman Team Name",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "reactflow__edge-149eaf2f-b451-4cd4-b1de-f279224f6dfcc66218ee-3abb-4716-94bf-66258cefb811-d498adeb-d6a8-44f9-b843-e6f8cce934b1e269e762-87d6-4cbc-bc6f-583b3ab174f3",
+        "sourceHandle": "c66218ee-3abb-4716-94bf-66258cefb811",
+        "targetHandle": "e269e762-87d6-4cbc-bc6f-583b3ab174f3"
+      },
+      {
+        "id": "87a2b5af-1702-429e-99ea-6ead2826f62d",
+        "sourceHandle": "0f768dc8-3afe-45ab-9c38-034989f0b8c2",
+        "targetHandle": "f529fad3-b681-4470-b46d-ea69dd024610"
+      },
+      {
+        "id": "reactflow__edge-d498adeb-d6a8-44f9-b843-e6f8cce934b11f6bcee0-ebf1-40a3-ab47-82ab1655273b-0c43ce30-8b48-499f-a0e8-32a4ab5685d4ea0a14d0-c3ed-484b-9fa9-85f23d258f5c",
+        "sourceHandle": "1f6bcee0-ebf1-40a3-ab47-82ab1655273b",
+        "targetHandle": "ea0a14d0-c3ed-484b-9fa9-85f23d258f5c"
+      },
+      {
+        "id": "reactflow__edge-5003905b-91b3-4692-9142-6846a7d13b8839a6fca5-54eb-4d07-b3d4-6ab0a1da1439-0c43ce30-8b48-499f-a0e8-32a4ab5685d413a90e77-5cd5-4859-80f2-e5abef28a256",
+        "sourceHandle": "39a6fca5-54eb-4d07-b3d4-6ab0a1da1439",
+        "targetHandle": "13a90e77-5cd5-4859-80f2-e5abef28a256"
+      },
+      {
+        "id": "574df152-2a7f-4d6e-ac26-4c7dd297ca8b",
+        "sourceHandle": "edba106b-60ae-46d1-ba22-5b1a9c83be86",
+        "targetHandle": "ce96ddfb-e5e3-43b3-8264-22ab73fd7275"
+      },
+      {
+        "id": "097a25c5-3124-40ce-8827-2709523465c9",
+        "sourceHandle": "5b72e86d-7128-4024-aa67-91b4a685dfaf",
+        "targetHandle": "00e21425-b232-4c38-82b3-e6471d932c72"
+      },
+      {
+        "id": "4216a4cc-47cd-4c3d-871d-3a5d65d736b2",
+        "sourceHandle": "2560da9f-4dda-4b7b-86f8-43f527dd045c",
+        "targetHandle": "97d83057-cf74-4bfc-abbf-1346d9d3fe1b"
+      },
+      {
+        "id": "reactflow__edge-0bb0c836-8f91-4b4c-a517-08d0863f43ec9bbf5adc-b49b-4453-8e6b-2fd8aeb32731-3289541d-ffe3-4cd0-b732-db10f880674b201cc6c0-8644-467e-961c-65f49186f98a",
+        "sourceHandle": "9bbf5adc-b49b-4453-8e6b-2fd8aeb32731",
+        "targetHandle": "201cc6c0-8644-467e-961c-65f49186f98a"
+      },
+      {
+        "id": "reactflow__edge-3289541d-ffe3-4cd0-b732-db10f880674b59c1f065-b846-4285-aef2-eba1a8a4f635-ce4da29e-88ff-4be3-ab1c-d45cd762192db144aa9f-54b7-45d7-8202-fd0e3ab23803",
+        "sourceHandle": "59c1f065-b846-4285-aef2-eba1a8a4f635",
+        "targetHandle": "b144aa9f-54b7-45d7-8202-fd0e3ab23803"
+      },
+      {
+        "id": "reactflow__edge-ce4da29e-88ff-4be3-ab1c-d45cd762192d96e85fbd-c716-4163-aca2-80bc786c5dc9-7e1e518f-4c1e-4efa-a384-5dfa59d29b4e8e88c0b4-3993-4bf2-85a7-57671b5b2df1",
+        "sourceHandle": "96e85fbd-c716-4163-aca2-80bc786c5dc9",
+        "targetHandle": "8e88c0b4-3993-4bf2-85a7-57671b5b2df1"
+      },
+      {
+        "id": "451337fa-83b0-4aa1-9d67-c2b5aa7e3257",
+        "sourceHandle": "ebe572c8-7f29-46c6-acdd-87342473eda9",
+        "targetHandle": "346f7c90-ed73-4ef7-bd76-da6609fbc546"
+      },
+      {
+        "id": "73515a22-e2f1-489f-ab42-a6796a245a69",
+        "sourceHandle": "e8dc5f3a-dd30-48af-b9a4-00b9daae192e",
+        "targetHandle": "d1e95c60-4745-4fbe-b16d-be93884bb2ea"
+      }
+    ]
+  }
+modelVersion: '1.0.0'

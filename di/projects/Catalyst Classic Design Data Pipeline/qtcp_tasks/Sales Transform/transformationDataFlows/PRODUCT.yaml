@@ -1,0 +1,1373 @@
+name: PRODUCT
+description: ''
+context:
+  projectId: '{{ref(project.current.projectId)}}'
+  dataAppId: sales_transform-lz1g
+graph: |-
+  {
+    "nodes": [
+      {
+        "type": "source",
+        "id": "87270f60-2303-490f-bab2-4928d6d5ecd8",
+        "label": "product_category",
+        "graphical": {
+          "position": {
+            "x": -80,
+            "y": 360
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [],
+          "outgoing": [
+            {
+              "id": "3e1cb3ac-1da2-4ec9-ae56-7395c0350953",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "qcdiDataEntitySource",
+          "label": "Input dataset",
+          "properties": {
+            "dataEntity": {
+              "projectId": "{{ref(project.current.projectId)}}",
+              "dataAppId": "land_ccd_storage-kqgk",
+              "entityId": "product_category-kqgm"
+            },
+            "configuration": {
+              "name": "product_category"
+            }
+          }
+        }
+      },
+      {
+        "type": "source",
+        "id": "1b727c98-7b25-4914-b2c6-5db10b075375",
+        "label": "product_product",
+        "graphical": {
+          "position": {
+            "x": -80,
+            "y": 120
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [],
+          "outgoing": [
+            {
+              "id": "df4f7f45-8a03-49b1-8078-c74857f9af2d",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "qcdiDataEntitySource",
+          "label": "Input dataset",
+          "properties": {
+            "dataEntity": {
+              "projectId": "{{ref(project.current.projectId)}}",
+              "dataAppId": "land_ccd_storage-kqgk",
+              "entityId": "product_product-kqgn"
+            },
+            "configuration": {
+              "name": "product_product"
+            }
+          }
+        }
+      },
+      {
+        "type": "source",
+        "id": "aa3d426c-d714-486c-ac25-b020812e7f2b",
+        "label": "product_template",
+        "graphical": {
+          "position": {
+            "x": -80,
+            "y": 240
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [],
+          "outgoing": [
+            {
+              "id": "a283440b-0864-4b45-9f09-dce78151dcc4",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "qcdiDataEntitySource",
+          "label": "Input dataset",
+          "properties": {
+            "dataEntity": {
+              "projectId": "{{ref(project.current.projectId)}}",
+              "dataAppId": "land_ccd_storage-kqgk",
+              "entityId": "product_template-kqgp"
+            },
+            "configuration": {
+              "name": "product_template"
+            }
+          }
+        }
+      },
+      {
+        "type": "target",
+        "id": "2cff79fc-67fd-4a1d-b135-fd7f8115a5cc",
+        "label": "PRODUCT",
+        "graphical": {
+          "position": {
+            "x": 2200,
+            "y": 120
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "2ce2ea88-50e9-4bd3-8666-f529a8f0415d",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": []
+        },
+        "component": {
+          "type": "qcdiDataEntityTarget",
+          "label": "Output dataset",
+          "properties": {
+            "configuration": {
+              "name": "PRODUCT",
+              "settings": {
+                "materialized": "INHERIT",
+                "createConsumptionViews": "INHERIT",
+                "hasHistory": "INHERIT",
+                "incremental": false
+              },
+              "overridenColumnsConfiguration": [
+                {
+                  "name": "Product ID",
+                  "nullable": false,
+                  "primaryKeyOrdinal": 1
+                },
+                {
+                  "name": "Product Create Date",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Product Colour",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Product Type",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Product Code",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Product Name",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Product Description",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Product List Price",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Product Is Saleable",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Product Is Purchaseable",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Product Purchase Method",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Product Hierarchy 4",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Product Hierarchy 3",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Product Hierarchy 2",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Product Hierarchy 1",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "5b3c7cd5-dc3d-47a4-977f-cb4bcf2d3863",
+        "label": "Select product_product fields",
+        "graphical": {
+          "position": {
+            "x": 200,
+            "y": 120
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "f28a9e1e-df0e-4159-af2f-8059ade80b65",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "4655870b-8c21-47d0-bbda-61c5775143c7",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "id",
+                  "field": "id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "product_tmpl_id",
+                  "field": "product_tmpl_id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "active",
+                  "field": "active",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "create_date",
+                  "field": "create_date",
+                  "output": "",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "a17f9799-f742-4b15-a15c-d33b5ab61f1d",
+        "label": "Select product_template fields",
+        "graphical": {
+          "position": {
+            "x": 200,
+            "y": 240
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "190209d4-9533-4c9d-972a-d566b0c9d76a",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "9cd9fbab-9fcb-412c-9c0b-6a927c4fd98b",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "id",
+                  "field": "id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "categ_id",
+                  "field": "categ_id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "uom_id",
+                  "field": "uom_id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "color",
+                  "field": "color",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "type",
+                  "field": "type",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "default_code",
+                  "field": "default_code",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "name",
+                  "field": "name",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "description",
+                  "field": "description",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "list_price",
+                  "field": "list_price",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "sale_ok",
+                  "field": "sale_ok",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "purchase_ok",
+                  "field": "purchase_ok",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "active",
+                  "field": "active",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "purchase_method",
+                  "field": "purchase_method",
+                  "output": "",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "e4b8b09a-91ce-4c8f-bdb4-dc86040d7301",
+        "label": "Join product to template",
+        "graphical": {
+          "position": {
+            "x": 480,
+            "y": 120
+          },
+          "icon": "union-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "f7bcb1c2-e0a4-410c-a88f-f129b27c55d2",
+              "type": "DEFAULT"
+            },
+            {
+              "id": "eae294eb-7f21-4297-b01a-fc977a82c1cb",
+              "type": "LOOKUP"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "abbbad74-313c-4ad3-bafd-fde30b779810",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "join",
+          "label": "Join",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjSm9pbjI",
+            "configuration": {
+              "joinFunction": "LEFT_OUTER_JOIN",
+              "conditions": [
+                {
+                  "leftKey": "product_tmpl_id",
+                  "rightKey": "id",
+                  "keepBothKeysInOutput": false,
+                  "$leftKey_name": "product_tmpl_id",
+                  "$rightKey_name": "id"
+                }
+              ],
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "fe8cf643-acf8-479e-88a0-4b73cccf4ec2",
+        "label": "Alias fields",
+        "graphical": {
+          "position": {
+            "x": 1920,
+            "y": 120
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "74232b5e-ff67-45b2-94f9-7e88744f5dae",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "c369e4c1-f40f-4845-872a-14b4d41fdb5b",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "LEFT_id",
+                  "field": "LEFT_id",
+                  "output": "Product ID",
+                  "selected": true
+                },
+                {
+                  "path": "create_date",
+                  "field": "create_date",
+                  "output": "Product Create Date",
+                  "selected": true
+                },
+                {
+                  "path": "color",
+                  "field": "color",
+                  "output": "Product Colour",
+                  "selected": true
+                },
+                {
+                  "path": "type",
+                  "field": "type",
+                  "output": "Product Type",
+                  "selected": true
+                },
+                {
+                  "path": "default_code",
+                  "field": "default_code",
+                  "output": "Product Code",
+                  "selected": true
+                },
+                {
+                  "path": "name",
+                  "field": "name",
+                  "output": "Product Name",
+                  "selected": true
+                },
+                {
+                  "path": "description",
+                  "field": "description",
+                  "output": "Product Description",
+                  "selected": true
+                },
+                {
+                  "path": "list_price",
+                  "field": "list_price",
+                  "output": "Product List Price",
+                  "selected": true
+                },
+                {
+                  "path": "sale_ok",
+                  "field": "sale_ok",
+                  "output": "Product Is Saleable",
+                  "selected": true
+                },
+                {
+                  "path": "purchase_ok",
+                  "field": "purchase_ok",
+                  "output": "Product Is Purchaseable",
+                  "selected": true
+                },
+                {
+                  "path": "purchase_method",
+                  "field": "purchase_method",
+                  "output": "Product Purchase Method",
+                  "selected": true
+                },
+                {
+                  "path": "lvl4 name",
+                  "field": "lvl4 name",
+                  "output": "Product Hierarchy 4",
+                  "selected": true
+                },
+                {
+                  "path": "lvl3 name",
+                  "field": "lvl3 name",
+                  "output": "Product Hierarchy 3",
+                  "selected": true
+                },
+                {
+                  "path": "lvl2 name",
+                  "field": "lvl2 name",
+                  "output": "Product Hierarchy 2",
+                  "selected": true
+                },
+                {
+                  "path": "lvl1 name",
+                  "field": "lvl1 name",
+                  "output": "Product Hierarchy 1",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "264c8872-0932-4ea9-b95e-401978d355e2",
+        "label": "Select category lvl4",
+        "graphical": {
+          "position": {
+            "x": 200,
+            "y": 360
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "e5cbc1e1-5f50-4798-988c-8777e9b9702e",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "6c0fb273-31d5-40d9-a461-d8ec0f719685",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "id",
+                  "field": "id",
+                  "output": "lvl4 id",
+                  "selected": true
+                },
+                {
+                  "path": "name",
+                  "field": "name",
+                  "output": "lvl4 name",
+                  "selected": true
+                },
+                {
+                  "path": "parent_id",
+                  "field": "parent_id",
+                  "output": "lvl3 id",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "source",
+        "id": "1d692a30-eb46-4ced-866f-a143da1cbe1d",
+        "label": "product_category",
+        "graphical": {
+          "position": {
+            "x": -80,
+            "y": 480
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [],
+          "outgoing": [
+            {
+              "id": "fe5d1e66-dba1-4538-b2a4-e71a45802395",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "qcdiDataEntitySource",
+          "label": "Input dataset",
+          "properties": {
+            "dataEntity": {
+              "projectId": "{{ref(project.current.projectId)}}",
+              "dataAppId": "land_ccd_storage-kqgk",
+              "entityId": "product_category-kqgm"
+            },
+            "configuration": {
+              "name": "product_category"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "85371194-8440-4e84-93c3-bcb641e66154",
+        "label": "Join lvl3 to lvl4",
+        "graphical": {
+          "position": {
+            "x": 480,
+            "y": 440
+          },
+          "icon": "union-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "ba20e1e9-7c2a-4ab6-85bf-a4ac38caa503",
+              "type": "DEFAULT"
+            },
+            {
+              "id": "1836cfe7-2e6d-416e-afa7-01bb061ff41f",
+              "type": "LOOKUP"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "6eb167c6-04ec-49ca-89c1-37a04a3f87c4",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "join",
+          "label": "Join",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjSm9pbjI",
+            "configuration": {
+              "joinFunction": "INNER_JOIN",
+              "conditions": [
+                {
+                  "leftKey": "lvl3 id",
+                  "rightKey": "lvl3 id",
+                  "keepBothKeysInOutput": false,
+                  "$leftKey_name": "lvl3 id",
+                  "$rightKey_name": "lvl3 id"
+                }
+              ],
+              "$state": "CONFIGURED",
+              "$joinFunction_name": "Inner join"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "c0d271d9-7805-4bb7-b2ef-61147d1e7ad5",
+        "label": "Select category lvl3",
+        "graphical": {
+          "position": {
+            "x": 200,
+            "y": 480
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "7a1b488f-b1ad-472e-bff0-def4dbd60e4c",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "0ecc9440-5ca3-4503-9048-1a084d2c25db",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "id",
+                  "field": "id",
+                  "output": "lvl3 id",
+                  "selected": true
+                },
+                {
+                  "path": "parent_id",
+                  "field": "parent_id",
+                  "output": "lvl2 id",
+                  "selected": true
+                },
+                {
+                  "path": "name",
+                  "field": "name",
+                  "output": "lvl3 name",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "source",
+        "id": "59ce7ed6-81ee-4ee5-9439-251c1b688445",
+        "label": "product_category",
+        "graphical": {
+          "position": {
+            "x": -80,
+            "y": 600
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [],
+          "outgoing": [
+            {
+              "id": "832fc644-4b90-4300-a18a-96009d44d2ed",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "qcdiDataEntitySource",
+          "label": "Input dataset",
+          "properties": {
+            "dataEntity": {
+              "projectId": "{{ref(project.current.projectId)}}",
+              "dataAppId": "land_ccd_storage-kqgk",
+              "entityId": "product_category-kqgm"
+            },
+            "configuration": {
+              "name": "product_category"
+            }
+          }
+        }
+      },
+      {
+        "type": "source",
+        "id": "9a71eac1-8ab3-4f99-ab91-8fe65c50ccb9",
+        "label": "product_category",
+        "graphical": {
+          "position": {
+            "x": -80,
+            "y": 720
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [],
+          "outgoing": [
+            {
+              "id": "e2e67a65-01f8-497e-bad6-3905379444b9",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "qcdiDataEntitySource",
+          "label": "Input dataset",
+          "properties": {
+            "dataEntity": {
+              "projectId": "{{ref(project.current.projectId)}}",
+              "dataAppId": "land_ccd_storage-kqgk",
+              "entityId": "product_category-kqgm"
+            },
+            "configuration": {
+              "name": "product_category"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "4751730c-08a0-4850-ae95-e274d4a29011",
+        "label": "Select cat lvl 2",
+        "graphical": {
+          "position": {
+            "x": 200,
+            "y": 600
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "0810a561-46f6-47d5-be18-e8762903ad31",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "4928f6b7-b8c1-4b3b-ab6c-69a3ee701ef3",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "id",
+                  "field": "id",
+                  "output": "lvl2 id",
+                  "selected": true
+                },
+                {
+                  "path": "parent_id",
+                  "field": "parent_id",
+                  "output": "lvl1 id",
+                  "selected": true
+                },
+                {
+                  "path": "name",
+                  "field": "name",
+                  "output": "lvl2 name",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "d29cc740-995c-431b-9eae-695cc9120e54",
+        "label": "Select cat lvl1",
+        "graphical": {
+          "position": {
+            "x": 200,
+            "y": 720
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "dbce0cca-e321-453f-8efa-27a233bb8c71",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "4ae4e9bb-efa4-4f15-9a14-9dbf1016cd98",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "id",
+                  "field": "id",
+                  "output": "lvl1 id",
+                  "selected": true
+                },
+                {
+                  "path": "name",
+                  "field": "name",
+                  "output": "lvl1 name",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "5b77eb75-d46d-451e-b80c-50b073cc988a",
+        "label": "Join lvl2 to lvl3",
+        "graphical": {
+          "position": {
+            "x": 760,
+            "y": 440
+          },
+          "icon": "union-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "9b023f9c-56af-4c23-bfd6-89651c2fed41",
+              "type": "DEFAULT"
+            },
+            {
+              "id": "c75a8ff7-d6a0-4965-ba5a-346ea275ba90",
+              "type": "LOOKUP"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "f7005b64-c35f-44e3-82b6-2a9908f6cc84",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "join",
+          "label": "Join",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjSm9pbjI",
+            "configuration": {
+              "joinFunction": "INNER_JOIN",
+              "conditions": [
+                {
+                  "leftKey": "lvl2 id",
+                  "rightKey": "lvl2 id",
+                  "keepBothKeysInOutput": false,
+                  "$leftKey_name": "lvl2 id",
+                  "$rightKey_name": "lvl2 id"
+                }
+              ],
+              "$state": "CONFIGURED",
+              "$joinFunction_name": "Inner join"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "4a6fd721-91ea-425e-9c43-e5df706b0a1c",
+        "label": "Join 2",
+        "graphical": {
+          "position": {
+            "x": 1040,
+            "y": 440
+          },
+          "icon": "union-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "6d6b9a97-b34e-481c-a3db-c8e464e36a05",
+              "type": "DEFAULT"
+            },
+            {
+              "id": "bba1dd7e-8c48-433b-9498-d0743153250f",
+              "type": "LOOKUP"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "92db15ab-0b50-40af-8be2-01bdc8d42f56",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "join",
+          "label": "Join",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjSm9pbjI",
+            "configuration": {
+              "joinFunction": "INNER_JOIN",
+              "conditions": [
+                {
+                  "leftKey": "lvl1 id",
+                  "rightKey": "lvl1 id",
+                  "keepBothKeysInOutput": false,
+                  "$leftKey_name": "lvl1 id",
+                  "$rightKey_name": "lvl1 id"
+                }
+              ],
+              "$state": "CONFIGURED",
+              "$joinFunction_name": "Inner join"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "1663a0a7-fe7e-4ef9-9cd4-cc04e6010912",
+        "label": "join cat to product",
+        "graphical": {
+          "position": {
+            "x": 1360,
+            "y": 120
+          },
+          "icon": "union-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "53643f69-ec95-405d-a040-f4542fc13f7c",
+              "type": "DEFAULT"
+            },
+            {
+              "id": "6e080196-8350-4874-93c1-f41ecf5c4d8b",
+              "type": "LOOKUP"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "f6384c89-8633-4449-8060-f73542759dc7",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "join",
+          "label": "Join",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjSm9pbjI",
+            "configuration": {
+              "joinFunction": "LEFT_OUTER_JOIN",
+              "conditions": [
+                {
+                  "leftKey": "categ_id",
+                  "rightKey": "lvl4 id",
+                  "keepBothKeysInOutput": false,
+                  "$leftKey_name": "categ_id",
+                  "$rightKey_name": "lvl4 id"
+                }
+              ],
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "3a67b5e6-6f78-4fb0-ac1b-f98de2082356",
+        "label": "Strings 1",
+        "graphical": {
+          "position": {
+            "x": 1640,
+            "y": 120
+          },
+          "icon": "abc-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "c4b53954-2e90-4cbb-8271-40d2b4df7d91",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "0240cdb6-76b8-4897-a1c3-ab46f8e733cd",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "strings",
+          "label": "Strings",
+          "properties": {
+            "tckType": "ZGF0YXByZXAtZnVuY3Rpb25zI0RhdGFwcmVwI0RhdGFwcmVwU3RyaW5nUHJvY2Vzc2luZw",
+            "configuration": {
+              "type": "SUBSTRING",
+              "computeLengthConfiguration": {
+                "columnsToProcess": "",
+                "$columnsToProcess_name": ""
+              },
+              "containsConfiguration": {
+                "columnsToProcess": "",
+                "type": "VALUE",
+                "constantValue": "",
+                "$columnsToProcess_name": ""
+              },
+              "lowercaseConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "$columnsToProcess_name": ""
+              },
+              "propercaseConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "$columnsToProcess_name": ""
+              },
+              "uppercaseConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "$columnsToProcess_name": ""
+              },
+              "generateAUuidConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": true,
+                "newColumnName": "",
+                "$columnsToProcess_name": ""
+              },
+              "fuzzyMatchingConfiguration": {
+                "columnsToProcess": "",
+                "type": "VALUE",
+                "sensitivity": 1,
+                "referenceValue": "",
+                "$columnsToProcess_name": ""
+              },
+              "removeNonNumCharsConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "$columnsToProcess_name": ""
+              },
+              "removeNonAlphaNumCharsConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "$columnsToProcess_name": ""
+              },
+              "paddingConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "size": 5,
+                "paddingCharacter": "0",
+                "paddingPosition": "LEFT",
+                "$columnsToProcess_name": ""
+              },
+              "matchesPatternConfiguration": {
+                "columnsToProcess": "",
+                "manualPattern": {
+                  "value": "",
+                  "operator": "EQUALS"
+                },
+                "proposedPattern": "ANY_WORD_CASE_INSENSITIVE",
+                "$columnsToProcess_name": ""
+              },
+              "trimConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "type": "WHITESPACE",
+                "customPaddingCharacter": "",
+                "$columnsToProcess_name": ""
+              },
+              "replaceOnValueConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "replaceValue": "",
+                "replaceEntireCell": false,
+                "cellValue": {
+                  "value": "",
+                  "operator": "EQUALS"
+                },
+                "$columnsToProcess_name": ""
+              },
+              "cutConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "pattern": {
+                  "value": "",
+                  "operator": "EQUALS"
+                },
+                "$columnsToProcess_name": ""
+              },
+              "substringConfiguration": {
+                "columnsToProcess": "name",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "fromType": "FROM_INDEX",
+                "fromIndex": 11,
+                "fromNBeforeEnd": 5,
+                "toType": "TO_INDEX",
+                "toIndex": 5,
+                "toIndex0": 5,
+                "toNBeforeEnd": 1,
+                "toNBeforeEnd0": 2,
+                "toNBeforeEnd1": 1,
+                "toTypeWithIndex": "TO_N_BEFORE_END",
+                "toTypeWithoutIndex": "TO_END",
+                "$columnsToProcess_name": "name",
+                "$fromType_name": "From index",
+                "$toTypeWithIndex_name": "To N before end"
+              },
+              "$state": "CONFIGURED",
+              "$type_name": "Extract a value by index"
+            }
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "reactflow__edge-87270f60-2303-490f-bab2-4928d6d5ecd83e1cb3ac-1da2-4ec9-ae56-7395c0350953-264c8872-0932-4ea9-b95e-401978d355e2e5cbc1e1-5f50-4798-988c-8777e9b9702e",
+        "sourceHandle": "3e1cb3ac-1da2-4ec9-ae56-7395c0350953",
+        "targetHandle": "e5cbc1e1-5f50-4798-988c-8777e9b9702e"
+      },
+      {
+        "id": "reactflow__edge-1b727c98-7b25-4914-b2c6-5db10b075375df4f7f45-8a03-49b1-8078-c74857f9af2d-5b3c7cd5-dc3d-47a4-977f-cb4bcf2d3863f28a9e1e-df0e-4159-af2f-8059ade80b65",
+        "sourceHandle": "df4f7f45-8a03-49b1-8078-c74857f9af2d",
+        "targetHandle": "f28a9e1e-df0e-4159-af2f-8059ade80b65"
+      },
+      {
+        "id": "reactflow__edge-aa3d426c-d714-486c-ac25-b020812e7f2ba283440b-0864-4b45-9f09-dce78151dcc4-a17f9799-f742-4b15-a15c-d33b5ab61f1d190209d4-9533-4c9d-972a-d566b0c9d76a",
+        "sourceHandle": "a283440b-0864-4b45-9f09-dce78151dcc4",
+        "targetHandle": "190209d4-9533-4c9d-972a-d566b0c9d76a"
+      },
+      {
+        "id": "reactflow__edge-5b3c7cd5-dc3d-47a4-977f-cb4bcf2d38634655870b-8c21-47d0-bbda-61c5775143c7-e4b8b09a-91ce-4c8f-bdb4-dc86040d7301f7bcb1c2-e0a4-410c-a88f-f129b27c55d2",
+        "sourceHandle": "4655870b-8c21-47d0-bbda-61c5775143c7",
+        "targetHandle": "f7bcb1c2-e0a4-410c-a88f-f129b27c55d2"
+      },
+      {
+        "id": "reactflow__edge-a17f9799-f742-4b15-a15c-d33b5ab61f1d9cd9fbab-9fcb-412c-9c0b-6a927c4fd98b-e4b8b09a-91ce-4c8f-bdb4-dc86040d7301eae294eb-7f21-4297-b01a-fc977a82c1cb",
+        "sourceHandle": "9cd9fbab-9fcb-412c-9c0b-6a927c4fd98b",
+        "targetHandle": "eae294eb-7f21-4297-b01a-fc977a82c1cb"
+      },
+      {
+        "id": "reactflow__edge-e4b8b09a-91ce-4c8f-bdb4-dc86040d7301abbbad74-313c-4ad3-bafd-fde30b779810-1663a0a7-fe7e-4ef9-9cd4-cc04e601091253643f69-ec95-405d-a040-f4542fc13f7c",
+        "sourceHandle": "abbbad74-313c-4ad3-bafd-fde30b779810",
+        "targetHandle": "53643f69-ec95-405d-a040-f4542fc13f7c"
+      },
+      {
+        "id": "reactflow__edge-fe8cf643-acf8-479e-88a0-4b73cccf4ec2c369e4c1-f40f-4845-872a-14b4d41fdb5b-2cff79fc-67fd-4a1d-b135-fd7f8115a5cc2ce2ea88-50e9-4bd3-8666-f529a8f0415d",
+        "sourceHandle": "c369e4c1-f40f-4845-872a-14b4d41fdb5b",
+        "targetHandle": "2ce2ea88-50e9-4bd3-8666-f529a8f0415d"
+      },
+      {
+        "id": "reactflow__edge-264c8872-0932-4ea9-b95e-401978d355e26c0fb273-31d5-40d9-a461-d8ec0f719685-85371194-8440-4e84-93c3-bcb641e66154ba20e1e9-7c2a-4ab6-85bf-a4ac38caa503",
+        "sourceHandle": "6c0fb273-31d5-40d9-a461-d8ec0f719685",
+        "targetHandle": "ba20e1e9-7c2a-4ab6-85bf-a4ac38caa503"
+      },
+      {
+        "id": "a042e90b-9868-4cea-bc05-5712f27e9a11",
+        "sourceHandle": "fe5d1e66-dba1-4538-b2a4-e71a45802395",
+        "targetHandle": "7a1b488f-b1ad-472e-bff0-def4dbd60e4c"
+      },
+      {
+        "id": "reactflow__edge-85371194-8440-4e84-93c3-bcb641e661546eb167c6-04ec-49ca-89c1-37a04a3f87c4-5b77eb75-d46d-451e-b80c-50b073cc988a9b023f9c-56af-4c23-bfd6-89651c2fed41",
+        "sourceHandle": "6eb167c6-04ec-49ca-89c1-37a04a3f87c4",
+        "targetHandle": "9b023f9c-56af-4c23-bfd6-89651c2fed41"
+      },
+      {
+        "id": "b1e9bde5-6c0d-4a11-bb03-6a8c75a81fa5",
+        "sourceHandle": "0ecc9440-5ca3-4503-9048-1a084d2c25db",
+        "targetHandle": "1836cfe7-2e6d-416e-afa7-01bb061ff41f"
+      },
+      {
+        "id": "reactflow__edge-59ce7ed6-81ee-4ee5-9439-251c1b688445832fc644-4b90-4300-a18a-96009d44d2ed-4751730c-08a0-4850-ae95-e274d4a290110810a561-46f6-47d5-be18-e8762903ad31",
+        "sourceHandle": "832fc644-4b90-4300-a18a-96009d44d2ed",
+        "targetHandle": "0810a561-46f6-47d5-be18-e8762903ad31"
+      },
+      {
+        "id": "reactflow__edge-9a71eac1-8ab3-4f99-ab91-8fe65c50ccb9e2e67a65-01f8-497e-bad6-3905379444b9-d29cc740-995c-431b-9eae-695cc9120e54dbce0cca-e321-453f-8efa-27a233bb8c71",
+        "sourceHandle": "e2e67a65-01f8-497e-bad6-3905379444b9",
+        "targetHandle": "dbce0cca-e321-453f-8efa-27a233bb8c71"
+      },
+      {
+        "id": "reactflow__edge-4751730c-08a0-4850-ae95-e274d4a290114928f6b7-b8c1-4b3b-ab6c-69a3ee701ef3-5b77eb75-d46d-451e-b80c-50b073cc988ac75a8ff7-d6a0-4965-ba5a-346ea275ba90",
+        "sourceHandle": "4928f6b7-b8c1-4b3b-ab6c-69a3ee701ef3",
+        "targetHandle": "c75a8ff7-d6a0-4965-ba5a-346ea275ba90"
+      },
+      {
+        "id": "reactflow__edge-d29cc740-995c-431b-9eae-695cc9120e544ae4e9bb-efa4-4f15-9a14-9dbf1016cd98-4a6fd721-91ea-425e-9c43-e5df706b0a1cbba1dd7e-8c48-433b-9498-d0743153250f",
+        "sourceHandle": "4ae4e9bb-efa4-4f15-9a14-9dbf1016cd98",
+        "targetHandle": "bba1dd7e-8c48-433b-9498-d0743153250f"
+      },
+      {
+        "id": "reactflow__edge-5b77eb75-d46d-451e-b80c-50b073cc988af7005b64-c35f-44e3-82b6-2a9908f6cc84-4a6fd721-91ea-425e-9c43-e5df706b0a1c6d6b9a97-b34e-481c-a3db-c8e464e36a05",
+        "sourceHandle": "f7005b64-c35f-44e3-82b6-2a9908f6cc84",
+        "targetHandle": "6d6b9a97-b34e-481c-a3db-c8e464e36a05"
+      },
+      {
+        "id": "reactflow__edge-4a6fd721-91ea-425e-9c43-e5df706b0a1c92db15ab-0b50-40af-8be2-01bdc8d42f56-1663a0a7-fe7e-4ef9-9cd4-cc04e60109126e080196-8350-4874-93c1-f41ecf5c4d8b",
+        "sourceHandle": "92db15ab-0b50-40af-8be2-01bdc8d42f56",
+        "targetHandle": "6e080196-8350-4874-93c1-f41ecf5c4d8b"
+      },
+      {
+        "id": "reactflow__edge-1663a0a7-fe7e-4ef9-9cd4-cc04e6010912f6384c89-8633-4449-8060-f73542759dc7-3a67b5e6-6f78-4fb0-ac1b-f98de2082356c4b53954-2e90-4cbb-8271-40d2b4df7d91",
+        "sourceHandle": "f6384c89-8633-4449-8060-f73542759dc7",
+        "targetHandle": "c4b53954-2e90-4cbb-8271-40d2b4df7d91"
+      },
+      {
+        "id": "reactflow__edge-3a67b5e6-6f78-4fb0-ac1b-f98de20823560240cdb6-76b8-4897-a1c3-ab46f8e733cd-fe8cf643-acf8-479e-88a0-4b73cccf4ec274232b5e-ff67-45b2-94f9-7e88744f5dae",
+        "sourceHandle": "0240cdb6-76b8-4897-a1c3-ab46f8e733cd",
+        "targetHandle": "74232b5e-ff67-45b2-94f9-7e88744f5dae"
+      }
+    ]
+  }
+modelVersion: '1.0.0'

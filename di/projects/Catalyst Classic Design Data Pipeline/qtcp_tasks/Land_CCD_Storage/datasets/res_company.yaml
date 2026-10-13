@@ -1,0 +1,6 @@
+properties:
+  id: res_company-kqgq
+  name: res_company
+  inputDatasets:
+    - datasetId: res_company
+      taskId: land_ccd_landing-kqgj

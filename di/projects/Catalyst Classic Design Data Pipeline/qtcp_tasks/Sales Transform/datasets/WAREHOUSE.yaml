@@ -1,0 +1,42 @@
+properties:
+  id: stock_warehouse-difs
+  name: WAREHOUSE
+  inputDatasets:
+    - datasetId: stock_warehouse-kqh1
+      name: stock_warehouse
+      taskId: land_ccd_storage-kqgk
+  tableDef:
+    columns:
+      - datatype:
+          type: INT4
+          originalTypeFull: INTEGER
+        name: Warehouse ID
+        primaryKeyOrdinal: 1
+        expression:
+          expressionStatement: ${id}
+          alias:
+            - name: id
+              value: id
+        id: id
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Warehouse Name
+        expression:
+          expressionStatement: ${name}
+          alias:
+            - name: name
+              value: name
+        id: name
+      - datatype:
+          type: WSTRING
+          length: 5
+          originalTypeFull: NVARCHAR(5)
+        name: Warehouse Code
+        expression:
+          expressionStatement: ${code}
+          alias:
+            - name: code
+              value: code
+        id: code

@@ -1,0 +1,263 @@
+properties:
+  id: product-fyv1
+  name: PRODUCT
+  inputDatasets:
+    - datasetId: product-lz1x
+      name: PRODUCT
+      taskId: sales_transform-lz1g
+  datasetAttributes:
+    materialized: ON
+    hasStandardViewsWithHeaders: ON
+  tableDef:
+    columns:
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Product ID
+        nullable: true
+        primaryKeyOrdinal: 1
+        id: product id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: DATETIME
+          precision: 6
+          originalTypeFull: TIMESTAMP_NTZ(6)
+        name: Product Create Date
+        nullable: true
+        id: product create date
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Product Colour
+        nullable: true
+        id: product colour
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Product Type
+        nullable: true
+        id: product type
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Product Code
+        nullable: true
+        id: product code
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NCLOB
+          originalTypeFull: NVARCHAR(8388608)
+        name: Product Name
+        nullable: true
+        id: product name
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NCLOB
+          originalTypeFull: NVARCHAR(8388608)
+        name: Product Description
+        nullable: true
+        id: product description
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Product List Price
+        nullable: true
+        id: product list price
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: STRING
+          length: 5
+          originalTypeFull: VARCHAR(5)
+        name: Product Is Saleable
+        nullable: true
+        id: product is saleable
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: STRING
+          length: 5
+          originalTypeFull: VARCHAR(5)
+        name: Product Is Purchaseable
+        nullable: true
+        id: product is purchaseable
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Product Purchase Method
+        nullable: true
+        id: product purchase method
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Product Hierarchy 4
+        nullable: true
+        id: product hierarchy 4
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Product Hierarchy 3
+        nullable: true
+        id: product hierarchy 3
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Product Hierarchy 2
+        nullable: true
+        id: product hierarchy 2
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Product Hierarchy 1
+        nullable: true
+        id: product hierarchy 1
+        properties:
+          documentMetadata: false
+  dimensionDatasetSettings:
+    type: TYPE1
+    rootDataEntityId:
+      datasetId: product-lz1x
+      name: PRODUCT
+      taskId: sales_transform-lz1g
+    mapping:
+      columns:
+        - columnName: Product ID
+          type: ROOT_PK
+          expression:
+            expressionStatement: ${Product ID}
+            alias:
+              - name: Product ID
+                value: Product ID
+        - columnName: Product Create Date
+          type: NONE
+          expression:
+            expressionStatement: ${Product Create Date}
+            alias:
+              - name: Product Create Date
+                value: Product Create Date
+        - columnName: Product Colour
+          type: NONE
+          expression:
+            expressionStatement: ${Product Colour}
+            alias:
+              - name: Product Colour
+                value: Product Colour
+        - columnName: Product Type
+          type: NONE
+          expression:
+            expressionStatement: ${Product Type}
+            alias:
+              - name: Product Type
+                value: Product Type
+        - columnName: Product Code
+          type: NONE
+          expression:
+            expressionStatement: ${Product Code}
+            alias:
+              - name: Product Code
+                value: Product Code
+        - columnName: Product Name
+          type: NONE
+          expression:
+            expressionStatement: ${Product Name}
+            alias:
+              - name: Product Name
+                value: Product Name
+        - columnName: Product Description
+          type: NONE
+          expression:
+            expressionStatement: ${Product Description}
+            alias:
+              - name: Product Description
+                value: Product Description
+        - columnName: Product List Price
+          type: NONE
+          expression:
+            expressionStatement: ${Product List Price}
+            alias:
+              - name: Product List Price
+                value: Product List Price
+        - columnName: Product Is Saleable
+          type: NONE
+          expression:
+            expressionStatement: ${Product Is Saleable}
+            alias:
+              - name: Product Is Saleable
+                value: Product Is Saleable
+        - columnName: Product Is Purchaseable
+          type: NONE
+          expression:
+            expressionStatement: ${Product Is Purchaseable}
+            alias:
+              - name: Product Is Purchaseable
+                value: Product Is Purchaseable
+        - columnName: Product Purchase Method
+          type: NONE
+          expression:
+            expressionStatement: ${Product Purchase Method}
+            alias:
+              - name: Product Purchase Method
+                value: Product Purchase Method
+        - columnName: Product Hierarchy 4
+          type: NONE
+          expression:
+            expressionStatement: ${Product Hierarchy 4}
+            alias:
+              - name: Product Hierarchy 4
+                value: Product Hierarchy 4
+        - columnName: Product Hierarchy 3
+          type: NONE
+          expression:
+            expressionStatement: ${Product Hierarchy 3}
+            alias:
+              - name: Product Hierarchy 3
+                value: Product Hierarchy 3
+        - columnName: Product Hierarchy 2
+          type: NONE
+          expression:
+            expressionStatement: ${Product Hierarchy 2}
+            alias:
+              - name: Product Hierarchy 2
+                value: Product Hierarchy 2
+        - columnName: Product Hierarchy 1
+          type: NONE
+          expression:
+            expressionStatement: ${Product Hierarchy 1}
+            alias:
+              - name: Product Hierarchy 1
+                value: Product Hierarchy 1
+    fullyType2Sources: false
+    subtype: MODEL_BASED
+    materializedSource: false

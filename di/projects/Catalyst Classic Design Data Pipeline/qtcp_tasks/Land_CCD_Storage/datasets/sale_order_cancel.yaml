@@ -1,0 +1,6 @@
+properties:
+  id: sale_order_cancel-kqgx
+  name: sale_order_cancel
+  inputDatasets:
+    - datasetId: sale_order_cancel
+      taskId: land_ccd_landing-kqgj

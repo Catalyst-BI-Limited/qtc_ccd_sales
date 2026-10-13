@@ -1,0 +1,6 @@
+properties:
+  id: sale_order_line_invoice_rel-kqgz
+  name: sale_order_line_invoice_rel
+  inputDatasets:
+    - datasetId: sale_order_line_invoice_rel
+      taskId: land_ccd_landing-kqgj

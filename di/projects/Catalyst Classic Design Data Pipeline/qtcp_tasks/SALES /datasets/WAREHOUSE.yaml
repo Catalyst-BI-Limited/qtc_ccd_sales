@@ -1,0 +1,71 @@
+properties:
+  id: warehouse-kqja
+  name: WAREHOUSE
+  inputDatasets:
+    - datasetId: stock_warehouse-difs
+      name: WAREHOUSE
+      taskId: sales_transform-lz1g
+  datasetAttributes:
+    materialized: ON
+    hasStandardViewsWithHeaders: ON
+  tableDef:
+    columns:
+      - datatype:
+          type: INT4
+          originalTypeFull: INTEGER
+        name: Warehouse ID
+        nullable: true
+        primaryKeyOrdinal: 1
+        id: id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Warehouse Name
+        nullable: true
+        id: name
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 5
+          originalTypeFull: NVARCHAR(5)
+        name: Warehouse Code
+        nullable: true
+        id: code
+        properties:
+          documentMetadata: false
+  dimensionDatasetSettings:
+    type: TYPE1
+    rootDataEntityId:
+      datasetId: stock_warehouse-difs
+      name: WAREHOUSE
+      taskId: sales_transform-lz1g
+    mapping:
+      columns:
+        - columnName: Warehouse ID
+          type: ROOT_PK
+          expression:
+            expressionStatement: ${Warehouse ID}
+            alias:
+              - name: Warehouse ID
+                value: Warehouse ID
+        - columnName: Warehouse Name
+          type: NONE
+          expression:
+            expressionStatement: ${Warehouse Name}
+            alias:
+              - name: Warehouse Name
+                value: Warehouse Name
+        - columnName: Warehouse Code
+          type: NONE
+          expression:
+            expressionStatement: ${Warehouse Code}
+            alias:
+              - name: Warehouse Code
+                value: Warehouse Code
+    fullyType2Sources: false
+    subtype: MODEL_BASED
+    materializedSource: false

@@ -1,0 +1,12 @@
+properties:
+  name: 'SALES '
+  id: sales_-g-vs
+  type: DATAMART
+settings:
+  artifactsLocation:
+    internalSchema: '{{task.sales_-g-vs.internalSchema}}'
+    taskSchema: '{{task.sales_-g-vs.taskSchema}}'
+    databaseName: '{{task.sales_-g-vs.databaseName}}'
+  taskRuntime:
+    warehouseSelection:
+      warehouseName: '{{task.sales_-g-vs.warehouseName}}'

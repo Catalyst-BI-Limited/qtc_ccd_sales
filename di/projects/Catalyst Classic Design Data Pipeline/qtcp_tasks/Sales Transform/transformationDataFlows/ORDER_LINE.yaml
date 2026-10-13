@@ -1,0 +1,1081 @@
+name: ORDER_LINE
+description: ''
+context:
+  projectId: '{{ref(project.current.projectId)}}'
+  dataAppId: sales_transform-lz1g
+graph: |-
+  {
+    "nodes": [
+      {
+        "type": "source",
+        "id": "895cdd96-64c2-4877-82fc-30ed9cf3a2c4",
+        "label": "sale_order",
+        "graphical": {
+          "position": {
+            "x": 80,
+            "y": 40
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [],
+          "outgoing": [
+            {
+              "id": "53ae23ce-2e80-4a52-b33b-197f6a06939a",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "qcdiDataEntitySource",
+          "label": "Input dataset",
+          "properties": {
+            "dataEntity": {
+              "projectId": "{{ref(project.current.projectId)}}",
+              "dataAppId": "land_ccd_storage-kqgk",
+              "entityId": "sale_order-kqgw"
+            },
+            "configuration": {
+              "name": "sale_order"
+            }
+          }
+        }
+      },
+      {
+        "type": "source",
+        "id": "08ceaa6b-a81f-4b59-bb81-ab46db76fe2d",
+        "label": "sale_order_line",
+        "graphical": {
+          "position": {
+            "x": 80,
+            "y": 200
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [],
+          "outgoing": [
+            {
+              "id": "3880506d-afae-4c28-bd8e-f5f3130b65f4",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "qcdiDataEntitySource",
+          "label": "Input dataset",
+          "properties": {
+            "dataEntity": {
+              "projectId": "{{ref(project.current.projectId)}}",
+              "dataAppId": "land_ccd_storage-kqgk",
+              "entityId": "sale_order_line-kqgy"
+            },
+            "configuration": {
+              "name": "sale_order_line"
+            }
+          }
+        }
+      },
+      {
+        "type": "target",
+        "id": "67184826-c4b5-49f0-ab64-7c1c280f6070",
+        "label": "ORDER_LINE",
+        "graphical": {
+          "position": {
+            "x": 1760,
+            "y": 40
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "eff59503-7d34-452a-bd29-0285562663f1",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": []
+        },
+        "component": {
+          "type": "qcdiDataEntityTarget",
+          "label": "Output dataset",
+          "properties": {
+            "configuration": {
+              "name": "ORDER_LINE",
+              "settings": {
+                "materialized": "INHERIT",
+                "createConsumptionViews": "INHERIT",
+                "hasHistory": "INHERIT",
+                "incremental": false
+              },
+              "overridenColumnsConfiguration": [
+                {
+                  "name": "Order ID",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Order Line Campaign ID",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Order Line Source ID",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Order Line Customer ID",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Order Line Order Number",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Order Line Order Date",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Order Line Warehouse ID",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Order Line Delivery Status",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Order Line ID",
+                  "nullable": false,
+                  "primaryKeyOrdinal": 1
+                },
+                {
+                  "name": "Order Line Salesman ID",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Order Line Product ID",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Order Line Unit Price",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Order Line Discount Amount",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Order Line Gross Amount",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Order Line Quantity Delivered",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Order Line Quantity Invoiced",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Order Line Quantity Remaining To Invoice",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Order Line Margin Amount",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Order Line Cost Price",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Order Line Invoice Status",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Order Line Price Reduction",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Order Line Currency ID",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Order Line Currency ",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Order Line Currency Symbol",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "7f12a80a-aed7-420e-9eac-7b34a7ffa4c8",
+        "label": "select header fields",
+        "graphical": {
+          "position": {
+            "x": 360,
+            "y": 40
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "03424b9a-caf4-450d-a228-69fcc9290dcd",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "d0f83d2b-59db-4496-9889-e4d11229e065",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "id",
+                  "field": "id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "campaign_id",
+                  "field": "campaign_id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "source_id",
+                  "field": "source_id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "partner_id",
+                  "field": "partner_id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "name",
+                  "field": "name",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "origin",
+                  "field": "origin",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "reference",
+                  "field": "reference",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "note",
+                  "field": "note",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "date_order",
+                  "field": "date_order",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "warehouse_id",
+                  "field": "warehouse_id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "delivery_status",
+                  "field": "delivery_status",
+                  "output": "",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "7bba8943-4683-43c7-b4a1-5bff99e474a7",
+        "label": "select line fields",
+        "graphical": {
+          "position": {
+            "x": 360,
+            "y": 200
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "5e374dbd-a9a7-4c10-99d7-7bca793432ff",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "ee2be7f1-9fbb-4f6e-bb6c-d0fd0d1348a4",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "id",
+                  "field": "id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "order_id",
+                  "field": "order_id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "salesman_id",
+                  "field": "salesman_id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "product_id",
+                  "field": "product_id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "product_uom",
+                  "field": "product_uom",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "name",
+                  "field": "name",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "price_unit",
+                  "field": "price_unit",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "discount",
+                  "field": "discount",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "price_total",
+                  "field": "price_total",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "qty_delivered",
+                  "field": "qty_delivered",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "qty_invoiced",
+                  "field": "qty_invoiced",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "qty_to_invoice",
+                  "field": "qty_to_invoice",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "margin",
+                  "field": "margin",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "purchase_price",
+                  "field": "purchase_price",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "invoice_status",
+                  "field": "invoice_status",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "price_reduce",
+                  "field": "price_reduce",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "currency_id",
+                  "field": "currency_id",
+                  "output": "",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "9aea4978-418a-4b5f-8165-b1521d0a0586",
+        "label": "Convert order date",
+        "graphical": {
+          "position": {
+            "x": 640,
+            "y": 40
+          },
+          "icon": "empty-calendar-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "46f515b0-1b06-4732-9950-f8cb38040820",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "9a646ddb-0ebd-478e-806d-db79b567246a",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "dates",
+          "label": "Dates",
+          "properties": {
+            "tckType": "HvYKC3FptozYOAWcUJKrHqwl1yfHXc2UgEqipjuqgW8AKsv77ulyvL",
+            "configuration": {
+              "type": "CONVERT_TO_DATE",
+              "compareDatesConfiguration": {
+                "columnToProcess": "",
+                "createNewColumn": true,
+                "newColumnRename": "",
+                "mode": "EQUALS",
+                "with": "VALUE",
+                "value": "",
+                "column": "",
+                "precision": 6
+              },
+              "convertToDateConfiguration": {
+                "columnToProcess": "date_order",
+                "createNewColumn": false,
+                "newColumnRename": "",
+                "inputFormat": "AUTO",
+                "customFormat": "yyyy.mm.dd",
+                "$columnToProcess_name": "date_order"
+              },
+              "convertToTimestampConfiguration": {
+                "columnToProcess": "",
+                "createNewColumn": false,
+                "newColumnRename": "",
+                "inputFormat": "AUTO",
+                "customFormat": "yyyy-mm-dd hh:mi:ss",
+                "precision": 6
+              },
+              "convertToTimeConfiguration": {
+                "columnToProcess": "",
+                "createNewColumn": true,
+                "newColumnRename": "",
+                "inputFormat": "AUTO",
+                "customFormat": "HH:mm:ss.FF9"
+              },
+              "createDateFromPartsConfiguration": {
+                "columnToProcess": "",
+                "createNewColumn": true,
+                "newColumnRename": "",
+                "yearFormat": "VALUE",
+                "yearValue": "",
+                "yearColumn": "",
+                "monthFormat": "VALUE",
+                "monthValue": "",
+                "monthColumn": "",
+                "dayFormat": "VALUE",
+                "dayValue": "",
+                "dayColumn": "",
+                "const": true
+              },
+              "createDatetimeFromPartsConfiguration": {
+                "columnToProcess": "",
+                "createNewColumn": true,
+                "newColumnRename": "",
+                "yearFormat": "VALUE",
+                "yearValue": "",
+                "yearColumn": "",
+                "monthFormat": "VALUE",
+                "monthValue": "",
+                "monthColumn": "",
+                "dayFormat": "VALUE",
+                "dayValue": "",
+                "dayColumn": "",
+                "hoursFormat": "VALUE",
+                "hoursValue": "",
+                "hoursColumn": "",
+                "minutesFormat": "VALUE",
+                "minutesValue": "",
+                "minutesColumn": "",
+                "secondsFormat": "VALUE",
+                "secondsValue": "",
+                "secondsColumn": "",
+                "millisecondsFormat": "VALUE",
+                "millisecondsValue": "",
+                "millisecondsColumn": "",
+                "microsecondsFormat": "VALUE",
+                "microsecondsValue": "",
+                "microsecondsColumn": "",
+                "nanosecondsFormat": "VALUE",
+                "nanosecondsValue": "",
+                "nanosecondsColumn": "",
+                "precision": 6,
+                "const": true
+              },
+              "createTimeFromPartsConfiguration": {
+                "columnToProcess": "",
+                "createNewColumn": true,
+                "newColumnRename": "",
+                "hoursFormat": "VALUE",
+                "hoursValue": "",
+                "hoursColumn": "",
+                "minutesFormat": "VALUE",
+                "minutesValue": "",
+                "minutesColumn": "",
+                "secondsFormat": "VALUE",
+                "secondsValue": "",
+                "secondsColumn": "",
+                "millisecondsFormat": "VALUE",
+                "millisecondsValue": "0",
+                "millisecondsColumn": "0",
+                "const": true
+              },
+              "truncateDateConfiguration": {
+                "columnToProcess": "",
+                "createNewColumn": true,
+                "newColumnRename": "",
+                "dateOrTimePart": "Day"
+              },
+              "addDurationConfiguration": {
+                "columnToProcess": "",
+                "createNewColumn": true,
+                "newColumnRename": "",
+                "durationFormat": "VALUE",
+                "durationValue": "",
+                "durationColumn": "",
+                "dateOrTimePart": "Day"
+              },
+              "calculateDateDifferenceConfiguration": {
+                "columnToProcess": "",
+                "until": "NOW",
+                "dateOrTimePart": "Day",
+                "specificDate": "",
+                "otherColumn": "",
+                "createNewColumn": true,
+                "newColumnRename": ""
+              },
+              "$state": "CONFIGURED",
+              "extractDatePartConfiguration": {
+                "columnToProcess": "",
+                "createNewColumn": true,
+                "newColumnRename": "",
+                "datePart": "Day"
+              },
+              "$type_name": "Convert to date"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "62d99f96-84f0-42ff-a7d1-6da84ca2578e",
+        "label": "Join 1",
+        "graphical": {
+          "position": {
+            "x": 920,
+            "y": 40
+          },
+          "icon": "union-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "f4fa3e44-f3eb-4559-9dd8-e3a6cf3c742e",
+              "type": "DEFAULT"
+            },
+            {
+              "id": "a738363b-c84e-4acb-8aa9-6631cd602ec8",
+              "type": "LOOKUP"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "88ea9bf9-c842-4413-9ae1-560d8a83afcd",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "join",
+          "label": "Join",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjSm9pbjI",
+            "configuration": {
+              "joinFunction": "INNER_JOIN",
+              "conditions": [
+                {
+                  "leftKey": "id",
+                  "rightKey": "order_id",
+                  "keepBothKeysInOutput": false,
+                  "$leftKey_name": "id",
+                  "$rightKey_name": "order_id"
+                }
+              ],
+              "$state": "CONFIGURED",
+              "$joinFunction_name": "Inner join"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "2ede1727-cfb2-4be5-8648-035bafadbccf",
+        "label": "Select columns 1",
+        "graphical": {
+          "position": {
+            "x": 1480,
+            "y": 40
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "d7813ea2-8ee0-4d67-9272-d479383307ca",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "19dd4fde-2770-4aec-80cd-0d2808425d27",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "LEFT_id",
+                  "field": "LEFT_id",
+                  "output": "Order ID",
+                  "selected": true
+                },
+                {
+                  "path": "campaign_id",
+                  "field": "campaign_id",
+                  "output": "Order Line Campaign ID",
+                  "selected": true
+                },
+                {
+                  "path": "source_id",
+                  "field": "source_id",
+                  "output": "Order Line Source ID",
+                  "selected": true
+                },
+                {
+                  "path": "partner_id",
+                  "field": "partner_id",
+                  "output": "Order Line Customer ID",
+                  "selected": true
+                },
+                {
+                  "path": "LEFT_name",
+                  "field": "LEFT_name",
+                  "output": "Order Line Order Number",
+                  "selected": true
+                },
+                {
+                  "path": "date_order",
+                  "field": "date_order",
+                  "output": "Order Line Order Date",
+                  "selected": true
+                },
+                {
+                  "path": "warehouse_id",
+                  "field": "warehouse_id",
+                  "output": "Order Line Warehouse ID",
+                  "selected": true
+                },
+                {
+                  "path": "delivery_status",
+                  "field": "delivery_status",
+                  "output": "Order Line Delivery Status",
+                  "selected": true
+                },
+                {
+                  "path": "RIGHT_id",
+                  "field": "RIGHT_id",
+                  "output": "Order Line ID",
+                  "selected": true
+                },
+                {
+                  "path": "salesman_id",
+                  "field": "salesman_id",
+                  "output": "Order Line Salesman ID",
+                  "selected": true
+                },
+                {
+                  "path": "product_id",
+                  "field": "product_id",
+                  "output": "Order Line Product ID",
+                  "selected": true
+                },
+                {
+                  "path": "price_unit",
+                  "field": "price_unit",
+                  "output": "Order Line Unit Price",
+                  "selected": true
+                },
+                {
+                  "path": "discount",
+                  "field": "discount",
+                  "output": "Order Line Discount Amount",
+                  "selected": true
+                },
+                {
+                  "path": "price_total",
+                  "field": "price_total",
+                  "output": "Order Line Gross Amount",
+                  "selected": true
+                },
+                {
+                  "path": "qty_delivered",
+                  "field": "qty_delivered",
+                  "output": "Order Line Quantity Delivered",
+                  "selected": true
+                },
+                {
+                  "path": "qty_invoiced",
+                  "field": "qty_invoiced",
+                  "output": "Order Line Quantity Invoiced",
+                  "selected": true
+                },
+                {
+                  "path": "qty_to_invoice",
+                  "field": "qty_to_invoice",
+                  "output": "Order Line Quantity Remaining To Invoice",
+                  "selected": true
+                },
+                {
+                  "path": "margin",
+                  "field": "margin",
+                  "output": "Order Line Margin Amount",
+                  "selected": true
+                },
+                {
+                  "path": "purchase_price",
+                  "field": "purchase_price",
+                  "output": "Order Line Cost Price",
+                  "selected": true
+                },
+                {
+                  "path": "invoice_status",
+                  "field": "invoice_status",
+                  "output": "Order Line Invoice Status",
+                  "selected": true
+                },
+                {
+                  "path": "price_reduce",
+                  "field": "price_reduce",
+                  "output": "Order Line Price Reduction",
+                  "selected": true
+                },
+                {
+                  "path": "currency_id",
+                  "field": "currency_id",
+                  "output": "Order Line Currency ID",
+                  "selected": true
+                },
+                {
+                  "path": "name",
+                  "field": "name",
+                  "output": "Order Line Currency ",
+                  "selected": true
+                },
+                {
+                  "path": "symbol",
+                  "field": "symbol",
+                  "output": "Order Line Currency Symbol",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "source",
+        "id": "451d1741-74dd-490c-aebe-596c312ddadc",
+        "label": "res_currency",
+        "graphical": {
+          "position": {
+            "x": 80,
+            "y": 320
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [],
+          "outgoing": [
+            {
+              "id": "12381806-ecde-47b4-beba-c4997312561f",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "qcdiDataEntitySource",
+          "label": "Input dataset",
+          "properties": {
+            "dataEntity": {
+              "projectId": "{{ref(project.current.projectId)}}",
+              "dataAppId": "land_ccd_storage-kqgk",
+              "entityId": "res_currency-kqgs"
+            },
+            "configuration": {
+              "name": "res_currency"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "49acc861-de77-4a3d-b8f8-f2eb48ac407c",
+        "label": "Select columns 2",
+        "graphical": {
+          "position": {
+            "x": 360,
+            "y": 320
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "4a31a7cd-5094-4a89-9144-e3cbd2e99aae",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "4b96cb49-bfd8-4f7c-8ffb-d74a483520bf",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "id",
+                  "field": "id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "name",
+                  "field": "name",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "symbol",
+                  "field": "symbol",
+                  "output": "",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "c6ccf3f1-3e5e-4b46-b231-4d1acbc2b709",
+        "label": "Join 2",
+        "graphical": {
+          "position": {
+            "x": 1200,
+            "y": 40
+          },
+          "icon": "union-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "404aeda7-5fae-4681-9a64-6d17a1138aa3",
+              "type": "DEFAULT"
+            },
+            {
+              "id": "ec684e81-b717-4a79-9ecb-a012f0c071c8",
+              "type": "LOOKUP"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "cf16bb50-3664-4a7e-a25a-de417ddec165",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "join",
+          "label": "Join",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjSm9pbjI",
+            "configuration": {
+              "joinFunction": "LEFT_OUTER_JOIN",
+              "conditions": [
+                {
+                  "leftKey": "currency_id",
+                  "rightKey": "id",
+                  "keepBothKeysInOutput": false,
+                  "$leftKey_name": "currency_id",
+                  "$rightKey_name": "id"
+                }
+              ],
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "reactflow__edge-895cdd96-64c2-4877-82fc-30ed9cf3a2c453ae23ce-2e80-4a52-b33b-197f6a06939a-7f12a80a-aed7-420e-9eac-7b34a7ffa4c803424b9a-caf4-450d-a228-69fcc9290dcd",
+        "sourceHandle": "53ae23ce-2e80-4a52-b33b-197f6a06939a",
+        "targetHandle": "03424b9a-caf4-450d-a228-69fcc9290dcd"
+      },
+      {
+        "id": "reactflow__edge-08ceaa6b-a81f-4b59-bb81-ab46db76fe2d3880506d-afae-4c28-bd8e-f5f3130b65f4-7bba8943-4683-43c7-b4a1-5bff99e474a75e374dbd-a9a7-4c10-99d7-7bca793432ff",
+        "sourceHandle": "3880506d-afae-4c28-bd8e-f5f3130b65f4",
+        "targetHandle": "5e374dbd-a9a7-4c10-99d7-7bca793432ff"
+      },
+      {
+        "id": "reactflow__edge-7f12a80a-aed7-420e-9eac-7b34a7ffa4c8d0f83d2b-59db-4496-9889-e4d11229e065-9aea4978-418a-4b5f-8165-b1521d0a058646f515b0-1b06-4732-9950-f8cb38040820",
+        "sourceHandle": "d0f83d2b-59db-4496-9889-e4d11229e065",
+        "targetHandle": "46f515b0-1b06-4732-9950-f8cb38040820"
+      },
+      {
+        "id": "reactflow__edge-7bba8943-4683-43c7-b4a1-5bff99e474a7ee2be7f1-9fbb-4f6e-bb6c-d0fd0d1348a4-62d99f96-84f0-42ff-a7d1-6da84ca2578ea738363b-c84e-4acb-8aa9-6631cd602ec8",
+        "sourceHandle": "ee2be7f1-9fbb-4f6e-bb6c-d0fd0d1348a4",
+        "targetHandle": "a738363b-c84e-4acb-8aa9-6631cd602ec8"
+      },
+      {
+        "id": "reactflow__edge-9aea4978-418a-4b5f-8165-b1521d0a05869a646ddb-0ebd-478e-806d-db79b567246a-62d99f96-84f0-42ff-a7d1-6da84ca2578ef4fa3e44-f3eb-4559-9dd8-e3a6cf3c742e",
+        "sourceHandle": "9a646ddb-0ebd-478e-806d-db79b567246a",
+        "targetHandle": "f4fa3e44-f3eb-4559-9dd8-e3a6cf3c742e"
+      },
+      {
+        "id": "5b99db97-9e1b-4587-b807-a2e558bca26a",
+        "sourceHandle": "88ea9bf9-c842-4413-9ae1-560d8a83afcd",
+        "targetHandle": "404aeda7-5fae-4681-9a64-6d17a1138aa3"
+      },
+      {
+        "id": "reactflow__edge-2ede1727-cfb2-4be5-8648-035bafadbccf19dd4fde-2770-4aec-80cd-0d2808425d27-67184826-c4b5-49f0-ab64-7c1c280f6070eff59503-7d34-452a-bd29-0285562663f1",
+        "sourceHandle": "19dd4fde-2770-4aec-80cd-0d2808425d27",
+        "targetHandle": "eff59503-7d34-452a-bd29-0285562663f1"
+      },
+      {
+        "id": "reactflow__edge-451d1741-74dd-490c-aebe-596c312ddadc12381806-ecde-47b4-beba-c4997312561f-49acc861-de77-4a3d-b8f8-f2eb48ac407c4a31a7cd-5094-4a89-9144-e3cbd2e99aae",
+        "sourceHandle": "12381806-ecde-47b4-beba-c4997312561f",
+        "targetHandle": "4a31a7cd-5094-4a89-9144-e3cbd2e99aae"
+      },
+      {
+        "id": "reactflow__edge-49acc861-de77-4a3d-b8f8-f2eb48ac407c4b96cb49-bfd8-4f7c-8ffb-d74a483520bf-c6ccf3f1-3e5e-4b46-b231-4d1acbc2b709ec684e81-b717-4a79-9ecb-a012f0c071c8",
+        "sourceHandle": "4b96cb49-bfd8-4f7c-8ffb-d74a483520bf",
+        "targetHandle": "ec684e81-b717-4a79-9ecb-a012f0c071c8"
+      },
+      {
+        "id": "b5929f86-244c-49c1-b058-256de5eecd2e",
+        "sourceHandle": "cf16bb50-3664-4a7e-a25a-de417ddec165",
+        "targetHandle": "d7813ea2-8ee0-4d67-9272-d479383307ca"
+      }
+    ]
+  }
+modelVersion: '1.0.0'

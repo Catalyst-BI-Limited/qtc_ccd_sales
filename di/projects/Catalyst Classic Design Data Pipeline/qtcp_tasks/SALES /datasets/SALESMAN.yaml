@@ -1,0 +1,119 @@
+properties:
+  id: salesman-f2tt
+  name: SALESMAN
+  inputDatasets:
+    - datasetId: salesman-kqij
+      name: SALESMAN
+      taskId: sales_transform-lz1g
+  datasetAttributes:
+    materialized: ON
+    hasStandardViewsWithHeaders: ON
+  tableDef:
+    columns:
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Salesman ID
+        nullable: true
+        primaryKeyOrdinal: 1
+        id: salesman id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Salesman Name
+        nullable: true
+        id: salesman name
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: target_sales_won
+        nullable: true
+        id: target_sales_won
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Salesman Team Target Done
+        nullable: true
+        id: salesman team target done
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Salesmand Team Target Invoiced
+        nullable: true
+        id: salesmand team target invoiced
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NCLOB
+          originalTypeFull: NVARCHAR(8388608)
+        name: Salesman Team Name
+        nullable: true
+        id: salesman team name
+        properties:
+          documentMetadata: false
+  dimensionDatasetSettings:
+    type: TYPE1
+    rootDataEntityId:
+      datasetId: salesman-kqij
+      name: SALESMAN
+      taskId: sales_transform-lz1g
+    mapping:
+      columns:
+        - columnName: Salesman ID
+          type: ROOT_PK
+          expression:
+            expressionStatement: ${Salesman ID}
+            alias:
+              - name: Salesman ID
+                value: Salesman ID
+        - columnName: Salesman Name
+          type: NONE
+          expression:
+            expressionStatement: ${Salesman Name}
+            alias:
+              - name: Salesman Name
+                value: Salesman Name
+        - columnName: target_sales_won
+          type: NONE
+          expression:
+            expressionStatement: ${target_sales_won}
+            alias:
+              - name: target_sales_won
+                value: target_sales_won
+        - columnName: Salesman Team Target Done
+          type: NONE
+          expression:
+            expressionStatement: ${Salesman Team Target Done}
+            alias:
+              - name: Salesman Team Target Done
+                value: Salesman Team Target Done
+        - columnName: Salesmand Team Target Invoiced
+          type: NONE
+          expression:
+            expressionStatement: ${Salesmand Team Target Invoiced}
+            alias:
+              - name: Salesmand Team Target Invoiced
+                value: Salesmand Team Target Invoiced
+        - columnName: Salesman Team Name
+          type: NONE
+          expression:
+            expressionStatement: ${Salesman Team Name}
+            alias:
+              - name: Salesman Team Name
+                value: Salesman Team Name
+    fullyType2Sources: false
+    subtype: MODEL_BASED
+    materializedSource: false

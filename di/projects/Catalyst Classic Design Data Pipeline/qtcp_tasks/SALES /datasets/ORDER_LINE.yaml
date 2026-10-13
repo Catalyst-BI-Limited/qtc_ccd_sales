@@ -1,0 +1,451 @@
+properties:
+  id: order_line-kqi_
+  name: ORDER_LINE
+  inputDatasets:
+    - datasetId: order_line-g-tx
+      name: ORDER_LINE
+      taskId: sales_transform-lz1g
+  datasetAttributes:
+    materialized: ON
+    hasStandardViewsWithHeaders: ON
+  tableDef:
+    columns:
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Order ID
+        nullable: true
+        id: order id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Order Line Campaign ID
+        nullable: true
+        id: order line campaign id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Order Line Source ID
+        nullable: true
+        id: order line source id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Order Line Customer ID
+        nullable: true
+        id: order line customer id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Order Line Order Number
+        nullable: true
+        id: order line order number
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: DATE
+          originalTypeFull: DATE
+        name: Order Line Order Date
+        nullable: true
+        id: order line order date
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Order Line Warehouse ID
+        nullable: true
+        id: order line warehouse id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Order Line Delivery Status
+        nullable: true
+        id: order line delivery status
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Order Line ID
+        primaryKeyOrdinal: 1
+        id: order line id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Order Line Salesman ID
+        nullable: true
+        id: order line salesman id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Order Line Product ID
+        nullable: true
+        id: order line product id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Order Line Unit Price
+        nullable: true
+        id: order line unit price
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Order Line Discount Amount
+        nullable: true
+        id: order line discount amount
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Order Line Gross Amount
+        nullable: true
+        id: order line gross amount
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Order Line Quantity Delivered
+        nullable: true
+        id: order line quantity delivered
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Order Line Quantity Invoiced
+        nullable: true
+        id: order line quantity invoiced
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Order Line Quantity Remaining To Invoice
+        nullable: true
+        id: order line quantity remaining to invoice
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Order Line Margin Amount
+        nullable: true
+        id: order line margin amount
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Order Line Cost Price
+        nullable: true
+        id: order line cost price
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Order Line Invoice Status
+        nullable: true
+        id: order line invoice status
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Order Line Price Reduction
+        nullable: true
+        id: order line price reduction
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Order Line Currency ID
+        nullable: true
+        id: order line currency id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: 'Order Line Currency '
+        nullable: true
+        id: 'order line currency '
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Order Line Currency Symbol
+        nullable: true
+        id: order line currency symbol
+        properties:
+          documentMetadata: false
+  factDatasetSettings:
+    type: TRANSACTIONAL
+    rootDataEntityId:
+      datasetId: order_line-g-tx
+      name: ORDER_LINE
+      taskId: sales_transform-lz1g
+    factDimension:
+      - name: CUSTOMER
+        dimension:
+          type: NONE
+          datasetId: customer-digg
+          taskId: sales_-g-vs
+        dimensionRelationshipPath: order_line_customer_relation-f2sr
+        dimensionRelationshipPathDisplayName: ORDER_LINE_CUSTOMER_relation
+        dimensionRelationshipPathShortName: ''
+      - name: PRODUCT
+        dimension:
+          type: NONE
+          datasetId: product-fyv1
+          taskId: sales_-g-vs
+        dimensionRelationshipPath: order_line_product_relation-f2ss
+        dimensionRelationshipPathDisplayName: ORDER_LINE_PRODUCT_relation
+        dimensionRelationshipPathShortName: ''
+      - name: SALESMAN
+        dimension:
+          type: NONE
+          datasetId: salesman-f2tt
+          taskId: sales_-g-vs
+        dimensionRelationshipPath: orderline_salesman-digq
+        dimensionRelationshipPathDisplayName: ORDERLINE_SALESMAN
+        dimensionRelationshipPathShortName: Salesman
+      - name: WAREHOUSE
+        dimension:
+          type: NONE
+          datasetId: warehouse-kqja
+          taskId: sales_-g-vs
+        dimensionRelationshipPath: order_line_warehouse_relation-g-uy
+        dimensionRelationshipPathDisplayName: ORDER_LINE_WAREHOUSE_relation
+        dimensionRelationshipPathShortName: ''
+    mapping:
+      columns:
+        - columnName: Order ID
+          type: NONE
+          expression:
+            expressionStatement: ${Order ID}
+            alias:
+              - name: Order ID
+                value: Order ID
+        - columnName: Order Line Campaign ID
+          type: NONE
+          expression:
+            expressionStatement: ${Order Line Campaign ID}
+            alias:
+              - name: Order Line Campaign ID
+                value: Order Line Campaign ID
+        - columnName: Order Line Source ID
+          type: NONE
+          expression:
+            expressionStatement: ${Order Line Source ID}
+            alias:
+              - name: Order Line Source ID
+                value: Order Line Source ID
+        - columnName: Order Line Customer ID
+          type: NONE
+          expression:
+            expressionStatement: ${Order Line Customer ID}
+            alias:
+              - name: Order Line Customer ID
+                value: Order Line Customer ID
+        - columnName: Order Line Order Number
+          type: NONE
+          expression:
+            expressionStatement: ${Order Line Order Number}
+            alias:
+              - name: Order Line Order Number
+                value: Order Line Order Number
+        - columnName: Order Line Order Date
+          type: NONE
+          expression:
+            expressionStatement: ${Order Line Order Date}
+            alias:
+              - name: Order Line Order Date
+                value: Order Line Order Date
+        - columnName: Order Line Warehouse ID
+          type: NONE
+          expression:
+            expressionStatement: ${Order Line Warehouse ID}
+            alias:
+              - name: Order Line Warehouse ID
+                value: Order Line Warehouse ID
+        - columnName: Order Line Delivery Status
+          type: NONE
+          expression:
+            expressionStatement: ${Order Line Delivery Status}
+            alias:
+              - name: Order Line Delivery Status
+                value: Order Line Delivery Status
+        - columnName: Order Line ID
+          type: ROOT_PK
+          expression:
+            expressionStatement: ${Order Line ID}
+            alias:
+              - name: Order Line ID
+                value: Order Line ID
+        - columnName: Order Line Salesman ID
+          type: NONE
+          expression:
+            expressionStatement: ${Order Line Salesman ID}
+            alias:
+              - name: Order Line Salesman ID
+                value: Order Line Salesman ID
+        - columnName: Order Line Product ID
+          type: NONE
+          expression:
+            expressionStatement: ${Order Line Product ID}
+            alias:
+              - name: Order Line Product ID
+                value: Order Line Product ID
+        - columnName: Order Line Unit Price
+          type: NONE
+          expression:
+            expressionStatement: ${Order Line Unit Price}
+            alias:
+              - name: Order Line Unit Price
+                value: Order Line Unit Price
+        - columnName: Order Line Discount Amount
+          type: NONE
+          expression:
+            expressionStatement: ${Order Line Discount Amount}
+            alias:
+              - name: Order Line Discount Amount
+                value: Order Line Discount Amount
+        - columnName: Order Line Gross Amount
+          type: NONE
+          expression:
+            expressionStatement: ${Order Line Gross Amount}
+            alias:
+              - name: Order Line Gross Amount
+                value: Order Line Gross Amount
+        - columnName: Order Line Quantity Delivered
+          type: NONE
+          expression:
+            expressionStatement: ${Order Line Quantity Delivered}
+            alias:
+              - name: Order Line Quantity Delivered
+                value: Order Line Quantity Delivered
+        - columnName: Order Line Quantity Invoiced
+          type: NONE
+          expression:
+            expressionStatement: ${Order Line Quantity Invoiced}
+            alias:
+              - name: Order Line Quantity Invoiced
+                value: Order Line Quantity Invoiced
+        - columnName: Order Line Quantity Remaining To Invoice
+          type: NONE
+          expression:
+            expressionStatement: ${Order Line Quantity Remaining To Invoice}
+            alias:
+              - name: Order Line Quantity Remaining To Invoice
+                value: Order Line Quantity Remaining To Invoice
+        - columnName: Order Line Margin Amount
+          type: NONE
+          expression:
+            expressionStatement: ${Order Line Margin Amount}
+            alias:
+              - name: Order Line Margin Amount
+                value: Order Line Margin Amount
+        - columnName: Order Line Cost Price
+          type: NONE
+          expression:
+            expressionStatement: ${Order Line Cost Price}
+            alias:
+              - name: Order Line Cost Price
+                value: Order Line Cost Price
+        - columnName: Order Line Invoice Status
+          type: NONE
+          expression:
+            expressionStatement: ${Order Line Invoice Status}
+            alias:
+              - name: Order Line Invoice Status
+                value: Order Line Invoice Status
+        - columnName: Order Line Price Reduction
+          type: NONE
+          expression:
+            expressionStatement: ${Order Line Price Reduction}
+            alias:
+              - name: Order Line Price Reduction
+                value: Order Line Price Reduction
+        - columnName: Order Line Currency ID
+          type: NONE
+          expression:
+            expressionStatement: ${Order Line Currency ID}
+            alias:
+              - name: Order Line Currency ID
+                value: Order Line Currency ID
+        - columnName: 'Order Line Currency '
+          type: NONE
+          expression:
+            expressionStatement: ${Order Line Currency }
+            alias:
+              - name: 'Order Line Currency '
+                value: 'Order Line Currency '
+        - columnName: Order Line Currency Symbol
+          type: NONE
+          expression:
+            expressionStatement: ${Order Line Currency Symbol}
+            alias:
+              - name: Order Line Currency Symbol
+                value: Order Line Currency Symbol
+    transactionalDate:
+      columnName: Order Line Order Date
+      entityRelationshipPath: Order Line Order Date
+      entityRelationshipPathDisplayName: Order Line Order Date
+    subtype: MODEL_BASED
+    materializedSource: false

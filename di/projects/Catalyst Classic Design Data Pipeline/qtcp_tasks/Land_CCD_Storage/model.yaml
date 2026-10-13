@@ -1,0 +1,243 @@
+relationships:
+  - sourceEntity:
+      datasetId: product_product-kqgn
+      name: product_product
+      taskId: land_ccd_storage-kqgk
+    targetEntity:
+      datasetId: product_template-kqgp
+      name: product_template
+      taskId: land_ccd_storage-kqgk
+    columnRelationships:
+      - sourceColumn: product_tmpl_id
+        targetColumn: id
+        sourceColumnId: product_tmpl_id
+        targetColumnId: id
+    name: ProductProduct_ProductTemplate
+    description: ''
+    id: productproduct_producttemplate-kqiq
+  - sourceEntity:
+      datasetId: product_supplierinfo-kqgo
+      name: product_supplierinfo
+      taskId: land_ccd_storage-kqgk
+    targetEntity:
+      datasetId: product_product-kqgn
+      name: product_product
+      taskId: land_ccd_storage-kqgk
+    columnRelationships:
+      - sourceColumn: product_id
+        targetColumn: id
+        sourceColumnId: product_id
+        targetColumnId: id
+    name: ProductSupplierinfo_ProductProduct
+    description: ''
+    id: productsupplierinfo_productproduct-f2s7
+  - sourceEntity:
+      datasetId: product_template-kqgp
+      name: product_template
+      taskId: land_ccd_storage-kqgk
+    targetEntity:
+      datasetId: product_category-kqgm
+      name: product_category
+      taskId: land_ccd_storage-kqgk
+    columnRelationships:
+      - sourceColumn: categ_id
+        targetColumn: id
+        sourceColumnId: categ_id
+        targetColumnId: id
+    name: ProductTemplate_ProductCategory
+    description: ''
+    id: producttemplate_productcategory-fyvd
+  - sourceEntity:
+      datasetId: res_partner-kqgt
+      name: res_partner
+      taskId: land_ccd_storage-kqgk
+    targetEntity:
+      datasetId: res_company-kqgq
+      name: res_company
+      taskId: land_ccd_storage-kqgk
+    columnRelationships:
+      - sourceColumn: company_id
+        targetColumn: id
+        sourceColumnId: company_id
+        targetColumnId: id
+    name: ResPartner_ResCompany
+    description: ''
+    id: respartner_rescompany-g-u1
+  - sourceEntity:
+      datasetId: res_partner-kqgt
+      name: res_partner
+      taskId: land_ccd_storage-kqgk
+    targetEntity:
+      datasetId: res_country-kqgr
+      name: res_country
+      taskId: land_ccd_storage-kqgk
+    columnRelationships:
+      - sourceColumn: country_id
+        targetColumn: id
+        sourceColumnId: country_id
+        targetColumnId: id
+    name: ResPartner_ResCountry
+    description: ''
+    id: respartner_rescountry-digo
+  - sourceEntity:
+      datasetId: res_users-kqgu
+      name: res_users
+      taskId: land_ccd_storage-kqgk
+    targetEntity:
+      datasetId: crm_team-lz2y
+      name: crm_team
+      taskId: land_ccd_storage-kqgk
+    columnRelationships:
+      - sourceColumn: sale_team_id
+        targetColumn: id
+        sourceColumnId: sale_team_id
+        targetColumnId: id
+    name: ResUsers_CrmTeam
+    description: ''
+    id: resusers_crmteam-fyve
+  - sourceEntity:
+      datasetId: resource_resource-kqgv
+      name: resource_resource
+      taskId: land_ccd_storage-kqgk
+    targetEntity:
+      datasetId: res_users-kqgu
+      name: res_users
+      taskId: land_ccd_storage-kqgk
+    columnRelationships:
+      - sourceColumn: user_id
+        targetColumn: id
+        sourceColumnId: user_id
+        targetColumnId: id
+    shortName: Users
+    name: ResourceResource_ResUsers
+    description: ''
+    id: resourceresource_resusers-diga
+  - sourceEntity:
+      datasetId: sale_order_cancel-kqgx
+      name: sale_order_cancel
+      taskId: land_ccd_storage-kqgk
+    targetEntity:
+      datasetId: sale_order-kqgw
+      name: sale_order
+      taskId: land_ccd_storage-kqgk
+    columnRelationships:
+      - sourceColumn: order_id
+        targetColumn: id
+        sourceColumnId: order_id
+        targetColumnId: id
+    name: SaleOrderCancel_SaleOrder
+    description: ''
+    id: saleordercancel_saleorder-g-uy
+  - sourceEntity:
+      datasetId: sale_order_line_invoice_rel-kqgz
+      name: sale_order_line_invoice_rel
+      taskId: land_ccd_storage-kqgk
+    targetEntity:
+      datasetId: sale_order_line-kqgy
+      name: sale_order_line
+      taskId: land_ccd_storage-kqgk
+    columnRelationships:
+      - sourceColumn: order_line_id
+        targetColumn: id
+        sourceColumnId: order_line_id
+        targetColumnId: id
+    name: SaleOrderLineInvoiceRel_SaleOrderLine
+    description: ''
+    id: saleorderlineinvoicerel_saleorderline-fyvc
+  - sourceEntity:
+      datasetId: sale_order_line-kqgy
+      name: sale_order_line
+      taskId: land_ccd_storage-kqgk
+    targetEntity:
+      datasetId: product_product-kqgn
+      name: product_product
+      taskId: land_ccd_storage-kqgk
+    columnRelationships:
+      - sourceColumn: product_id
+        targetColumn: id
+        sourceColumnId: product_id
+        targetColumnId: id
+    name: SaleOrderLine_ProductProduct
+    description: ''
+    id: saleorderline_productproduct-g-u0
+  - sourceEntity:
+      datasetId: sale_order_line-kqgy
+      name: sale_order_line
+      taskId: land_ccd_storage-kqgk
+    targetEntity:
+      datasetId: sale_order-kqgw
+      name: sale_order
+      taskId: land_ccd_storage-kqgk
+    columnRelationships:
+      - sourceColumn: order_id
+        targetColumn: id
+        sourceColumnId: order_id
+        targetColumnId: id
+    name: SaleOrderLine_SaleOrder
+    description: ''
+    id: saleorderline_saleorder-kqiw
+  - sourceEntity:
+      datasetId: sale_order-kqgw
+      name: sale_order
+      taskId: land_ccd_storage-kqgk
+    targetEntity:
+      datasetId: res_currency-kqgs
+      name: res_currency
+      taskId: land_ccd_storage-kqgk
+    columnRelationships:
+      - sourceColumn: currency_id
+        targetColumn: id
+        sourceColumnId: currency_id
+        targetColumnId: id
+    name: SaleOrder_ResCurrency
+    description: ''
+    id: saleorder_rescurrency-lz3i
+  - sourceEntity:
+      datasetId: sale_order-kqgw
+      name: sale_order
+      taskId: land_ccd_storage-kqgk
+    targetEntity:
+      datasetId: res_partner-kqgt
+      name: res_partner
+      taskId: land_ccd_storage-kqgk
+    columnRelationships:
+      - sourceColumn: partner_id
+        targetColumn: id
+        sourceColumnId: partner_id
+        targetColumnId: id
+    shortName: Customer
+    name: SaleOrder_ResPartner
+    description: ''
+    id: saleorder_respartner-kqij
+  - sourceEntity:
+      datasetId: sale_order-kqgw
+      name: sale_order
+      taskId: land_ccd_storage-kqgk
+    targetEntity:
+      datasetId: res_users-kqgu
+      name: res_users
+      taskId: land_ccd_storage-kqgk
+    columnRelationships:
+      - sourceColumn: user_id
+        targetColumn: id
+        sourceColumnId: user_id
+        targetColumnId: id
+    name: SaleOrder_ResUsers
+    description: ''
+    id: saleorder_resusers-g-uz
+  - sourceEntity:
+      datasetId: sale_order-kqgw
+      name: sale_order
+      taskId: land_ccd_storage-kqgk
+    targetEntity:
+      datasetId: stock_warehouse-kqh1
+      name: stock_warehouse
+      taskId: land_ccd_storage-kqgk
+    columnRelationships:
+      - sourceColumn: warehouse_id
+        targetColumn: id
+        sourceColumnId: warehouse_id
+        targetColumnId: id
+    name: SaleOrder_StockWarehouse
+    description: ''
+    id: saleorder_stockwarehouse-kqin

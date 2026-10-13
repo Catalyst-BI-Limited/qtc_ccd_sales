@@ -1,0 +1,6 @@
+properties:
+  id: resource_resource-kqgv
+  name: resource_resource
+  inputDatasets:
+    - datasetId: resource_resource
+      taskId: land_ccd_landing-kqgj

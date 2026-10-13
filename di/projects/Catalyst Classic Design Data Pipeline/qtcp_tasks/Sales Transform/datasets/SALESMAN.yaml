@@ -1,0 +1,14 @@
+properties:
+  id: salesman-kqij
+  name: SALESMAN
+  inputDatasets:
+    - datasetId: resource_resource-kqgv
+      taskId: land_ccd_storage-kqgk
+    - datasetId: res_users-kqgu
+      taskId: land_ccd_storage-kqgk
+    - datasetId: crm_team-lz2y
+      taskId: land_ccd_storage-kqgk
+  dataflowDatasetSettings:
+    dataflowId: '{{id(dataflow, SALESMAN)}}'
+    targetId: '35629ed0-c51c-4b51-bdb4-8c0e695a12d0'
+    dataflowTargetState: VALID

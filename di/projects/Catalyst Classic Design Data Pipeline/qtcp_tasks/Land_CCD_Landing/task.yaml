@@ -1,0 +1,21 @@
+properties:
+  name: Land_CCD_Landing
+  id: land_ccd_landing-kqgj
+  type: LANDING
+settings:
+  errorHandling:
+    data:
+      policyErrors: ERROR_POLICY_SUSPEND_TABLE
+  landingDwSettings:
+    landingArtifactsLocation:
+      dataAssetSchema: '{{task.land_ccd_landing-kqgj.taskSchema}}'
+      database: '{{task.land_ccd_landing-kqgj.databaseName}}'
+  landingAppRuntime:
+    sourceCdcFetchIntervalMinutes: 60
+  applyChangesOptions:
+    changeProcessingTuning:
+      applyChangesMultipleTablesConcurrently: true
+      maxTables: 2
+  ddlHandlingPolicy:
+    addColumn: IGNORE
+    createTable: IGNORE

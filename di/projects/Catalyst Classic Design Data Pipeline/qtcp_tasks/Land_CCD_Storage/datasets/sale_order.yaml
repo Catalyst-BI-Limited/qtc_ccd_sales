@@ -1,0 +1,6 @@
+properties:
+  id: sale_order-kqgw
+  name: sale_order
+  inputDatasets:
+    - datasetId: sale_order
+      taskId: land_ccd_landing-kqgj

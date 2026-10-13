@@ -1,0 +1,6 @@
+properties:
+  id: stock_warehouse-kqh1
+  name: stock_warehouse
+  inputDatasets:
+    - datasetId: stock_warehouse
+      taskId: land_ccd_landing-kqgj

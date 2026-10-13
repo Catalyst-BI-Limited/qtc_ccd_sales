@@ -1,0 +1,1026 @@
+name: CUSTOMER
+description: ''
+context:
+  projectId: '{{ref(project.current.projectId)}}'
+  dataAppId: sales_transform-lz1g
+graph: |-
+  {
+    "nodes": [
+      {
+        "type": "source",
+        "id": "0d4bd1d2-a2e2-42b5-b5d5-bcd0550ea74b",
+        "label": "res_partner",
+        "graphical": {
+          "position": {
+            "x": -120,
+            "y": 40
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [],
+          "outgoing": [
+            {
+              "id": "68ce67ce-6836-4726-886b-1cb65e8dc3d3",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "qcdiDataEntitySource",
+          "label": "Input dataset",
+          "properties": {
+            "dataEntity": {
+              "projectId": "{{ref(project.current.projectId)}}",
+              "dataAppId": "land_ccd_storage-kqgk",
+              "entityId": "res_partner-kqgt"
+            },
+            "configuration": {
+              "name": "res_partner"
+            }
+          }
+        }
+      },
+      {
+        "type": "target",
+        "id": "96cebafc-a9d0-4ce2-9a99-ed2573dbdc4f",
+        "label": "CUSTOMER",
+        "graphical": {
+          "position": {
+            "x": 2040,
+            "y": 40
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "dd6579d2-9aee-4c25-97c9-3a0d52e7af1e",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": []
+        },
+        "component": {
+          "type": "qcdiDataEntityTarget",
+          "label": "Output dataset",
+          "properties": {
+            "configuration": {
+              "name": "CUSTOMER",
+              "settings": {
+                "materialized": "INHERIT",
+                "createConsumptionViews": "INHERIT",
+                "hasHistory": "INHERIT",
+                "incremental": false
+              },
+              "overridenColumnsConfiguration": [
+                {
+                  "name": "Customer ID",
+                  "nullable": false,
+                  "primaryKeyOrdinal": 1
+                },
+                {
+                  "name": "Customer Name",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Customer Display Name",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Customer Address 1",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Customer Address 2",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Customer Postcode",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Customer City",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Customer Email",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Customer Phone ",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Customer T/A",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Customer Rank",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Customer Invoice Warning Message",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Customer Credit Limit",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Customer Sales Warning Message",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Customer Country Code",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Customer Country Name",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Customer Latitude",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Customer Longitude",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Customer Default Warehouse",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Customer Delivery Warehouse Longitude",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Customer Delivery Warehouse Latitude",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "b0d031b8-690b-4dce-8832-bbe7ce1443f8",
+        "label": "Filter 1",
+        "graphical": {
+          "position": {
+            "x": 160,
+            "y": 40
+          },
+          "icon": "filter-row-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "d81b4dd6-0006-4fe5-8bdc-52e5fc65d87b",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "7a882fa4-6355-4b26-bd59-4d168a17ebd4",
+              "type": "DEFAULT"
+            },
+            {
+              "id": "a50c11e5-3d21-462f-97ce-613be0221ff3",
+              "type": "REJECT"
+            }
+          ]
+        },
+        "component": {
+          "type": "filter",
+          "label": "Filter",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmlsdGVy",
+            "configuration": {
+              "logicalOpType": "ALL",
+              "filters": [
+                {
+                  "columnName": "customer_rank",
+                  "function": "EMPTY",
+                  "operator": "NOT_EQUAL",
+                  "compareWith": "VALUE",
+                  "value": "0",
+                  "columnToCompareWith": "",
+                  "$columnName_name": "customer_rank",
+                  "$operator_name": "\u003C\u003E"
+                }
+              ],
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "be74d5a6-64db-4f72-b27f-cc8921ff0514",
+        "label": "Select Customer Fields",
+        "description": "Pick only analytically relevant fields",
+        "graphical": {
+          "position": {
+            "x": 440,
+            "y": 40
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "d05fec57-2841-4995-8bfb-abfdfee8fb3c",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "fc12fb9c-2992-407c-ad8e-e25a31d20d5f",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "id",
+                  "field": "id",
+                  "output": "Customer ID",
+                  "selected": true
+                },
+                {
+                  "path": "name",
+                  "field": "name",
+                  "output": "Customer Name",
+                  "selected": true
+                },
+                {
+                  "path": "display_name",
+                  "field": "display_name",
+                  "output": "Customer Display Name",
+                  "selected": true
+                },
+                {
+                  "path": "street",
+                  "field": "street",
+                  "output": "Customer Address 1",
+                  "selected": true
+                },
+                {
+                  "path": "street2",
+                  "field": "street2",
+                  "output": "Customer Address 2",
+                  "selected": true
+                },
+                {
+                  "path": "zip",
+                  "field": "zip",
+                  "output": "Customer Postcode",
+                  "selected": true
+                },
+                {
+                  "path": "city",
+                  "field": "city",
+                  "output": "Customer City",
+                  "selected": true
+                },
+                {
+                  "path": "email",
+                  "field": "email",
+                  "output": "Customer Email",
+                  "selected": true
+                },
+                {
+                  "path": "phone",
+                  "field": "phone",
+                  "output": "Customer Phone ",
+                  "selected": true
+                },
+                {
+                  "path": "commercial_company_name",
+                  "field": "commercial_company_name",
+                  "output": "Customer T/A",
+                  "selected": true
+                },
+                {
+                  "path": "country_id",
+                  "field": "country_id",
+                  "output": "Customer Country ID",
+                  "selected": true
+                },
+                {
+                  "path": "customer_rank",
+                  "field": "customer_rank",
+                  "output": "Customer Rank",
+                  "selected": true
+                },
+                {
+                  "path": "invoice_warn",
+                  "field": "invoice_warn",
+                  "output": "Customer Invoice Warning Message",
+                  "selected": true
+                },
+                {
+                  "path": "debit_limit",
+                  "field": "debit_limit",
+                  "output": "Customer Credit Limit",
+                  "selected": true
+                },
+                {
+                  "path": "sale_warn",
+                  "field": "sale_warn",
+                  "output": "Customer Sales Warning Message",
+                  "selected": true
+                },
+                {
+                  "path": "partner_latitude",
+                  "field": "partner_latitude",
+                  "output": "Customer Latitude",
+                  "selected": true
+                },
+                {
+                  "path": "partner_longitude",
+                  "field": "partner_longitude",
+                  "output": "Customer Longitude",
+                  "selected": true
+                },
+                {
+                  "path": "ref",
+                  "field": "ref",
+                  "output": "Customer Default Warehouse",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "source",
+        "id": "ea11fd3b-8806-401f-bbae-205bed08f512",
+        "label": "res_country",
+        "graphical": {
+          "position": {
+            "x": -120,
+            "y": 160
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [],
+          "outgoing": [
+            {
+              "id": "dc47725a-68fd-4da4-8819-7b210e197e7e",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "qcdiDataEntitySource",
+          "label": "Input dataset",
+          "properties": {
+            "dataEntity": {
+              "projectId": "{{ref(project.current.projectId)}}",
+              "dataAppId": "land_ccd_storage-kqgk",
+              "entityId": "res_country-kqgr"
+            },
+            "configuration": {
+              "name": "res_country"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "79530ea1-49ef-4e1b-939c-60b39a8b11b6",
+        "label": "Join country to customer",
+        "graphical": {
+          "position": {
+            "x": 720,
+            "y": 40
+          },
+          "icon": "union-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "7766cfd4-0847-48de-b273-ca33f2f31f07",
+              "type": "DEFAULT"
+            },
+            {
+              "id": "78af4af4-b0fb-45d8-9890-b04d3af4f012",
+              "type": "LOOKUP"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "97bbe827-fe5e-4bb7-b100-1628bfdc6581",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "join",
+          "label": "Join",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjSm9pbjI",
+            "configuration": {
+              "joinFunction": "LEFT_OUTER_JOIN",
+              "conditions": [
+                {
+                  "leftKey": "Customer Country ID",
+                  "rightKey": "Country ID",
+                  "keepBothKeysInOutput": false,
+                  "$leftKey_name": "Customer Country ID",
+                  "$rightKey_name": "Country ID"
+                }
+              ],
+              "$state": "CONFIGURED",
+              "$joinFunction_name": "Left outer join"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "7007da35-f7a6-4e76-a5d3-1394cb7afa94",
+        "label": "Select relevant fields",
+        "graphical": {
+          "position": {
+            "x": 160,
+            "y": 160
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "67329067-6eee-49a0-815e-42d7712f2c51",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "d6ec6521-de19-4c39-9b38-0a1986b0371c",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "id",
+                  "field": "id",
+                  "output": "Country ID",
+                  "selected": true
+                },
+                {
+                  "path": "code",
+                  "field": "code",
+                  "output": "Country Code",
+                  "selected": true
+                },
+                {
+                  "path": "name",
+                  "field": "name",
+                  "output": "Country Name",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "b92691e3-f0b9-480b-abff-1378e3df4169",
+        "label": "Extract Country Name From JSON",
+        "graphical": {
+          "position": {
+            "x": 440,
+            "y": 160
+          },
+          "icon": "abc-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "78e4d797-1d85-4d09-868e-a93c650a90b5",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "6f4b08fe-ac20-4b99-bc5c-605c4924d681",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "strings",
+          "label": "Strings",
+          "properties": {
+            "tckType": "ZGF0YXByZXAtZnVuY3Rpb25zI0RhdGFwcmVwI0RhdGFwcmVwU3RyaW5nUHJvY2Vzc2luZw",
+            "configuration": {
+              "type": "SUBSTRING",
+              "computeLengthConfiguration": {
+                "columnsToProcess": "",
+                "$columnsToProcess_name": ""
+              },
+              "containsConfiguration": {
+                "columnsToProcess": "",
+                "type": "VALUE",
+                "constantValue": "",
+                "$columnsToProcess_name": ""
+              },
+              "lowercaseConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "$columnsToProcess_name": ""
+              },
+              "propercaseConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "$columnsToProcess_name": ""
+              },
+              "uppercaseConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "$columnsToProcess_name": ""
+              },
+              "generateAUuidConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": true,
+                "newColumnName": "",
+                "$columnsToProcess_name": ""
+              },
+              "fuzzyMatchingConfiguration": {
+                "columnsToProcess": "",
+                "type": "VALUE",
+                "sensitivity": 1,
+                "referenceValue": "",
+                "$columnsToProcess_name": ""
+              },
+              "removeNonNumCharsConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "$columnsToProcess_name": ""
+              },
+              "removeNonAlphaNumCharsConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "$columnsToProcess_name": ""
+              },
+              "paddingConfiguration": {
+                "columnsToProcess": "Country Name",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "size": 5,
+                "paddingCharacter": "0",
+                "paddingPosition": "LEFT",
+                "$columnsToProcess_name": "Country Name"
+              },
+              "matchesPatternConfiguration": {
+                "columnsToProcess": "",
+                "manualPattern": {
+                  "value": "",
+                  "operator": "EQUALS"
+                },
+                "proposedPattern": "ANY_WORD_CASE_INSENSITIVE",
+                "$columnsToProcess_name": ""
+              },
+              "trimConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "type": "WHITESPACE",
+                "customPaddingCharacter": "",
+                "$columnsToProcess_name": ""
+              },
+              "replaceOnValueConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "replaceValue": "",
+                "replaceEntireCell": false,
+                "cellValue": {
+                  "value": "",
+                  "operator": "EQUALS"
+                },
+                "$columnsToProcess_name": ""
+              },
+              "cutConfiguration": {
+                "columnsToProcess": "",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "pattern": {
+                  "value": "",
+                  "operator": "EQUALS"
+                },
+                "$columnsToProcess_name": ""
+              },
+              "substringConfiguration": {
+                "columnsToProcess": "Country Name",
+                "shouldCreateNewColumn": false,
+                "newColumnName": "",
+                "fromType": "FROM_INDEX",
+                "fromIndex": 11,
+                "fromNBeforeEnd": 5,
+                "toType": "TO_INDEX",
+                "toIndex": 5,
+                "toIndex0": 5,
+                "toNBeforeEnd": 1,
+                "toNBeforeEnd0": 2,
+                "toNBeforeEnd1": 1,
+                "toTypeWithIndex": "TO_N_BEFORE_END",
+                "toTypeWithoutIndex": "TO_END",
+                "$columnsToProcess_name": "Country Name",
+                "$fromType_name": "From index",
+                "$toTypeWithIndex_name": "To N before end"
+              },
+              "$state": "CONFIGURED",
+              "$type_name": "Extract a value by index"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "1f7a5f78-c696-41c2-b289-90c471d9316f",
+        "label": "Final field selection",
+        "graphical": {
+          "position": {
+            "x": 1640,
+            "y": 40
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "3181ebcd-8a0d-4074-8724-fef362fc778b",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "06e7094a-f81c-48ad-a1f9-a9550859b106",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "Customer ID",
+                  "field": "Customer ID",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Customer Name",
+                  "field": "Customer Name",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Customer Display Name",
+                  "field": "Customer Display Name",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Customer Address 1",
+                  "field": "Customer Address 1",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Customer Address 2",
+                  "field": "Customer Address 2",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Customer Postcode",
+                  "field": "Customer Postcode",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Customer City",
+                  "field": "Customer City",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Customer Email",
+                  "field": "Customer Email",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Customer Phone ",
+                  "field": "Customer Phone ",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Customer T/A",
+                  "field": "Customer T/A",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Customer Rank",
+                  "field": "Customer Rank",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Customer Invoice Warning Message",
+                  "field": "Customer Invoice Warning Message",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Customer Credit Limit",
+                  "field": "Customer Credit Limit",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Customer Sales Warning Message",
+                  "field": "Customer Sales Warning Message",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Country Code",
+                  "field": "Country Code",
+                  "output": "Customer Country Code",
+                  "selected": true
+                },
+                {
+                  "path": "Country Name",
+                  "field": "Country Name",
+                  "output": "Customer Country Name",
+                  "selected": true
+                },
+                {
+                  "path": "Customer Latitude",
+                  "field": "Customer Latitude",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Customer Longitude",
+                  "field": "Customer Longitude",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Customer Default Warehouse",
+                  "field": "Customer Default Warehouse",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Customer Delivery Warehouse Longitude",
+                  "field": "Customer Delivery Warehouse Longitude",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Customer Delivery Warehouse Latitude",
+                  "field": "Customer Delivery Warehouse Latitude",
+                  "output": "",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "8e67f1f4-9672-41ae-b71b-fb92377c68de",
+        "label": "Create Delivery Warehouse Longitude",
+        "graphical": {
+          "position": {
+            "x": 1000,
+            "y": 40
+          },
+          "icon": "sql-expression-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "e0d317d8-3246-43a2-8003-c90d36d18430",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "432e19cf-6dac-4274-aa22-ff221d3e1b57",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "sql-expression",
+          "label": "SQL Expression",
+          "properties": {
+            "tckType": "ZGF0YXByZXAtZnVuY3Rpb25zI0RhdGFwcmVwI1NxbEV4cHJlc3Npb24==",
+            "configuration": {
+              "sqlExpressions": [
+                {
+                  "newColumnName": "Customer Delivery Warehouse Longitude",
+                  "datatype": {
+                    "type": "NUMERIC",
+                    "length": 1,
+                    "precision": 18,
+                    "scale": 2,
+                    "datetimePrecision": 6,
+                    "$type_name": "NUMERIC"
+                  },
+                  "nullable": true,
+                  "expression": {
+                    "expressionStatement": "$IFF(${Customer Default Warehouse}=\u0027WH\u0027,-0.3780,\n$IFF(${Customer Default Warehouse}=\u0027STA\u0027,-2.1164,\n$IFF(${Customer Default Warehouse}=\u0027HO\u0027,-1.5491,NULL)))",
+                    "alias": [
+                      {
+                        "name": "Customer Default Warehouse",
+                        "value": "Customer Default Warehouse"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "1ce5fab4-432a-42f0-ad2a-0aef5219a01a",
+        "label": "Create Delivery Warehouse Latitude",
+        "graphical": {
+          "position": {
+            "x": 1280,
+            "y": 40
+          },
+          "icon": "sql-expression-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "599b4cb0-a9b7-4d8a-be98-c57b343223ba",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "d7de933d-1b37-4545-a0b4-1d0fd3473345",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "sql-expression",
+          "label": "SQL Expression",
+          "properties": {
+            "tckType": "ZGF0YXByZXAtZnVuY3Rpb25zI0RhdGFwcmVwI1NxbEV4cHJlc3Npb24==",
+            "configuration": {
+              "sqlExpressions": [
+                {
+                  "newColumnName": "Customer Delivery Warehouse Latitude",
+                  "datatype": {
+                    "type": "NUMERIC",
+                    "length": 1,
+                    "precision": 18,
+                    "scale": 2,
+                    "datetimePrecision": 6,
+                    "$type_name": "NUMERIC"
+                  },
+                  "nullable": true,
+                  "expression": {
+                    "expressionStatement": "$IFF(${Customer Default Warehouse}=\u0027WH\u0027,51.5075,\n$IFF(${Customer Default Warehouse}=\u0027STA\u0027,52.8058,\n$IFF(${Customer Default Warehouse}=\u0027HO\u0027,53.8008,NULL)))",
+                    "alias": [
+                      {
+                        "name": "Customer Default Warehouse",
+                        "value": "Customer Default Warehouse"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e50710f7-6f3f-4382-b871-af510d22663c",
+        "sourceHandle": "68ce67ce-6836-4726-886b-1cb65e8dc3d3",
+        "targetHandle": "d81b4dd6-0006-4fe5-8bdc-52e5fc65d87b"
+      },
+      {
+        "id": "d1d4c281-df0d-425d-816d-a9a83ab71797",
+        "sourceHandle": "7a882fa4-6355-4b26-bd59-4d168a17ebd4",
+        "targetHandle": "d05fec57-2841-4995-8bfb-abfdfee8fb3c"
+      },
+      {
+        "id": "e3834be2-fe68-4b0c-bd27-0ae14fc6c28b",
+        "sourceHandle": "fc12fb9c-2992-407c-ad8e-e25a31d20d5f",
+        "targetHandle": "7766cfd4-0847-48de-b273-ca33f2f31f07"
+      },
+      {
+        "id": "reactflow__edge-ea11fd3b-8806-401f-bbae-205bed08f512dc47725a-68fd-4da4-8819-7b210e197e7e-7007da35-f7a6-4e76-a5d3-1394cb7afa9467329067-6eee-49a0-815e-42d7712f2c51",
+        "sourceHandle": "dc47725a-68fd-4da4-8819-7b210e197e7e",
+        "targetHandle": "67329067-6eee-49a0-815e-42d7712f2c51"
+      },
+      {
+        "id": "3e4487ea-aeab-4738-8a67-8dd186771b8c",
+        "sourceHandle": "97bbe827-fe5e-4bb7-b100-1628bfdc6581",
+        "targetHandle": "e0d317d8-3246-43a2-8003-c90d36d18430"
+      },
+      {
+        "id": "reactflow__edge-7007da35-f7a6-4e76-a5d3-1394cb7afa94d6ec6521-de19-4c39-9b38-0a1986b0371c-b92691e3-f0b9-480b-abff-1378e3df416978e4d797-1d85-4d09-868e-a93c650a90b5",
+        "sourceHandle": "d6ec6521-de19-4c39-9b38-0a1986b0371c",
+        "targetHandle": "78e4d797-1d85-4d09-868e-a93c650a90b5"
+      },
+      {
+        "id": "reactflow__edge-b92691e3-f0b9-480b-abff-1378e3df41696f4b08fe-ac20-4b99-bc5c-605c4924d681-79530ea1-49ef-4e1b-939c-60b39a8b11b678af4af4-b0fb-45d8-9890-b04d3af4f012",
+        "sourceHandle": "6f4b08fe-ac20-4b99-bc5c-605c4924d681",
+        "targetHandle": "78af4af4-b0fb-45d8-9890-b04d3af4f012"
+      },
+      {
+        "id": "9b5ed838-1dc5-44f8-ac94-b93aa20d8303",
+        "sourceHandle": "06e7094a-f81c-48ad-a1f9-a9550859b106",
+        "targetHandle": "dd6579d2-9aee-4c25-97c9-3a0d52e7af1e"
+      },
+      {
+        "id": "d050f8b3-1ca6-400c-ae25-c099cb44b484",
+        "sourceHandle": "432e19cf-6dac-4274-aa22-ff221d3e1b57",
+        "targetHandle": "599b4cb0-a9b7-4d8a-be98-c57b343223ba"
+      },
+      {
+        "id": "7ef6b004-0497-4bb1-859b-b080688593d4",
+        "sourceHandle": "d7de933d-1b37-4545-a0b4-1d0fd3473345",
+        "targetHandle": "3181ebcd-8a0d-4074-8724-fef362fc778b"
+      }
+    ]
+  }
+modelVersion: '1.0.0'
