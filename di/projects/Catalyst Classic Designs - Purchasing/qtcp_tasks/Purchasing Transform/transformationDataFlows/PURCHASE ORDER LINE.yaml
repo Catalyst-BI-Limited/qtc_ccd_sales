@@ -1,0 +1,740 @@
+name: PURCHASE ORDER LINE
+description: ''
+context:
+  projectId: '{{ref(project.current.projectId)}}'
+  dataAppId: purchasing_transform-gmrl
+graph: |-
+  {
+    "nodes": [
+      {
+        "type": "target",
+        "id": "0575cec0-a9d2-4ea7-a29d-747d85c72407",
+        "label": "PURCHASE_ORDER_LINE",
+        "graphical": {
+          "position": {
+            "x": 920,
+            "y": -120
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "15ffa833-6364-4fd0-9095-21288c9bbc43",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": []
+        },
+        "component": {
+          "type": "qcdiDataEntityTarget",
+          "label": "Output dataset",
+          "properties": {
+            "configuration": {
+              "name": "PURCHASE_ORDER_LINE",
+              "settings": {
+                "materialized": "INHERIT",
+                "createConsumptionViews": "INHERIT",
+                "hasHistory": "INHERIT",
+                "incremental": false
+              },
+              "overridenColumnsConfiguration": [
+                {
+                  "name": "Currency ID",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Currency Name",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Currency Symbol",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order ID",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order Supplier ID",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order Currency ID",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order Payment Term ID",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order Incoterm ID",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order Numer",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order Priority",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order State",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order Invoice Status",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order Date",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order Date Planned",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order Line ID",
+                  "nullable": false,
+                  "primaryKeyOrdinal": 1
+                },
+                {
+                  "name": "Purchase Order Line Product UOM",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order Line Product ID",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order Line Purchase Order ID",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order Line Product Name",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order Line Quantity",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order Line Unit Price",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order Line Subtotal",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order LIne Total",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order Line Quantity Invoiced",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order Line Quantity Received",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order Line Date Planned",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order Line UOM Quantity",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order Line Sales Order Line ID",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Purchase Order line Sales Order ID",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "type": "source",
+        "id": "5c9f25d8-f9d8-491f-909c-d00f96b19676",
+        "label": "purchase_order",
+        "graphical": {
+          "position": {
+            "x": -320,
+            "y": -120
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [],
+          "outgoing": [
+            {
+              "id": "aec85379-2779-4788-a31e-0e0f5751d64b",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "qcdiDataEntitySource",
+          "label": "Input dataset",
+          "properties": {
+            "dataEntity": {
+              "projectId": "{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}",
+              "dataAppId": "land_ccd_storage-kqgk",
+              "entityId": "purchase_order-epx0"
+            },
+            "configuration": {
+              "name": "purchase_order"
+            }
+          }
+        }
+      },
+      {
+        "type": "source",
+        "id": "64bb4304-e5ad-4445-9103-2af9f165cdd2",
+        "label": "purchase_order_line",
+        "graphical": {
+          "position": {
+            "x": -320,
+            "y": 0
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [],
+          "outgoing": [
+            {
+              "id": "ef350d54-7974-45d7-827f-e184f2b710ef",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "qcdiDataEntitySource",
+          "label": "Input dataset",
+          "properties": {
+            "dataEntity": {
+              "projectId": "{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}",
+              "dataAppId": "land_ccd_storage-kqgk",
+              "entityId": "purchase_order_line-epx1"
+            },
+            "configuration": {
+              "name": "purchase_order_line"
+            }
+          }
+        }
+      },
+      {
+        "type": "source",
+        "id": "471f35f6-9afc-472a-ab86-df7f0eeb81c1",
+        "label": "res_currency",
+        "graphical": {
+          "position": {
+            "x": -320,
+            "y": -240
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [],
+          "outgoing": [
+            {
+              "id": "bc397dee-5fe6-469d-a3a5-250ec6e330de",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "qcdiDataEntitySource",
+          "label": "Input dataset",
+          "properties": {
+            "dataEntity": {
+              "projectId": "{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}",
+              "dataAppId": "land_ccd_storage-kqgk",
+              "entityId": "res_currency-kqgs"
+            },
+            "configuration": {
+              "name": "res_currency"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "e219af75-2c7a-411d-a896-2fa993fff467",
+        "label": "Select columns 1",
+        "graphical": {
+          "position": {
+            "x": -40,
+            "y": -120
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "0fca2207-a410-434f-825c-58dc578ce402",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "c7b30857-46b2-417d-9fec-59f698af843c",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "id",
+                  "field": "id",
+                  "output": "Purchase Order ID",
+                  "selected": true
+                },
+                {
+                  "path": "partner_id",
+                  "field": "partner_id",
+                  "output": "Purchase Order Supplier ID",
+                  "selected": true
+                },
+                {
+                  "path": "currency_id",
+                  "field": "currency_id",
+                  "output": "Purchase Order Currency ID",
+                  "selected": true
+                },
+                {
+                  "path": "payment_term_id",
+                  "field": "payment_term_id",
+                  "output": "Purchase Order Payment Term ID",
+                  "selected": true
+                },
+                {
+                  "path": "incoterm_id",
+                  "field": "incoterm_id",
+                  "output": "Purchase Order Incoterm ID",
+                  "selected": true
+                },
+                {
+                  "path": "name",
+                  "field": "name",
+                  "output": "Purchase Order Numer",
+                  "selected": true
+                },
+                {
+                  "path": "priority",
+                  "field": "priority",
+                  "output": "Purchase Order Priority",
+                  "selected": true
+                },
+                {
+                  "path": "state",
+                  "field": "state",
+                  "output": "Purchase Order State",
+                  "selected": true
+                },
+                {
+                  "path": "invoice_status",
+                  "field": "invoice_status",
+                  "output": "Purchase Order Invoice Status",
+                  "selected": true
+                },
+                {
+                  "path": "date_order",
+                  "field": "date_order",
+                  "output": "Purchase Order Date",
+                  "selected": true
+                },
+                {
+                  "path": "date_planned",
+                  "field": "date_planned",
+                  "output": "Purchase Order Date Planned",
+                  "selected": true
+                },
+                {
+                  "path": "picking_type_id",
+                  "field": "picking_type_id",
+                  "output": "Purchase Order Warehouse ID",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "5a256073-207b-4de8-8f2e-eec04ecd5567",
+        "label": "Select columns 2",
+        "graphical": {
+          "position": {
+            "x": -40,
+            "y": 0
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "aa1dd02b-1baf-4d08-888c-97ca4262ccae",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "a5942104-d1c3-48b9-bc78-cee5e889cdbd",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "id",
+                  "field": "id",
+                  "output": "Purchase Order Line ID",
+                  "selected": true
+                },
+                {
+                  "path": "product_uom",
+                  "field": "product_uom",
+                  "output": "Purchase Order Line Product UOM",
+                  "selected": true
+                },
+                {
+                  "path": "product_id",
+                  "field": "product_id",
+                  "output": "Purchase Order Line Product ID",
+                  "selected": true
+                },
+                {
+                  "path": "order_id",
+                  "field": "order_id",
+                  "output": "Purchase Order Line Purchase Order ID",
+                  "selected": true
+                },
+                {
+                  "path": "name",
+                  "field": "name",
+                  "output": "Purchase Order Line Product Name",
+                  "selected": true
+                },
+                {
+                  "path": "product_qty",
+                  "field": "product_qty",
+                  "output": "Purchase Order Line Quantity",
+                  "selected": true
+                },
+                {
+                  "path": "price_unit",
+                  "field": "price_unit",
+                  "output": "Purchase Order Line Unit Price",
+                  "selected": true
+                },
+                {
+                  "path": "price_subtotal",
+                  "field": "price_subtotal",
+                  "output": "Purchase Order Line Subtotal",
+                  "selected": true
+                },
+                {
+                  "path": "price_total",
+                  "field": "price_total",
+                  "output": "Purchase Order LIne Total",
+                  "selected": true
+                },
+                {
+                  "path": "qty_invoiced",
+                  "field": "qty_invoiced",
+                  "output": "Purchase Order Line Quantity Invoiced",
+                  "selected": true
+                },
+                {
+                  "path": "qty_received",
+                  "field": "qty_received",
+                  "output": "Purchase Order Line Quantity Received",
+                  "selected": true
+                },
+                {
+                  "path": "date_planned",
+                  "field": "date_planned",
+                  "output": "Purchase Order Line Date Planned",
+                  "selected": true
+                },
+                {
+                  "path": "product_uom_qty",
+                  "field": "product_uom_qty",
+                  "output": "Purchase Order Line UOM Quantity",
+                  "selected": true
+                },
+                {
+                  "path": "sale_order_id",
+                  "field": "sale_order_id",
+                  "output": "Purchase Order Line Sales Order Line ID",
+                  "selected": true
+                },
+                {
+                  "path": "sale_line_id",
+                  "field": "sale_line_id",
+                  "output": "Purchase Order line Sales Order ID",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "ac2ba38f-0e66-4157-ba04-3a2af0191303",
+        "label": "Join 1",
+        "graphical": {
+          "position": {
+            "x": 360,
+            "y": -160
+          },
+          "icon": "union-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "e418dfb3-63c1-4fa1-bccb-be2d6c731497",
+              "type": "DEFAULT"
+            },
+            {
+              "id": "244859d3-cbfd-4058-bcd4-759d793f5bb2",
+              "type": "LOOKUP"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "327e0483-2e03-405e-bb2b-b713d4f7218a",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "join",
+          "label": "Join",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjSm9pbjI",
+            "configuration": {
+              "joinFunction": "INNER_JOIN",
+              "conditions": [
+                {
+                  "leftKey": "Currency ID",
+                  "rightKey": "Purchase Order Currency ID",
+                  "keepBothKeysInOutput": false,
+                  "$leftKey_name": "Currency ID",
+                  "$rightKey_name": "Purchase Order Currency ID"
+                }
+              ],
+              "$state": "CONFIGURED",
+              "$joinFunction_name": "Inner join"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "c3aef978-8e1d-4b20-98e8-868a3c846400",
+        "label": "Join 2",
+        "graphical": {
+          "position": {
+            "x": 640,
+            "y": -120
+          },
+          "icon": "union-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "35f7e85b-e7f8-400f-8818-ff2898e7d6c1",
+              "type": "DEFAULT"
+            },
+            {
+              "id": "ad92208e-a096-4dc6-9c11-2333ee839691",
+              "type": "LOOKUP"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "8f539066-77b1-4244-8cd0-7ba8304a3fe9",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "join",
+          "label": "Join",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjSm9pbjI",
+            "configuration": {
+              "joinFunction": "INNER_JOIN",
+              "conditions": [
+                {
+                  "leftKey": "Purchase Order ID",
+                  "rightKey": "Purchase Order Line Purchase Order ID",
+                  "keepBothKeysInOutput": false,
+                  "$leftKey_name": "Purchase Order ID",
+                  "$rightKey_name": "Purchase Order Line Purchase Order ID"
+                }
+              ],
+              "$state": "CONFIGURED",
+              "$joinFunction_name": "Inner join"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "e29f9dd2-32d7-4a2a-b07e-8f7214501779",
+        "label": "Select columns 3",
+        "graphical": {
+          "position": {
+            "x": -40,
+            "y": -240
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "b348eb57-6ad2-4165-bdcd-1e1cbdec375a",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "576b92f6-91b9-4e37-bb4b-4eaf1ba8ad0e",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "id",
+                  "field": "id",
+                  "output": "Currency ID",
+                  "selected": true
+                },
+                {
+                  "path": "name",
+                  "field": "name",
+                  "output": "Currency Name",
+                  "selected": true
+                },
+                {
+                  "path": "symbol",
+                  "field": "symbol",
+                  "output": "Currency Symbol",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "reactflow__edge-5c9f25d8-f9d8-491f-909c-d00f96b19676aec85379-2779-4788-a31e-0e0f5751d64b-e219af75-2c7a-411d-a896-2fa993fff4670fca2207-a410-434f-825c-58dc578ce402",
+        "sourceHandle": "aec85379-2779-4788-a31e-0e0f5751d64b",
+        "targetHandle": "0fca2207-a410-434f-825c-58dc578ce402"
+      },
+      {
+        "id": "reactflow__edge-64bb4304-e5ad-4445-9103-2af9f165cdd2ef350d54-7974-45d7-827f-e184f2b710ef-5a256073-207b-4de8-8f2e-eec04ecd5567aa1dd02b-1baf-4d08-888c-97ca4262ccae",
+        "sourceHandle": "ef350d54-7974-45d7-827f-e184f2b710ef",
+        "targetHandle": "aa1dd02b-1baf-4d08-888c-97ca4262ccae"
+      },
+      {
+        "id": "40cb1ee6-32d5-4423-8fdc-110b9fef90ae",
+        "sourceHandle": "bc397dee-5fe6-469d-a3a5-250ec6e330de",
+        "targetHandle": "b348eb57-6ad2-4165-bdcd-1e1cbdec375a"
+      },
+      {
+        "id": "reactflow__edge-e219af75-2c7a-411d-a896-2fa993fff467c7b30857-46b2-417d-9fec-59f698af843c-ac2ba38f-0e66-4157-ba04-3a2af0191303244859d3-cbfd-4058-bcd4-759d793f5bb2",
+        "sourceHandle": "c7b30857-46b2-417d-9fec-59f698af843c",
+        "targetHandle": "244859d3-cbfd-4058-bcd4-759d793f5bb2"
+      },
+      {
+        "id": "reactflow__edge-5a256073-207b-4de8-8f2e-eec04ecd5567a5942104-d1c3-48b9-bc78-cee5e889cdbd-c3aef978-8e1d-4b20-98e8-868a3c846400ad92208e-a096-4dc6-9c11-2333ee839691",
+        "sourceHandle": "a5942104-d1c3-48b9-bc78-cee5e889cdbd",
+        "targetHandle": "ad92208e-a096-4dc6-9c11-2333ee839691"
+      },
+      {
+        "id": "bf9e1ba6-d7e6-493c-b919-c0fc475a318b",
+        "sourceHandle": "327e0483-2e03-405e-bb2b-b713d4f7218a",
+        "targetHandle": "35f7e85b-e7f8-400f-8818-ff2898e7d6c1"
+      },
+      {
+        "id": "reactflow__edge-c3aef978-8e1d-4b20-98e8-868a3c8464008f539066-77b1-4244-8cd0-7ba8304a3fe9-0575cec0-a9d2-4ea7-a29d-747d85c7240715ffa833-6364-4fd0-9095-21288c9bbc43",
+        "sourceHandle": "8f539066-77b1-4244-8cd0-7ba8304a3fe9",
+        "targetHandle": "15ffa833-6364-4fd0-9095-21288c9bbc43"
+      },
+      {
+        "id": "c83fa75b-78f6-48d2-8aef-224f0bb4bd14",
+        "sourceHandle": "576b92f6-91b9-4e37-bb4b-4eaf1ba8ad0e",
+        "targetHandle": "e418dfb3-63c1-4fa1-bccb-be2d6c731497"
+      }
+    ]
+  }
+modelVersion: '1.0.0'

@@ -1,0 +1,534 @@
+properties:
+  id: purchase_order_line-dxpx
+  name: PURCHASE_ORDER_LINE
+  inputDatasets:
+    - datasetId: purchase_order_line-xtpq
+      name: PURCHASE_ORDER_LINE
+      taskId: create_table_association_for_shared_dimensions-s3ol
+  datasetAttributes:
+    materialized: ON
+    hasStandardViewsWithHeaders: ON
+  tableDef:
+    columns:
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Currency ID
+        nullable: true
+        id: currency id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Currency Name
+        nullable: true
+        id: currency name
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Currency Symbol
+        nullable: true
+        id: currency symbol
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Purchase Order ID
+        nullable: true
+        id: purchase order id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Purchase Order Supplier ID
+        nullable: true
+        id: purchase order supplier id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Purchase Order Currency ID
+        nullable: true
+        id: purchase order currency id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Purchase Order Payment Term ID
+        nullable: true
+        id: purchase order payment term id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Purchase Order Incoterm ID
+        nullable: true
+        id: purchase order incoterm id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Purchase Order Numer
+        nullable: true
+        id: purchase order numer
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Purchase Order Priority
+        nullable: true
+        id: purchase order priority
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Purchase Order State
+        nullable: true
+        id: purchase order state
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Purchase Order Invoice Status
+        nullable: true
+        id: purchase order invoice status
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: DATETIME
+          precision: 6
+          originalTypeFull: TIMESTAMP_NTZ(6)
+        name: Purchase Order Date
+        nullable: true
+        id: purchase order date
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: DATETIME
+          precision: 6
+          originalTypeFull: TIMESTAMP_NTZ(6)
+        name: Purchase Order Date Planned
+        nullable: true
+        id: purchase order date planned
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Purchase Order Warehouse ID
+        id: purchase order warehouse id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Purchase Order Line ID
+        primaryKeyOrdinal: 1
+        id: purchase order line id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Purchase Order Line Product UOM
+        nullable: true
+        id: purchase order line product uom
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Purchase Order Line Product ID
+        nullable: true
+        id: purchase order line product id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Purchase Order Line Purchase Order ID
+        nullable: true
+        id: purchase order line purchase order id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NCLOB
+          originalTypeFull: NVARCHAR(8388608)
+        name: Purchase Order Line Product Name
+        nullable: true
+        id: purchase order line product name
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Purchase Order Line Quantity
+        nullable: true
+        id: purchase order line quantity
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Purchase Order Line Unit Price
+        nullable: true
+        id: purchase order line unit price
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Purchase Order Line Subtotal
+        nullable: true
+        id: purchase order line subtotal
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Purchase Order LIne Total
+        nullable: true
+        id: purchase order line total
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Purchase Order Line Quantity Invoiced
+        nullable: true
+        id: purchase order line quantity invoiced
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Purchase Order Line Quantity Received
+        nullable: true
+        id: purchase order line quantity received
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: DATETIME
+          precision: 6
+          originalTypeFull: TIMESTAMP_NTZ(6)
+        name: Purchase Order Line Date Planned
+        nullable: true
+        id: purchase order line date planned
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: REAL8
+          originalTypeFull: FLOAT8
+        name: Purchase Order Line UOM Quantity
+        nullable: true
+        id: purchase order line uom quantity
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Purchase Order Line Sales Order Line ID
+        nullable: true
+        id: purchase order line sales order line id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Purchase Order line Sales Order ID
+        nullable: true
+        id: purchase order line sales order id
+        properties:
+          documentMetadata: false
+  factDatasetSettings:
+    type: TRANSACTIONAL
+    rootDataEntityId:
+      datasetId: purchase_order_line-xtpq
+      name: PURCHASE_ORDER_LINE
+      taskId: create_table_association_for_shared_dimensions-s3ol
+    factDimension:
+      - name: PRODUCT
+        dimension:
+          type: NONE
+          datasetId: product-qz_n
+          taskId: purchasing-qz_l
+        dimensionRelationshipPath: purchaseorderline_product-qz_k
+        dimensionRelationshipPathDisplayName: PURCHASEORDERLINE_PRODUCT
+        dimensionRelationshipPathShortName: ''
+      - name: SUPPLIER
+        dimension:
+          type: NONE
+          datasetId: supplier-dxpy
+          taskId: purchasing-qz_l
+        dimensionRelationshipPath: purchaseorderline_supplier-jejc
+        dimensionRelationshipPathDisplayName: PURCHASEORDERLINE_SUPPLIER
+        dimensionRelationshipPathShortName: ''
+      - name: WAREHOUSE
+        dimension:
+          type: NONE
+          datasetId: warehouse-xtpt
+          taskId: purchasing-qz_l
+        dimensionRelationshipPath: purchaseorderline_warehouse-gmed
+        dimensionRelationshipPathDisplayName: PURCHASEORDERLINE_WAREHOUSE
+        dimensionRelationshipPathShortName: ''
+    mapping:
+      columns:
+        - columnName: Currency ID
+          type: NONE
+          expression:
+            expressionStatement: ${Currency ID}
+            alias:
+              - name: Currency ID
+                value: Currency ID
+        - columnName: Currency Name
+          type: NONE
+          expression:
+            expressionStatement: ${Currency Name}
+            alias:
+              - name: Currency Name
+                value: Currency Name
+        - columnName: Currency Symbol
+          type: NONE
+          expression:
+            expressionStatement: ${Currency Symbol}
+            alias:
+              - name: Currency Symbol
+                value: Currency Symbol
+        - columnName: Purchase Order ID
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order ID}
+            alias:
+              - name: Purchase Order ID
+                value: Purchase Order ID
+        - columnName: Purchase Order Supplier ID
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order Supplier ID}
+            alias:
+              - name: Purchase Order Supplier ID
+                value: Purchase Order Supplier ID
+        - columnName: Purchase Order Currency ID
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order Currency ID}
+            alias:
+              - name: Purchase Order Currency ID
+                value: Purchase Order Currency ID
+        - columnName: Purchase Order Payment Term ID
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order Payment Term ID}
+            alias:
+              - name: Purchase Order Payment Term ID
+                value: Purchase Order Payment Term ID
+        - columnName: Purchase Order Incoterm ID
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order Incoterm ID}
+            alias:
+              - name: Purchase Order Incoterm ID
+                value: Purchase Order Incoterm ID
+        - columnName: Purchase Order Numer
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order Numer}
+            alias:
+              - name: Purchase Order Numer
+                value: Purchase Order Numer
+        - columnName: Purchase Order Priority
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order Priority}
+            alias:
+              - name: Purchase Order Priority
+                value: Purchase Order Priority
+        - columnName: Purchase Order State
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order State}
+            alias:
+              - name: Purchase Order State
+                value: Purchase Order State
+        - columnName: Purchase Order Invoice Status
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order Invoice Status}
+            alias:
+              - name: Purchase Order Invoice Status
+                value: Purchase Order Invoice Status
+        - columnName: Purchase Order Date
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order Date}
+            alias:
+              - name: Purchase Order Date
+                value: Purchase Order Date
+        - columnName: Purchase Order Date Planned
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order Date Planned}
+            alias:
+              - name: Purchase Order Date Planned
+                value: Purchase Order Date Planned
+        - columnName: Purchase Order Warehouse ID
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order Warehouse ID}
+            alias:
+              - name: Purchase Order Warehouse ID
+                value: Purchase Order Warehouse ID
+        - columnName: Purchase Order Line ID
+          type: ROOT_PK
+          expression:
+            expressionStatement: ${Purchase Order Line ID}
+            alias:
+              - name: Purchase Order Line ID
+                value: Purchase Order Line ID
+        - columnName: Purchase Order Line Product UOM
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order Line Product UOM}
+            alias:
+              - name: Purchase Order Line Product UOM
+                value: Purchase Order Line Product UOM
+        - columnName: Purchase Order Line Product ID
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order Line Product ID}
+            alias:
+              - name: Purchase Order Line Product ID
+                value: Purchase Order Line Product ID
+        - columnName: Purchase Order Line Purchase Order ID
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order Line Purchase Order ID}
+            alias:
+              - name: Purchase Order Line Purchase Order ID
+                value: Purchase Order Line Purchase Order ID
+        - columnName: Purchase Order Line Product Name
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order Line Product Name}
+            alias:
+              - name: Purchase Order Line Product Name
+                value: Purchase Order Line Product Name
+        - columnName: Purchase Order Line Quantity
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order Line Quantity}
+            alias:
+              - name: Purchase Order Line Quantity
+                value: Purchase Order Line Quantity
+        - columnName: Purchase Order Line Unit Price
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order Line Unit Price}
+            alias:
+              - name: Purchase Order Line Unit Price
+                value: Purchase Order Line Unit Price
+        - columnName: Purchase Order Line Subtotal
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order Line Subtotal}
+            alias:
+              - name: Purchase Order Line Subtotal
+                value: Purchase Order Line Subtotal
+        - columnName: Purchase Order LIne Total
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order LIne Total}
+            alias:
+              - name: Purchase Order LIne Total
+                value: Purchase Order LIne Total
+        - columnName: Purchase Order Line Quantity Invoiced
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order Line Quantity Invoiced}
+            alias:
+              - name: Purchase Order Line Quantity Invoiced
+                value: Purchase Order Line Quantity Invoiced
+        - columnName: Purchase Order Line Quantity Received
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order Line Quantity Received}
+            alias:
+              - name: Purchase Order Line Quantity Received
+                value: Purchase Order Line Quantity Received
+        - columnName: Purchase Order Line Date Planned
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order Line Date Planned}
+            alias:
+              - name: Purchase Order Line Date Planned
+                value: Purchase Order Line Date Planned
+        - columnName: Purchase Order Line UOM Quantity
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order Line UOM Quantity}
+            alias:
+              - name: Purchase Order Line UOM Quantity
+                value: Purchase Order Line UOM Quantity
+        - columnName: Purchase Order Line Sales Order Line ID
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order Line Sales Order Line ID}
+            alias:
+              - name: Purchase Order Line Sales Order Line ID
+                value: Purchase Order Line Sales Order Line ID
+        - columnName: Purchase Order line Sales Order ID
+          type: NONE
+          expression:
+            expressionStatement: ${Purchase Order line Sales Order ID}
+            alias:
+              - name: Purchase Order line Sales Order ID
+                value: Purchase Order line Sales Order ID
+    transactionalDate:
+      columnName: Purchase Order Date
+      entityRelationshipPath: Purchase Order Date
+      entityRelationshipPathDisplayName: Purchase Order Date
+    subtype: MODEL_BASED
+    materializedSource: false

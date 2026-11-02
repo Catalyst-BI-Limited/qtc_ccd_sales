@@ -1,0 +1,17 @@
+relationships:
+  - sourceEntity:
+      datasetId: purchasing_transformation-dxdb
+      name: Purchasing Transformation
+      taskId: purchasing_transform-gmrl
+    targetEntity:
+      datasetId: res_partner-xtdd
+      name: SUPPLIER
+      taskId: purchasing_transform-gmrl
+    columnRelationships:
+      - sourceColumn: Purchase Order Supplier ID
+        targetColumn: Supplier ID
+        sourceColumnId: purchase order supplier id
+        targetColumnId: id
+    name: PurchasingTransformation_SUPPLIER
+    description: ''
+    id: purchasingtransformation_supplier-qzzp

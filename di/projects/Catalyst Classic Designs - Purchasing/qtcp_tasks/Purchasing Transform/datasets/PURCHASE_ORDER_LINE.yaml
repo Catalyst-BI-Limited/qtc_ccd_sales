@@ -1,0 +1,17 @@
+properties:
+  id: purchasing_transformation-dxdb
+  name: PURCHASE_ORDER_LINE
+  inputDatasets:
+    - datasetId: res_currency-kqgs
+      projectId: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+      taskId: land_ccd_storage-kqgk
+    - datasetId: purchase_order_line-epx1
+      projectId: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+      taskId: land_ccd_storage-kqgk
+    - datasetId: purchase_order-epx0
+      projectId: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+      taskId: land_ccd_storage-kqgk
+  dataflowDatasetSettings:
+    dataflowId: '{{id(dataflow, PURCHASE ORDER LINE)}}'
+    targetId: '0575cec0-a9d2-4ea7-a29d-747d85c72407'
+    dataflowTargetState: VALID

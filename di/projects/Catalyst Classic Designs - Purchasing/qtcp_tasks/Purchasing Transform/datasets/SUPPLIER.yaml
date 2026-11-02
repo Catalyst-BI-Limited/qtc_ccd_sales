@@ -1,0 +1,107 @@
+properties:
+  id: res_partner-xtdd
+  name: SUPPLIER
+  inputDatasets:
+    - datasetId: res_partner-kqgt
+      name: res_partner
+      projectId: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+      taskId: land_ccd_storage-kqgk
+  tableDef:
+    columns:
+      - datatype:
+          type: INT4
+          originalTypeFull: INTEGER
+        name: Supplier ID
+        primaryKeyOrdinal: 1
+        expression:
+          expressionStatement: ${id}
+          alias:
+            - name: id
+              value: id
+        id: id
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Supplier Name
+        nullable: true
+        expression:
+          expressionStatement: ${name}
+          alias:
+            - name: name
+              value: name
+        id: name
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Supplier Latitude
+        nullable: true
+        expression:
+          expressionStatement: ${partner_latitude}
+          alias:
+            - name: partner_latitude
+              value: partner_latitude
+        id: partner_latitude
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Supplier Longitude
+        nullable: true
+        expression:
+          expressionStatement: ${partner_longitude}
+          alias:
+            - name: partner_longitude
+              value: partner_longitude
+        id: partner_longitude
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Supplier Address 1
+        nullable: true
+        expression:
+          expressionStatement: ${street}
+          alias:
+            - name: street
+              value: street
+        id: street
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Supplier Address 2
+        nullable: true
+        expression:
+          expressionStatement: ${street2}
+          alias:
+            - name: street2
+              value: street2
+        id: street2
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Supplier Postcode
+        nullable: true
+        expression:
+          expressionStatement: ${zip}
+          alias:
+            - name: zip
+              value: zip
+        id: zip
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Supplier City
+        nullable: true
+        expression:
+          expressionStatement: ${city}
+          alias:
+            - name: city
+              value: city
+        id: city

@@ -1,0 +1,153 @@
+properties:
+  id: supplier-dxpy
+  name: SUPPLIER
+  inputDatasets:
+    - datasetId: supplier-xtpn
+      name: SUPPLIER
+      taskId: create_table_association_for_shared_dimensions-s3ol
+  datasetAttributes:
+    materialized: ON
+    hasStandardViewsWithHeaders: ON
+  tableDef:
+    columns:
+      - datatype:
+          type: INT4
+          originalTypeFull: INTEGER
+        name: Supplier ID
+        nullable: true
+        primaryKeyOrdinal: 1
+        id: id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Supplier Name
+        nullable: true
+        id: name
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Supplier Latitude
+        nullable: true
+        id: partner_latitude
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Supplier Longitude
+        nullable: true
+        id: partner_longitude
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Supplier Address 1
+        nullable: true
+        id: street
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Supplier Address 2
+        nullable: true
+        id: street2
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Supplier Postcode
+        nullable: true
+        id: zip
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Supplier City
+        nullable: true
+        id: city
+        properties:
+          documentMetadata: false
+  dimensionDatasetSettings:
+    type: TYPE1
+    rootDataEntityId:
+      datasetId: supplier-xtpn
+      name: SUPPLIER
+      taskId: create_table_association_for_shared_dimensions-s3ol
+    mapping:
+      columns:
+        - columnName: Supplier ID
+          type: ROOT_PK
+          expression:
+            expressionStatement: ${Supplier ID}
+            alias:
+              - name: Supplier ID
+                value: Supplier ID
+        - columnName: Supplier Name
+          type: NONE
+          expression:
+            expressionStatement: ${Supplier Name}
+            alias:
+              - name: Supplier Name
+                value: Supplier Name
+        - columnName: Supplier Latitude
+          type: NONE
+          expression:
+            expressionStatement: ${Supplier Latitude}
+            alias:
+              - name: Supplier Latitude
+                value: Supplier Latitude
+        - columnName: Supplier Longitude
+          type: NONE
+          expression:
+            expressionStatement: ${Supplier Longitude}
+            alias:
+              - name: Supplier Longitude
+                value: Supplier Longitude
+        - columnName: Supplier Address 1
+          type: NONE
+          expression:
+            expressionStatement: ${Supplier Address 1}
+            alias:
+              - name: Supplier Address 1
+                value: Supplier Address 1
+        - columnName: Supplier Address 2
+          type: NONE
+          expression:
+            expressionStatement: ${Supplier Address 2}
+            alias:
+              - name: Supplier Address 2
+                value: Supplier Address 2
+        - columnName: Supplier Postcode
+          type: NONE
+          expression:
+            expressionStatement: ${Supplier Postcode}
+            alias:
+              - name: Supplier Postcode
+                value: Supplier Postcode
+        - columnName: Supplier City
+          type: NONE
+          expression:
+            expressionStatement: ${Supplier City}
+            alias:
+              - name: Supplier City
+                value: Supplier City
+    fullyType2Sources: false
+    subtype: MODEL_BASED
+    materializedSource: false

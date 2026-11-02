@@ -1,0 +1,17 @@
+explicitlySelected:
+  - sourceProject: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+    sourceTask: land_ccd_storage-kqgk
+    name: purchase_order
+    sourceTableId: purchase_order-epx0
+  - sourceProject: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+    sourceTask: land_ccd_storage-kqgk
+    name: purchase_order_line
+    sourceTableId: purchase_order_line-epx1
+  - sourceProject: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+    sourceTask: land_ccd_storage-kqgk
+    name: res_currency
+    sourceTableId: res_currency-kqgs
+  - sourceProject: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+    sourceTask: land_ccd_storage-kqgk
+    name: res_partner
+    sourceTableId: res_partner-kqgt

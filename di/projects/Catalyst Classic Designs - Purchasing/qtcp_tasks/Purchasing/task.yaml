@@ -1,0 +1,12 @@
+properties:
+  name: Purchasing
+  id: purchasing-qz_l
+  type: DATAMART
+settings:
+  artifactsLocation:
+    internalSchema: '{{task.purchasing-qz_l.internalSchema}}'
+    taskSchema: '{{task.purchasing-qz_l.taskSchema}}'
+    databaseName: '{{task.purchasing-qz_l.databaseName}}'
+  taskRuntime:
+    warehouseSelection:
+      warehouseName: '{{task.purchasing-qz_l.warehouseName}}'

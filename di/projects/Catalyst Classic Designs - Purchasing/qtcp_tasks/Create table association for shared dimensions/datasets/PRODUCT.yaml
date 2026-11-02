@@ -1,0 +1,189 @@
+properties:
+  id: product-xtpp
+  name: PRODUCT
+  inputDatasets:
+    - datasetId: product-lz1x
+      name: PRODUCT
+      projectId: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+      taskId: sales_transform-lz1g
+  tableDef:
+    columns:
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Product ID
+        primaryKeyOrdinal: 1
+        expression:
+          expressionStatement: ${Product ID}
+          alias:
+            - name: Product ID
+              value: Product ID
+        id: product id
+      - datatype:
+          type: DATETIME
+          precision: 6
+          originalTypeFull: TIMESTAMP_NTZ(6)
+        name: Product Create Date
+        nullable: true
+        expression:
+          expressionStatement: ${Product Create Date}
+          alias:
+            - name: Product Create Date
+              value: Product Create Date
+        id: product create date
+      - datatype:
+          type: NUMERIC
+          precision: 38
+          originalTypeFull: NUMBER(38,0)
+        name: Product Colour
+        nullable: true
+        expression:
+          expressionStatement: ${Product Colour}
+          alias:
+            - name: Product Colour
+              value: Product Colour
+        id: product colour
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Product Type
+        nullable: true
+        expression:
+          expressionStatement: ${Product Type}
+          alias:
+            - name: Product Type
+              value: Product Type
+        id: product type
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Product Code
+        nullable: true
+        expression:
+          expressionStatement: ${Product Code}
+          alias:
+            - name: Product Code
+              value: Product Code
+        id: product code
+      - datatype:
+          type: NCLOB
+          originalTypeFull: NVARCHAR(8388608)
+        name: Product Name
+        nullable: true
+        expression:
+          expressionStatement: ${Product Name}
+          alias:
+            - name: Product Name
+              value: Product Name
+        id: product name
+      - datatype:
+          type: NCLOB
+          originalTypeFull: NVARCHAR(8388608)
+        name: Product Description
+        nullable: true
+        expression:
+          expressionStatement: ${Product Description}
+          alias:
+            - name: Product Description
+              value: Product Description
+        id: product description
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Product List Price
+        nullable: true
+        expression:
+          expressionStatement: ${Product List Price}
+          alias:
+            - name: Product List Price
+              value: Product List Price
+        id: product list price
+      - datatype:
+          type: STRING
+          length: 5
+          originalTypeFull: VARCHAR(5)
+        name: Product Is Saleable
+        nullable: true
+        expression:
+          expressionStatement: ${Product Is Saleable}
+          alias:
+            - name: Product Is Saleable
+              value: Product Is Saleable
+        id: product is saleable
+      - datatype:
+          type: STRING
+          length: 5
+          originalTypeFull: VARCHAR(5)
+        name: Product Is Purchaseable
+        nullable: true
+        expression:
+          expressionStatement: ${Product Is Purchaseable}
+          alias:
+            - name: Product Is Purchaseable
+              value: Product Is Purchaseable
+        id: product is purchaseable
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Product Purchase Method
+        nullable: true
+        expression:
+          expressionStatement: ${Product Purchase Method}
+          alias:
+            - name: Product Purchase Method
+              value: Product Purchase Method
+        id: product purchase method
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Product Hierarchy 4
+        nullable: true
+        expression:
+          expressionStatement: ${Product Hierarchy 4}
+          alias:
+            - name: Product Hierarchy 4
+              value: Product Hierarchy 4
+        id: product hierarchy 4
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Product Hierarchy 3
+        nullable: true
+        expression:
+          expressionStatement: ${Product Hierarchy 3}
+          alias:
+            - name: Product Hierarchy 3
+              value: Product Hierarchy 3
+        id: product hierarchy 3
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Product Hierarchy 2
+        nullable: true
+        expression:
+          expressionStatement: ${Product Hierarchy 2}
+          alias:
+            - name: Product Hierarchy 2
+              value: Product Hierarchy 2
+        id: product hierarchy 2
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Product Hierarchy 1
+        nullable: true
+        expression:
+          expressionStatement: ${Product Hierarchy 1}
+          alias:
+            - name: Product Hierarchy 1
+              value: Product Hierarchy 1
+        id: product hierarchy 1

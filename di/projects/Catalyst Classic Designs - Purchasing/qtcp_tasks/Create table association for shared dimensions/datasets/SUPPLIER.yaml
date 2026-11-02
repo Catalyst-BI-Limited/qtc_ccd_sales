@@ -1,0 +1,106 @@
+properties:
+  id: supplier-xtpn
+  name: SUPPLIER
+  inputDatasets:
+    - datasetId: res_partner-xtdd
+      name: SUPPLIER
+      taskId: purchasing_transform-gmrl
+  tableDef:
+    columns:
+      - datatype:
+          type: INT4
+          originalTypeFull: INTEGER
+        name: Supplier ID
+        primaryKeyOrdinal: 1
+        expression:
+          expressionStatement: ${Supplier ID}
+          alias:
+            - name: Supplier ID
+              value: Supplier ID
+        id: id
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Supplier Name
+        nullable: true
+        expression:
+          expressionStatement: ${Supplier Name}
+          alias:
+            - name: Supplier Name
+              value: Supplier Name
+        id: name
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Supplier Latitude
+        nullable: true
+        expression:
+          expressionStatement: ${Supplier Latitude}
+          alias:
+            - name: Supplier Latitude
+              value: Supplier Latitude
+        id: partner_latitude
+      - datatype:
+          type: NUMERIC
+          precision: 28
+          scale: 6
+          originalTypeFull: NUMBER(28,6)
+        name: Supplier Longitude
+        nullable: true
+        expression:
+          expressionStatement: ${Supplier Longitude}
+          alias:
+            - name: Supplier Longitude
+              value: Supplier Longitude
+        id: partner_longitude
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Supplier Address 1
+        nullable: true
+        expression:
+          expressionStatement: ${Supplier Address 1}
+          alias:
+            - name: Supplier Address 1
+              value: Supplier Address 1
+        id: street
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Supplier Address 2
+        nullable: true
+        expression:
+          expressionStatement: ${Supplier Address 2}
+          alias:
+            - name: Supplier Address 2
+              value: Supplier Address 2
+        id: street2
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Supplier Postcode
+        nullable: true
+        expression:
+          expressionStatement: ${Supplier Postcode}
+          alias:
+            - name: Supplier Postcode
+              value: Supplier Postcode
+        id: zip
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Supplier City
+        nullable: true
+        expression:
+          expressionStatement: ${Supplier City}
+          alias:
+            - name: Supplier City
+              value: Supplier City
+        id: city

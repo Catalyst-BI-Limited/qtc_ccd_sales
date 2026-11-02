@@ -1,0 +1,14 @@
+properties:
+  name: Purchasing Transform
+  id: purchasing_transform-gmrl
+  type: TRANSFORM
+settings:
+  artifactsSettings:
+    materialized: true
+  artifactsLocation:
+    internalSchema: '{{task.purchasing_transform-gmrl.internalSchema}}'
+    taskSchema: '{{task.purchasing_transform-gmrl.taskSchema}}'
+    databaseName: '{{task.purchasing_transform-gmrl.databaseName}}'
+  taskRuntime:
+    warehouseSelection:
+      warehouseName: '{{task.purchasing_transform-gmrl.warehouseName}}'

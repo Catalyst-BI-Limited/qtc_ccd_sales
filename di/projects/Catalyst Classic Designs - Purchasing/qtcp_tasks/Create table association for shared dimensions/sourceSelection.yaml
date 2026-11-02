@@ -1,0 +1,18 @@
+includePatterns:
+  - sourceTask: purchasing_transform-gmrl
+    tablePattern: '%'
+explicitlySelected:
+  - sourceProject: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+    sourceTask: sales_transform-lz1g
+    name: PRODUCT
+    sourceTableId: product-lz1x
+  - sourceProject: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+    sourceTask: sales_transform-lz1g
+    name: WAREHOUSE
+    sourceTableId: stock_warehouse-difs
+  - sourceTask: purchasing_transform-gmrl
+    name: PURCHASE_ORDER_LINE
+    sourceTableId: purchasing_transformation-dxdb
+  - sourceTask: purchasing_transform-gmrl
+    name: SUPPLIER
+    sourceTableId: res_partner-xtdd

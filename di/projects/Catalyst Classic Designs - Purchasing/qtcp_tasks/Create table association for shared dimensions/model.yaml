@@ -1,0 +1,49 @@
+relationships:
+  - sourceEntity:
+      datasetId: purchase_order_line-xtpq
+      name: PURCHASE_ORDER_LINE
+      taskId: create_table_association_for_shared_dimensions-s3ol
+    targetEntity:
+      datasetId: product-xtpp
+      name: PRODUCT
+      taskId: create_table_association_for_shared_dimensions-s3ol
+    columnRelationships:
+      - sourceColumn: Purchase Order Line Product ID
+        targetColumn: Product ID
+        sourceColumnId: purchase order line product id
+        targetColumnId: product id
+    name: PURCHASEORDERLINE_PRODUCT
+    description: ''
+    id: purchaseorderline_product-qz_k
+  - sourceEntity:
+      datasetId: purchase_order_line-xtpq
+      name: PURCHASE_ORDER_LINE
+      taskId: create_table_association_for_shared_dimensions-s3ol
+    targetEntity:
+      datasetId: supplier-xtpn
+      name: SUPPLIER
+      taskId: create_table_association_for_shared_dimensions-s3ol
+    columnRelationships:
+      - sourceColumn: Purchase Order Supplier ID
+        targetColumn: Supplier ID
+        sourceColumnId: purchase order supplier id
+        targetColumnId: id
+    name: PURCHASEORDERLINE_SUPPLIER
+    description: ''
+    id: purchaseorderline_supplier-jejc
+  - sourceEntity:
+      datasetId: purchase_order_line-xtpq
+      name: PURCHASE_ORDER_LINE
+      taskId: create_table_association_for_shared_dimensions-s3ol
+    targetEntity:
+      datasetId: warehouse-xtpl
+      name: WAREHOUSE
+      taskId: create_table_association_for_shared_dimensions-s3ol
+    columnRelationships:
+      - sourceColumn: Purchase Order Warehouse ID
+        targetColumn: Warehouse ID
+        sourceColumnId: purchase order warehouse id
+        targetColumnId: id
+    name: PURCHASEORDERLINE_WAREHOUSE
+    description: ''
+    id: purchaseorderline_warehouse-gmed

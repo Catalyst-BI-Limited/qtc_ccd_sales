@@ -1,0 +1,12 @@
+properties:
+  name: Create table association for shared dimensions
+  id: create_table_association_for_shared_dimensions-s3ol
+  type: TRANSFORM
+settings:
+  artifactsLocation:
+    internalSchema: '{{task.create_table_association_for_shared_dimensions-s3ol.internalSchema}}'
+    taskSchema: '{{task.create_table_association_for_shared_dimensions-s3ol.taskSchema}}'
+    databaseName: '{{task.create_table_association_for_shared_dimensions-s3ol.databaseName}}'
+  taskRuntime:
+    warehouseSelection:
+      warehouseName: '{{task.create_table_association_for_shared_dimensions-s3ol.warehouseName}}'

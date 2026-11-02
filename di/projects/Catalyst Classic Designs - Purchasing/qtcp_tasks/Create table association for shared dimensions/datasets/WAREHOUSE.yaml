@@ -1,0 +1,69 @@
+properties:
+  id: warehouse-xtpl
+  name: WAREHOUSE
+  inputDatasets:
+    - datasetId: stock_warehouse-difs
+      name: WAREHOUSE
+      projectId: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+      taskId: sales_transform-lz1g
+  tableDef:
+    columns:
+      - datatype:
+          type: INT4
+          originalTypeFull: INTEGER
+        name: Warehouse ID
+        primaryKeyOrdinal: 1
+        expression:
+          expressionStatement: ${Warehouse ID}
+          alias:
+            - name: Warehouse ID
+              value: Warehouse ID
+        id: id
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Warehouse Name
+        expression:
+          expressionStatement: ${Warehouse Name}
+          alias:
+            - name: Warehouse Name
+              value: Warehouse Name
+        id: name
+      - datatype:
+          type: WSTRING
+          length: 5
+          originalTypeFull: NVARCHAR(5)
+        name: Warehouse Code
+        expression:
+          expressionStatement: ${Warehouse Code}
+          alias:
+            - name: Warehouse Code
+              value: Warehouse Code
+        id: code
+      - datatype:
+          type: NUMERIC
+          precision: 4
+          scale: 2
+          originalTypeFull: NUMBER(4,2)
+        name: Warehouse Latitude
+        nullable: true
+        expression:
+          expressionStatement: ${Warehouse Latitude}
+          alias:
+            - name: Warehouse Latitude
+              value: Warehouse Latitude
+        id: Warehouse Latitude-066d
+      - datatype:
+          type: NUMERIC
+          precision: 4
+          scale: 2
+          originalTypeFull: NUMBER(4,2)
+        name: Warehouse Longitude
+        nullable: true
+        expression:
+          expressionStatement: ${Warehouse Longitude}
+          alias:
+            - name: Warehouse Longitude
+              value: Warehouse Longitude
+        id: Warehouse Longitude-18ca

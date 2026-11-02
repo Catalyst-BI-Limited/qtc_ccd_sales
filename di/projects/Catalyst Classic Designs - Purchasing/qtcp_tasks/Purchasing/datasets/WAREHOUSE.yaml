@@ -1,0 +1,105 @@
+properties:
+  id: warehouse-xtpt
+  name: WAREHOUSE
+  inputDatasets:
+    - datasetId: warehouse-xtpl
+      name: WAREHOUSE
+      taskId: create_table_association_for_shared_dimensions-s3ol
+  datasetAttributes:
+    materialized: ON
+    hasStandardViewsWithHeaders: ON
+  tableDef:
+    columns:
+      - datatype:
+          type: INT4
+          originalTypeFull: INTEGER
+        name: Warehouse ID
+        nullable: true
+        primaryKeyOrdinal: 1
+        id: id
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Warehouse Name
+        nullable: true
+        id: name
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: WSTRING
+          length: 5
+          originalTypeFull: NVARCHAR(5)
+        name: Warehouse Code
+        nullable: true
+        id: code
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 4
+          scale: 2
+          originalTypeFull: NUMBER(4,2)
+        name: Warehouse Latitude
+        nullable: true
+        id: Warehouse Latitude-066d
+        properties:
+          documentMetadata: false
+      - datatype:
+          type: NUMERIC
+          precision: 4
+          scale: 2
+          originalTypeFull: NUMBER(4,2)
+        name: Warehouse Longitude
+        nullable: true
+        id: Warehouse Longitude-18ca
+        properties:
+          documentMetadata: false
+  dimensionDatasetSettings:
+    type: TYPE1
+    rootDataEntityId:
+      datasetId: warehouse-xtpl
+      name: WAREHOUSE
+      taskId: create_table_association_for_shared_dimensions-s3ol
+    mapping:
+      columns:
+        - columnName: Warehouse ID
+          type: ROOT_PK
+          expression:
+            expressionStatement: ${Warehouse ID}
+            alias:
+              - name: Warehouse ID
+                value: Warehouse ID
+        - columnName: Warehouse Name
+          type: NONE
+          expression:
+            expressionStatement: ${Warehouse Name}
+            alias:
+              - name: Warehouse Name
+                value: Warehouse Name
+        - columnName: Warehouse Code
+          type: NONE
+          expression:
+            expressionStatement: ${Warehouse Code}
+            alias:
+              - name: Warehouse Code
+                value: Warehouse Code
+        - columnName: Warehouse Latitude
+          type: NONE
+          expression:
+            expressionStatement: ${Warehouse Latitude}
+            alias:
+              - name: Warehouse Latitude
+                value: Warehouse Latitude
+        - columnName: Warehouse Longitude
+          type: NONE
+          expression:
+            expressionStatement: ${Warehouse Longitude}
+            alias:
+              - name: Warehouse Longitude
+                value: Warehouse Longitude
+    fullyType2Sources: false
+    subtype: MODEL_BASED
+    materializedSource: false
