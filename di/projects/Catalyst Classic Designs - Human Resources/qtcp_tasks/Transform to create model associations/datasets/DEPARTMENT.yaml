@@ -1,0 +1,44 @@
+properties:
+  id: hr_department-t30a
+  name: DEPARTMENT
+  inputDatasets:
+    - datasetId: hr_department-jj1a
+      name: hr_department
+      projectId: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+      taskId: land_ccd_storage-kqgk
+  tableDef:
+    columns:
+      - datatype:
+          type: INT4
+          originalTypeFull: INTEGER
+        name: Department ID
+        primaryKeyOrdinal: 1
+        expression:
+          expressionStatement: ${id}
+          alias:
+            - name: id
+              value: id
+        id: id
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Department Name
+        expression:
+          expressionStatement: ${name}
+          alias:
+            - name: name
+              value: name
+        id: name
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Department Long Name
+        nullable: true
+        expression:
+          expressionStatement: ${complete_name}
+          alias:
+            - name: complete_name
+              value: complete_name
+        id: complete_name

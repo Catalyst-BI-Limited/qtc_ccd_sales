@@ -1,0 +1,270 @@
+properties:
+  id: hr_employee-oiks
+  name: EMPLOYEE
+  inputDatasets:
+    - datasetId: hr_employee-jj1c
+      name: hr_employee
+      projectId: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+      taskId: land_ccd_storage-kqgk
+  tableDef:
+    columns:
+      - datatype:
+          type: INT4
+          originalTypeFull: INTEGER
+        name: Employee ID
+        primaryKeyOrdinal: 1
+        expression:
+          expressionStatement: ${id}
+          alias:
+            - name: id
+              value: id
+        id: id
+      - datatype:
+          type: INT4
+          originalTypeFull: INTEGER
+        name: Employee Resource ID
+        expression:
+          expressionStatement: ${resource_id}
+          alias:
+            - name: resource_id
+              value: resource_id
+        id: resource_id
+      - datatype:
+          type: INT4
+          originalTypeFull: INTEGER
+        name: Employee Department ID
+        nullable: true
+        expression:
+          expressionStatement: ${department_id}
+          alias:
+            - name: department_id
+              value: department_id
+        id: department_id
+      - datatype:
+          type: INT4
+          originalTypeFull: INTEGER
+        name: Employee Job ID
+        nullable: true
+        expression:
+          expressionStatement: ${job_id}
+          alias:
+            - name: job_id
+              value: job_id
+        id: job_id
+      - datatype:
+          type: INT4
+          originalTypeFull: INTEGER
+        name: Employee Work Location ID
+        nullable: true
+        expression:
+          expressionStatement: ${work_location_id}
+          alias:
+            - name: work_location_id
+              value: work_location_id
+        id: work_location_id
+      - datatype:
+          type: INT4
+          originalTypeFull: INTEGER
+        name: Employee User ID
+        nullable: true
+        expression:
+          expressionStatement: ${user_id}
+          alias:
+            - name: user_id
+              value: user_id
+        id: user_id
+      - datatype:
+          type: INT4
+          originalTypeFull: INTEGER
+        name: Employee Manager ID
+        nullable: true
+        expression:
+          expressionStatement: ${parent_id}
+          alias:
+            - name: parent_id
+              value: parent_id
+        id: parent_id
+      - datatype:
+          type: INT4
+          originalTypeFull: INTEGER
+        name: Employee Coach ID
+        nullable: true
+        expression:
+          expressionStatement: ${coach_id}
+          alias:
+            - name: coach_id
+              value: coach_id
+        id: coach_id
+      - datatype:
+          type: INT4
+          originalTypeFull: INTEGER
+        name: Employee Nationality
+        nullable: true
+        expression:
+          expressionStatement: ${country_of_birth}
+          alias:
+            - name: country_of_birth
+              value: country_of_birth
+        id: country_of_birth
+      - datatype:
+          type: INT4
+          originalTypeFull: INTEGER
+        name: Employee  Departure Reason ID
+        nullable: true
+        expression:
+          expressionStatement: ${departure_reason_id}
+          alias:
+            - name: departure_reason_id
+              value: departure_reason_id
+        id: departure_reason_id
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Employee Name
+        nullable: true
+        expression:
+          expressionStatement: ${name}
+          alias:
+            - name: name
+              value: name
+        id: name
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Employee Job Title
+        nullable: true
+        expression:
+          expressionStatement: ${job_title}
+          alias:
+            - name: job_title
+              value: job_title
+        id: job_title
+      - datatype:
+          type: WSTRING
+          length: 8000
+          originalTypeFull: NVARCHAR(8000)
+        name: Employee Place Of Birth
+        nullable: true
+        expression:
+          expressionStatement: ${place_of_birth}
+          alias:
+            - name: place_of_birth
+              value: place_of_birth
+        id: place_of_birth
+      - datatype:
+          type: DATE
+          originalTypeFull: DATE
+        name: Employee Departure Date
+        nullable: true
+        expression:
+          expressionStatement: ${departure_date}
+          alias:
+            - name: departure_date
+              value: departure_date
+        id: departure_date
+      - datatype:
+          type: NCLOB
+          length: 8190
+          originalTypeFull: NVARCHAR(8388608)
+        name: Employee Additional Notes
+        nullable: true
+        expression:
+          expressionStatement: ${additional_note}
+          alias:
+            - name: additional_note
+              value: additional_note
+        id: additional_note
+      - datatype:
+          type: NCLOB
+          length: 8190
+          originalTypeFull: NVARCHAR(8388608)
+        name: Employee Notes
+        nullable: true
+        expression:
+          expressionStatement: ${notes}
+          alias:
+            - name: notes
+              value: notes
+        id: notes
+      - datatype:
+          type: NCLOB
+          length: 8190
+          originalTypeFull: NVARCHAR(8388608)
+        name: Employee Departure Description
+        nullable: true
+        expression:
+          expressionStatement: ${departure_description}
+          alias:
+            - name: departure_description
+              value: departure_description
+        id: departure_description
+      - datatype:
+          type: STRING
+          length: 5
+          originalTypeFull: VARCHAR(5)
+        name: Employee Active
+        nullable: true
+        expression:
+          expressionStatement: ${active}
+          alias:
+            - name: active
+              value: active
+        id: active
+      - datatype:
+          type: INT4
+          originalTypeFull: INTEGER
+        name: Employee Last Attendance ID
+        nullable: true
+        expression:
+          expressionStatement: ${last_attendance_id}
+          alias:
+            - name: last_attendance_id
+              value: last_attendance_id
+        id: last_attendance_id
+      - datatype:
+          type: INT4
+          originalTypeFull: INTEGER
+        name: Employee Leave Manager ID
+        nullable: true
+        expression:
+          expressionStatement: ${leave_manager_id}
+          alias:
+            - name: leave_manager_id
+              value: leave_manager_id
+        id: leave_manager_id
+      - datatype:
+          type: INT4
+          originalTypeFull: INTEGER
+        name: Employee Contract ID
+        nullable: true
+        expression:
+          expressionStatement: ${contract_id}
+          alias:
+            - name: contract_id
+              value: contract_id
+        id: contract_id
+      - datatype:
+          type: DATE
+          originalTypeFull: DATE
+        name: Employee First Contract Date
+        nullable: true
+        expression:
+          expressionStatement: ${first_contract_date}
+          alias:
+            - name: first_contract_date
+              value: first_contract_date
+        id: first_contract_date
+      - datatype:
+          type: STRING
+          length: 5
+          originalTypeFull: VARCHAR(5)
+        name: Employee Contract Warning
+        nullable: true
+        expression:
+          expressionStatement: ${contract_warning}
+          alias:
+            - name: contract_warning
+              value: contract_warning
+        id: contract_warning

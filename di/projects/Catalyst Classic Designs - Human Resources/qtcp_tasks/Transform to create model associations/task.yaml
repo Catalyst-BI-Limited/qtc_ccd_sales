@@ -1,0 +1,12 @@
+properties:
+  name: Transform to create model associations
+  id: transform_to_create_model_associations-ol0z
+  type: TRANSFORM
+settings:
+  artifactsLocation:
+    internalSchema: '{{task.transform_to_create_model_associations-ol0z.internalSchema}}'
+    taskSchema: '{{task.transform_to_create_model_associations-ol0z.taskSchema}}'
+    databaseName: '{{task.transform_to_create_model_associations-ol0z.databaseName}}'
+  taskRuntime:
+    warehouseSelection:
+      warehouseName: '{{task.transform_to_create_model_associations-ol0z.warehouseName}}'

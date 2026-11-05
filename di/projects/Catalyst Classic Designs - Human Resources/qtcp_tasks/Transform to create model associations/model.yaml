@@ -1,0 +1,81 @@
+relationships:
+  - sourceEntity:
+      datasetId: hr_contract-cc7i
+      name: CONTRACT
+      taskId: transform_to_create_model_associations-ol0z
+    targetEntity:
+      datasetId: hr_employee-oiks
+      name: EMPLOYEE
+      taskId: transform_to_create_model_associations-ol0z
+    columnRelationships:
+      - sourceColumn: Contract Employee ID
+        targetColumn: Employee ID
+        sourceColumnId: employee_id
+        targetColumnId: id
+    name: CONTRACT_EMPLOYEE
+    description: ''
+    id: contract_employee-jj4c
+  - sourceEntity:
+      datasetId: employee_leave-jj2l
+      name: EMPLOYEE LEAVE
+      taskId: transform_to_create_model_associations-ol0z
+    targetEntity:
+      datasetId: hr_employee-oiks
+      name: EMPLOYEE
+      taskId: transform_to_create_model_associations-ol0z
+    columnRelationships:
+      - sourceColumn: Employee Leave Employee ID
+        targetColumn: Employee ID
+        sourceColumnId: employee leave employee id
+        targetColumnId: id
+    name: EMPLOYEELEAVE_EMPLOYEE
+    description: ''
+    id: employeeleave_employee-jj4a
+  - sourceEntity:
+      datasetId: hr_employee-oiks
+      name: EMPLOYEE
+      taskId: transform_to_create_model_associations-ol0z
+    targetEntity:
+      datasetId: hr_department-t30a
+      name: DEPARTMENT
+      taskId: transform_to_create_model_associations-ol0z
+    columnRelationships:
+      - sourceColumn: Employee Department ID
+        targetColumn: Department ID
+        sourceColumnId: department_id
+        targetColumnId: id
+    name: EMPLOYEE_DEPARTMENT
+    description: ''
+    id: employee_department-or1y
+  - sourceEntity:
+      datasetId: hr_employee-oiks
+      name: EMPLOYEE
+      taskId: transform_to_create_model_associations-ol0z
+    targetEntity:
+      datasetId: hr_work_location-cc7g
+      name: WORK LOCATION
+      taskId: transform_to_create_model_associations-ol0z
+    columnRelationships:
+      - sourceColumn: Employee Work Location ID
+        targetColumn: Work Location ID
+        sourceColumnId: work_location_id
+        targetColumnId: id
+    name: EMPLOYEE_WORKLOCATION
+    description: ''
+    id: employee_worklocation-cc9p
+  - sourceEntity:
+      datasetId: hr_leave_allocation-jj39
+      name: LEAVE ALLOCATION
+      taskId: transform_to_create_model_associations-ol0z
+    targetEntity:
+      datasetId: hr_employee-oiks
+      name: EMPLOYEE
+      taskId: transform_to_create_model_associations-ol0z
+    columnRelationships:
+      - sourceColumn: Leave Allocation Employee ID
+        targetColumn: Employee ID
+        sourceColumnId: employee_id
+        targetColumnId: id
+    name: LEAVEALLOCATION_EMPLOYEE
+    description: ''
+    id: leaveallocation_employee-cc9o

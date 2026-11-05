@@ -1,0 +1,14 @@
+properties:
+  id: employee_leave-jj2l
+  name: EMPLOYEE LEAVE
+  inputDatasets:
+    - datasetId: hr_leave-jj1f
+      projectId: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+      taskId: land_ccd_storage-kqgk
+    - datasetId: hr_employee-jj1c
+      projectId: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+      taskId: land_ccd_storage-kqgk
+  dataflowDatasetSettings:
+    dataflowId: '{{id(dataflow, EMPLOYEE LEAVE)}}'
+    targetId: '0ed7c50b-ed27-4a19-a9f9-e27de873a84f'
+    dataflowTargetState: VALID

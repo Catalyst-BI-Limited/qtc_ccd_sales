@@ -1,0 +1,949 @@
+name: EMPLOYEE LEAVE
+description: ''
+context:
+  projectId: '{{ref(project.current.projectId)}}'
+  dataAppId: transform_to_create_model_associations-ol0z
+graph: |-
+  {
+    "nodes": [
+      {
+        "type": "source",
+        "id": "690d4e58-6f33-4d74-a81a-15907902593f",
+        "label": "hr_leave",
+        "graphical": {
+          "position": {
+            "x": 0,
+            "y": 40
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [],
+          "outgoing": [
+            {
+              "id": "dc06a7ad-869d-4a07-b175-035f3c5cd40f",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "qcdiDataEntitySource",
+          "label": "Input dataset",
+          "properties": {
+            "dataEntity": {
+              "projectId": "{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}",
+              "dataAppId": "land_ccd_storage-kqgk",
+              "entityId": "hr_leave-jj1f"
+            },
+            "configuration": {
+              "name": "hr_leave"
+            }
+          }
+        }
+      },
+      {
+        "type": "target",
+        "id": "0ed7c50b-ed27-4a19-a9f9-e27de873a84f",
+        "label": "EMPLOYEE LEAVE",
+        "graphical": {
+          "position": {
+            "x": 1840,
+            "y": 40
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "f8015046-b027-4a8b-bc75-373339fb49a9",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": []
+        },
+        "component": {
+          "type": "qcdiDataEntityTarget",
+          "label": "Output dataset",
+          "properties": {
+            "configuration": {
+              "name": "EMPLOYEE LEAVE",
+              "settings": {
+                "materialized": "INHERIT",
+                "createConsumptionViews": "INHERIT",
+                "hasHistory": "INHERIT",
+                "incremental": false
+              },
+              "overridenColumnsConfiguration": [
+                {
+                  "name": "Employee Leave ID",
+                  "nullable": false,
+                  "primaryKeyOrdinal": 1
+                },
+                {
+                  "name": "Employee Leave Manager ID",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Employee Leave Status ID",
+                  "nullable": false,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Employee Leave Allocation ID",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Employee Leave Employee ID",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "Employee Leave Department ID",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "first_approver_id",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "second_approver_id",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "private_name",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "state",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "duration_display",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "holiday_type",
+                  "nullable": false,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "report_note",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "notes",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "active",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "date_from",
+                  "nullable": false,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "date_to",
+                  "nullable": false,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "number_of_days",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "id",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                },
+                {
+                  "name": "name",
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "59be236a-5e40-4159-9c06-7b62b5b96dff",
+        "label": "Select columns 1",
+        "graphical": {
+          "position": {
+            "x": 280,
+            "y": 40
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "20d7271e-01ca-470a-9fd2-d44f8f7f6032",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "e2a04aac-9e0e-4698-b5aa-73c6468c39a7",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "id",
+                  "field": "id",
+                  "output": "Employee Leave ID",
+                  "selected": true
+                },
+                {
+                  "path": "manager_id",
+                  "field": "manager_id",
+                  "output": "Employee Leave Manager ID",
+                  "selected": true
+                },
+                {
+                  "path": "holiday_status_id",
+                  "field": "holiday_status_id",
+                  "output": "Employee Leave Status ID",
+                  "selected": true
+                },
+                {
+                  "path": "holiday_allocation_id",
+                  "field": "holiday_allocation_id",
+                  "output": "Employee Leave Allocation ID",
+                  "selected": true
+                },
+                {
+                  "path": "employee_id",
+                  "field": "employee_id",
+                  "output": "Employee Leave Employee ID",
+                  "selected": true
+                },
+                {
+                  "path": "department_id",
+                  "field": "department_id",
+                  "output": "Employee Leave Department ID",
+                  "selected": true
+                },
+                {
+                  "path": "first_approver_id",
+                  "field": "first_approver_id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "second_approver_id",
+                  "field": "second_approver_id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "private_name",
+                  "field": "private_name",
+                  "output": "Employee Leave Private Name",
+                  "selected": true
+                },
+                {
+                  "path": "state",
+                  "field": "state",
+                  "output": "Employee Leave State",
+                  "selected": true
+                },
+                {
+                  "path": "duration_display",
+                  "field": "duration_display",
+                  "output": "Employee Leave Duration Display",
+                  "selected": true
+                },
+                {
+                  "path": "holiday_type",
+                  "field": "holiday_type",
+                  "output": "Employee Leave Holiday Type",
+                  "selected": true
+                },
+                {
+                  "path": "report_note",
+                  "field": "report_note",
+                  "output": "Employee Leave Additional Note",
+                  "selected": true
+                },
+                {
+                  "path": "notes",
+                  "field": "notes",
+                  "output": "Employee Leave Note",
+                  "selected": true
+                },
+                {
+                  "path": "active",
+                  "field": "active",
+                  "output": "Employee Leave Active",
+                  "selected": true
+                },
+                {
+                  "path": "date_from",
+                  "field": "date_from",
+                  "output": "Employee Leave Date From",
+                  "selected": true
+                },
+                {
+                  "path": "date_to",
+                  "field": "date_to",
+                  "output": "Employee Leave Date To",
+                  "selected": true
+                },
+                {
+                  "path": "number_of_days",
+                  "field": "number_of_days",
+                  "output": "Employee Leave Number Of Days",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "919c7700-3304-4c7d-a0f0-1ee7ac13a4eb",
+        "label": "Join 1",
+        "graphical": {
+          "position": {
+            "x": 640,
+            "y": 40
+          },
+          "icon": "union-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "fee43384-e446-4ccd-8d9a-931c283aa5b7",
+              "type": "DEFAULT"
+            },
+            {
+              "id": "768abd84-4636-429b-b645-ff58428b3790",
+              "type": "LOOKUP"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "2807e748-8440-4970-85d6-dec2d82ace1e",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "join",
+          "label": "Join",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjSm9pbjI",
+            "configuration": {
+              "joinFunction": "LEFT_OUTER_JOIN",
+              "conditions": [
+                {
+                  "leftKey": "first_approver_id",
+                  "rightKey": "id",
+                  "keepBothKeysInOutput": false,
+                  "$leftKey_name": "first_approver_id",
+                  "$rightKey_name": "id"
+                }
+              ],
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "source",
+        "id": "6e874c4d-e502-4c2e-b3d8-034156397736",
+        "label": "hr_employee",
+        "graphical": {
+          "position": {
+            "x": 0,
+            "y": 200
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [],
+          "outgoing": [
+            {
+              "id": "18cb2f6f-7abb-40be-8ad8-21e3073ad457",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "qcdiDataEntitySource",
+          "label": "Input dataset",
+          "properties": {
+            "dataEntity": {
+              "projectId": "{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}",
+              "dataAppId": "land_ccd_storage-kqgk",
+              "entityId": "hr_employee-jj1c"
+            },
+            "configuration": {
+              "name": "hr_employee"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "a1758ae5-fa18-4948-9c10-7c7c34dc618c",
+        "label": "Select columns 2",
+        "graphical": {
+          "position": {
+            "x": 280,
+            "y": 200
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "7e9efc9c-ffe1-47c0-9b7b-67a366372cf4",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "a070931f-fe0f-470e-a36a-70edf6783050",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "id",
+                  "field": "id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "name",
+                  "field": "name",
+                  "output": "",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "6ef381f6-5e78-43b0-ae94-72259136829c",
+        "label": "Select columns 3",
+        "graphical": {
+          "position": {
+            "x": 920,
+            "y": 40
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "2fc02456-1ae4-4428-9368-105f8e8f7389",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "7e6cf4cc-5117-4d59-a37d-6abdf526a63b",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "Employee Leave ID",
+                  "field": "Employee Leave ID",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Manager ID",
+                  "field": "Employee Leave Manager ID",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Status ID",
+                  "field": "Employee Leave Status ID",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Allocation ID",
+                  "field": "Employee Leave Allocation ID",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Employee ID",
+                  "field": "Employee Leave Employee ID",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Department ID",
+                  "field": "Employee Leave Department ID",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "second_approver_id",
+                  "field": "second_approver_id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Private Name",
+                  "field": "Employee Leave Private Name",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave State",
+                  "field": "Employee Leave State",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Duration Display",
+                  "field": "Employee Leave Duration Display",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Holiday Type",
+                  "field": "Employee Leave Holiday Type",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Additional Note",
+                  "field": "Employee Leave Additional Note",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Note",
+                  "field": "Employee Leave Note",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Active",
+                  "field": "Employee Leave Active",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Date From",
+                  "field": "Employee Leave Date From",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Date To",
+                  "field": "Employee Leave Date To",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Number Of Days",
+                  "field": "Employee Leave Number Of Days",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "name",
+                  "field": "name",
+                  "output": "Employee Leave First Approver Name",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "f0cb5c84-482e-4315-be45-3be013c01eb4",
+        "label": "Join 2",
+        "graphical": {
+          "position": {
+            "x": 1280,
+            "y": 40
+          },
+          "icon": "union-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "4c2091a7-1d17-4b52-adab-a10d71be6ab5",
+              "type": "DEFAULT"
+            },
+            {
+              "id": "ddf37da8-4a5f-41d2-99d8-2d9e5b66f197",
+              "type": "LOOKUP"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "1dfbbe81-ad31-470f-ad87-651c2f6ace28",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "join",
+          "label": "Join",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjSm9pbjI",
+            "configuration": {
+              "joinFunction": "LEFT_OUTER_JOIN",
+              "conditions": [
+                {
+                  "leftKey": "second_approver_id",
+                  "rightKey": "id",
+                  "keepBothKeysInOutput": false,
+                  "$leftKey_name": "second_approver_id",
+                  "$rightKey_name": "id"
+                }
+              ],
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "source",
+        "id": "fa010495-18e9-4c2e-9772-79fa0f17194f",
+        "label": "hr_employee",
+        "graphical": {
+          "position": {
+            "x": 0,
+            "y": 360
+          },
+          "icon": "dataset-icon"
+        },
+        "handles": {
+          "incoming": [],
+          "outgoing": [
+            {
+              "id": "c4fad9bd-3b30-47ef-8988-5cc95b298e29",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "qcdiDataEntitySource",
+          "label": "Input dataset",
+          "properties": {
+            "dataEntity": {
+              "projectId": "{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}",
+              "dataAppId": "land_ccd_storage-kqgk",
+              "entityId": "hr_employee-jj1c"
+            },
+            "configuration": {
+              "name": "hr_employee"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "e92ec836-8ffd-4240-bbb9-06909e3f96b1",
+        "label": "Select columns 4",
+        "graphical": {
+          "position": {
+            "x": 280,
+            "y": 360
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "a4cc1d10-5d5d-40a6-b53f-eb383996b607",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "6dec3845-3c71-4369-9a90-33bc14707a73",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "id",
+                  "field": "id",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "name",
+                  "field": "name",
+                  "output": "",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      },
+      {
+        "type": "processor",
+        "id": "3ff07962-3d8b-4cdc-8cc9-cf4b0b6d1c59",
+        "label": "Select columns 5",
+        "graphical": {
+          "position": {
+            "x": 1560,
+            "y": 40
+          },
+          "icon": "field-selector-processor"
+        },
+        "handles": {
+          "incoming": [
+            {
+              "id": "1a0a307b-7948-4e1a-90cf-9de0c7bf21dd",
+              "type": "DEFAULT"
+            }
+          ],
+          "outgoing": [
+            {
+              "id": "d5baf93d-0621-4185-b497-02d88a7b95ce",
+              "type": "DEFAULT"
+            }
+          ]
+        },
+        "component": {
+          "type": "field-selector",
+          "label": "Select columns",
+          "properties": {
+            "tckType": "cHJvY2Vzc2luZy1iZWFtI1Byb2Nlc3NpbmcjRmllbGRTZWxlY3Rvcg",
+            "configuration": {
+              "selectors": [
+                {
+                  "path": "Employee Leave ID",
+                  "field": "Employee Leave ID",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Manager ID",
+                  "field": "Employee Leave Manager ID",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Status ID",
+                  "field": "Employee Leave Status ID",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Allocation ID",
+                  "field": "Employee Leave Allocation ID",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Employee ID",
+                  "field": "Employee Leave Employee ID",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Department ID",
+                  "field": "Employee Leave Department ID",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Private Name",
+                  "field": "Employee Leave Private Name",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave State",
+                  "field": "Employee Leave State",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Duration Display",
+                  "field": "Employee Leave Duration Display",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Holiday Type",
+                  "field": "Employee Leave Holiday Type",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Additional Note",
+                  "field": "Employee Leave Additional Note",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Note",
+                  "field": "Employee Leave Note",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Active",
+                  "field": "Employee Leave Active",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Date From",
+                  "field": "Employee Leave Date From",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Date To",
+                  "field": "Employee Leave Date To",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave Number Of Days",
+                  "field": "Employee Leave Number Of Days",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "Employee Leave First Approver Name",
+                  "field": "Employee Leave First Approver Name",
+                  "output": "",
+                  "selected": true
+                },
+                {
+                  "path": "name",
+                  "field": "name",
+                  "output": "Employee Leave Second Approver Name",
+                  "selected": true
+                }
+              ],
+              "distinct": false,
+              "$state": "CONFIGURED"
+            }
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "f00d8be4-d7c9-460f-a32d-71d8a942caab",
+        "sourceHandle": "dc06a7ad-869d-4a07-b175-035f3c5cd40f",
+        "targetHandle": "20d7271e-01ca-470a-9fd2-d44f8f7f6032"
+      },
+      {
+        "id": "fe30ed15-4d7a-4056-8104-224577b75e1d",
+        "sourceHandle": "e2a04aac-9e0e-4698-b5aa-73c6468c39a7",
+        "targetHandle": "fee43384-e446-4ccd-8d9a-931c283aa5b7"
+      },
+      {
+        "id": "a3ff66ff-282b-491d-940e-8422575ffb90",
+        "sourceHandle": "2807e748-8440-4970-85d6-dec2d82ace1e",
+        "targetHandle": "2fc02456-1ae4-4428-9368-105f8e8f7389"
+      },
+      {
+        "id": "5b03fdb2-472b-4194-b18c-12a012cc5bd5",
+        "sourceHandle": "18cb2f6f-7abb-40be-8ad8-21e3073ad457",
+        "targetHandle": "7e9efc9c-ffe1-47c0-9b7b-67a366372cf4"
+      },
+      {
+        "id": "2def7f2b-39f5-4d61-95fb-c5c31d86dff6",
+        "sourceHandle": "a070931f-fe0f-470e-a36a-70edf6783050",
+        "targetHandle": "768abd84-4636-429b-b645-ff58428b3790"
+      },
+      {
+        "id": "11ee066a-e56e-4fc0-927e-1056e636f48f",
+        "sourceHandle": "7e6cf4cc-5117-4d59-a37d-6abdf526a63b",
+        "targetHandle": "4c2091a7-1d17-4b52-adab-a10d71be6ab5"
+      },
+      {
+        "id": "d8953aab-1f7e-4453-9a58-8aaa72862893",
+        "sourceHandle": "1dfbbe81-ad31-470f-ad87-651c2f6ace28",
+        "targetHandle": "1a0a307b-7948-4e1a-90cf-9de0c7bf21dd"
+      },
+      {
+        "id": "reactflow__edge-fa010495-18e9-4c2e-9772-79fa0f17194fc4fad9bd-3b30-47ef-8988-5cc95b298e29-e92ec836-8ffd-4240-bbb9-06909e3f96b1a4cc1d10-5d5d-40a6-b53f-eb383996b607",
+        "sourceHandle": "c4fad9bd-3b30-47ef-8988-5cc95b298e29",
+        "targetHandle": "a4cc1d10-5d5d-40a6-b53f-eb383996b607"
+      },
+      {
+        "id": "reactflow__edge-e92ec836-8ffd-4240-bbb9-06909e3f96b16dec3845-3c71-4369-9a90-33bc14707a73-f0cb5c84-482e-4315-be45-3be013c01eb4ddf37da8-4a5f-41d2-99d8-2d9e5b66f197",
+        "sourceHandle": "6dec3845-3c71-4369-9a90-33bc14707a73",
+        "targetHandle": "ddf37da8-4a5f-41d2-99d8-2d9e5b66f197"
+      },
+      {
+        "id": "0c7f323b-5e69-4c5b-ae66-f58b323d7d35",
+        "sourceHandle": "d5baf93d-0621-4185-b497-02d88a7b95ce",
+        "targetHandle": "f8015046-b027-4a8b-bc75-373339fb49a9"
+      }
+    ]
+  }
+modelVersion: '1.0.0'

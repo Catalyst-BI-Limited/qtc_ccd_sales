@@ -1,0 +1,45 @@
+explicitlySelected:
+  - sourceProject: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+    sourceTask: land_ccd_storage-kqgk
+    name: hr_attendance
+    sourceTableId: hr_attendance-jj1y
+  - sourceProject: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+    sourceTask: land_ccd_storage-kqgk
+    name: hr_contract
+    sourceTableId: hr_contract-jj1z
+  - sourceProject: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+    sourceTask: land_ccd_storage-kqgk
+    name: hr_department
+    sourceTableId: hr_department-jj1a
+  - sourceProject: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+    sourceTask: land_ccd_storage-kqgk
+    name: hr_departure_reason
+    sourceTableId: hr_departure_reason-jj1b
+  - sourceProject: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+    sourceTask: land_ccd_storage-kqgk
+    name: hr_employee
+    sourceTableId: hr_employee-jj1c
+  - sourceProject: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+    sourceTask: land_ccd_storage-kqgk
+    name: hr_employee_skill
+    sourceTableId: hr_employee_skill-jj1d
+  - sourceProject: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+    sourceTask: land_ccd_storage-kqgk
+    name: hr_job
+    sourceTableId: hr_job-jj1e
+  - sourceProject: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+    sourceTask: land_ccd_storage-kqgk
+    name: hr_leave
+    sourceTableId: hr_leave-jj1f
+  - sourceProject: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+    sourceTask: land_ccd_storage-kqgk
+    name: hr_leave_allocation
+    sourceTableId: hr_leave_allocation-jj1g
+  - sourceProject: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+    sourceTask: land_ccd_storage-kqgk
+    name: hr_skill
+    sourceTableId: hr_skill-jj1h
+  - sourceProject: '{{project.DEMO - Catalyst Classic Designs Data$_$Catalyst Classic Design Data Pipeline.projectId}}'
+    sourceTask: land_ccd_storage-kqgk
+    name: hr_work_location
+    sourceTableId: hr_work_location-jj1i
